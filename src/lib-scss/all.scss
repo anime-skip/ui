@@ -1,0 +1,5 @@
+@import './reset.css', './mixins.scss', './colors.scss', './fonts.scss', './defaults.scss',
+  './utilities.scss';
+
+// Override all styles whn using tailwind
+@import './tailwind.css';

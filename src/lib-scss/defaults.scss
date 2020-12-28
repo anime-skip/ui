@@ -1,0 +1,15 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $background;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $on-surface;
+  fill: $on-surface;
+}

@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono&family=Overpass:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap');
+
+$font-family-heading: 'Overpass', Avenir, Arial, sans-serif;
+$font-family-body: 'Roboto', Helvetica, Arial, sans-serif;
+$font-family-mono: 'Overpass Mono', monospace;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+
+h1,
+.heading-1 {
+  font-family: $font-family-heading;
+  font-size: 100px;
+  line-height: 100px;
+  font-weight: $font-weight-light;
+  letter-spacing: -0.5px;
+}
+
+h2,
+.heading-2 {
+  font-family: $font-family-heading;
+  font-size: 62px;
+  line-height: 62px;
+  font-weight: $font-weight-light;
+  letter-spacing: px;
+}
+
+h3,
+.heading-3 {
+  font-family: $font-family-heading;
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: $font-weight-regular;
+  letter-spacing: 0px;
+}
+
+h4,
+.heading-4 {
+  font-family: $font-family-heading;
+  font-size: 35px;
+  line-height: 35px;
+  font-weight: $font-weight-regular;
+  letter-spacing: 0.25px;
+}
+
+h5,
+.heading-5 {
+  font-family: $font-family-heading;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: $font-weight-regular;
+  letter-spacing: 0px;
+}
+
+h6,
+.heading-6 {
+  font-family: $font-family-heading;
+  font-size: 21px;
+  line-height: 21px;
+  font-weight: $font-weight-regular;
+  letter-spacing: 0.15px;
+}
+
+.subtitle-1 {
+  font-family: $font-family-heading;
+  font-size: 17px;
+  line-height: 17px;
+  font-weight: $font-weight-regular;
+  letter-spacing: 0.15px;
+}
+
+.subtitle-2 {
+  font-family: $font-family-heading;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: $font-weight-regular;
+  letter-spacing: 0.1px;
+}
+
+.body-1 {
+  font-family: $font-family-body;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: $font-weight-regular;
+  letter-spacing: 0.5px;
+}
+
+.body-2 {
+  font-family: $font-family-body;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: $font-weight-regular;
+  letter-spacing: 0.25px;
+}
+
+.button-text {
+  font-family: $font-family-body;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: $font-weight-medium;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.caption {
+  font-family: $font-family-body;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: $font-weight-regular;
+  letter-spacing: 0.4px;
+}
+
+.overline {
+  font-family: $font-family-body;
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: $font-weight-regular;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}

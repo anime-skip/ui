@@ -1,0 +1,101 @@
+// Main Colors - https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+$primary-50: #e1f5fe;
+$primary-100: #b3e6fb;
+$primary-200: #81d5f9;
+$primary-300: #4ec4f6; // * primary
+$primary-400: #25b8f5;
+$primary-500: #00abf4; // * brand
+$primary-600: #009de5;
+$primary-700: #008ad1;
+$primary-800: #0079bd;
+$primary-900: #00599c;
+
+$secondary-50: #f0e8f9;
+$secondary-100: #d7c7f0;
+$secondary-200: #bda2e7;
+$secondary-300: #a27bde;
+$secondary-400: #8d5dd6; // * primary
+$secondary-500: #793fce; // * brand
+$secondary-600: #6f3ac7;
+$secondary-700: #6131be;
+$secondary-800: #552bb7;
+$secondary-900: #411ea8;
+
+$complementary-50: #fbe7e4;
+$complementary-100: #fdc8b3;
+$complementary-200: #faa582;
+$complementary-300: #f78250;
+$complementary-400: #f46726;
+$complementary-500: #f04d00;
+$complementary-600: #e64700;
+$complementary-700: #d94100;
+$complementary-800: #cb3900;
+$complementary-900: #b32c00;
+
+$analogous-50: #f3f9e9;
+$analogous-100: #e0f1c7;
+$analogous-200: #cce7a3;
+$analogous-300: #b6dd7d;
+$analogous-400: #a5d65e;
+$analogous-500: #95ce3f;
+$analogous-600: #85be37;
+$analogous-700: #6fa92d;
+$analogous-800: #5b9523;
+$analogous-900: #34730f;
+
+// Theme Colors
+$primary: $primary-300;
+$primary-variant: $primary-700;
+$secondary: $secondary-400;
+$secondary-variant: $secondary-700;
+$background: #111d23;
+$surface: $background;
+$surface-1: mix(white, $surface, 5%);
+$surface-2: mix(white, $surface, 7%);
+$surface-3: mix(white, $surface, 8%);
+$surface-4: mix(white, $surface, 9%);
+$surface-6: mix(white, $surface, 11%);
+$surface-8: mix(white, $surface, 12%);
+$surface-12: mix(white, $surface, 14%);
+$surface-16: mix(white, $surface, 15%);
+$surface-24: mix(white, $surface, 16%);
+$error: mix(white, $complementary-500, 40%);
+$success: mix(white, $analogous-500, 32%);
+$control: saturate(darken($surface, 5%), 0%);
+$control-variant: darken($control, 7%);
+$control-disabled: lighten($surface, 10%);
+$control-highlight: lighten($control, 20%);
+
+// On
+$on-background: white;
+$on-surface: white;
+$on-surface-emphasis-low: rgba(
+  $color: $on-surface,
+  $alpha: 0.38,
+);
+$on-surface-emphasis-medium: rgba(
+  $color: $on-surface,
+  $alpha: 0.64,
+);
+$on-surface-emphasis-high: rgba(
+  $color: $on-surface,
+  $alpha: 0.87,
+);
+$on-error: black;
+$on-error-emphasis-low: rgba(
+  $color: $on-error,
+  $alpha: 0.38,
+);
+$on-error-emphasis-medium: rgba(
+  $color: $on-error,
+  $alpha: 0.64,
+);
+$on-error-emphasis-high: rgba(
+  $color: $on-error,
+  $alpha: 0.87,
+);
+$on-success: black;
+$on-primary: black;
+$on-primary-variant: white;
+$on-secondary: white;
+$on-secondary-variant: white;
