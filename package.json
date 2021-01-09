@@ -1,20 +1,25 @@
 {
   "name": "@anime-skip/ui",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "license": "MIT",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tailwind-preset": "./lib/tailwind-preset.js"
+  },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "start": "vite",
-    "build": "./scripts/build.sh",
+    "build": "rollup -c",
     "lint": "eslint --ext .js,.ts,.vue src --max-warnings=0",
     "prettier": "prettier --check \"src/**/*.{js,ts,vue}\"",
     "prettier:write": "yarn prettier --write",
     "prepublishOnly": "yarn build",
     "": "",
-    "build:tailwind-scss": "tailwindcss-export-config --config=src/lib/tailwind.preset.js --destination=src/lib/scss/generated-config --format=scss --flat=true",
-    "build:types": "tsc --build tsconfig.build.json",
-    "build:es": "NODE_ENV=production rollup --config rollup.config.js --format es && yarn build:types",
-    "build:js": "NODE_ENV=production rollup --config rollup.config.js && yarn build:types",
-    "build:js_css": "NODE_ENV=production SEP_CSS=true rollup --config rollup.config.js && yarn build:types"
+    "build:tailwind-scss": "tailwindcss-export-config --config=src/lib/tailwind.preset.js --destination=src/lib/scss/generated-config --format=scss --flat=true"
   },
   "husky": {
     "hooks": {
@@ -25,7 +30,11 @@
     "vue": "^3.0.4"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "@tailwindcss/postcss7-compat": "^2.0.2",
     "@vue/compiler-sfc": "^3.0.4",
+    "autoprefixer": "^9",
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-config-standard": "^16.0.2",
@@ -42,10 +51,23 @@
     "postcss": "^7",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
+    "rollup": "^2.36.1",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-execute": "^1.1.1",
+    "rollup-plugin-scss": "^2.6.1",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "rollup-plugin-vue": "^6.0.0-beta.10",
     "sass": "^1.30.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "tailwindcss-export-config": "^2.3.0",
     "typescript": "^4.1.3",
     "vite": "^1.0.0-rc.13"
+  },
+  "peerDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "autoprefixer": "^9",
+    "postcss": "^7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declarationDir": "lib",
+    "sourceMap": true,
+    "declaration": true,
+    "importHelpers": true,
+    "strict": true,
+    "experimentalDecorators": true
+  },
+  "include": ["src/@types/*.d.ts", "src/lib/**/*.ts", "src/lib/**/*.vue"]
+}
