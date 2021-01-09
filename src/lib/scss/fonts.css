@@ -1,0 +1,101 @@
+@layer base {
+  h1,
+  .heading-1 {
+    @apply font-heading font-light text-opacity-100;
+    font-size: 100px;
+    line-height: 100px;
+    letter-spacing: -0.5px;
+  }
+
+  h2,
+  .heading-2 {
+    @apply font-heading font-light;
+    font-size: 62px;
+    line-height: 62px;
+    letter-spacing: px;
+  }
+
+  h3,
+  .heading-3 {
+    @apply font-heading;
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: 0px;
+  }
+
+  h4,
+  .heading-4 {
+    @apply font-heading;
+    font-size: 35px;
+    line-height: 35px;
+    letter-spacing: 0.25px;
+  }
+
+  h5,
+  .heading-5 {
+    @apply font-heading;
+    font-size: 25px;
+    line-height: 25px;
+    letter-spacing: 0px;
+  }
+
+  h6,
+  .heading-6 {
+    @apply font-heading;
+    font-size: 21px;
+    line-height: 21px;
+    letter-spacing: 0.15px;
+  }
+
+  .subtitle-1 {
+    @apply font-heading;
+    font-size: 17px;
+    line-height: 17px;
+    letter-spacing: 0.15px;
+  }
+
+  .subtitle-2 {
+    @apply font-heading;
+    font-size: 15px;
+    line-height: 15px;
+    letter-spacing: 0.1px;
+  }
+
+  .body-1 {
+    @apply font-body;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.5px;
+  }
+
+  .body-2 {
+    @apply font-body;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.25px;
+  }
+
+  .button-text {
+    @apply font-body font-medium;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .caption {
+    @apply font-body;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.4px;
+  }
+
+  .overline {
+    @apply font-body;
+    font-size: 10px;
+    line-height: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+}

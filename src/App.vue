@@ -17,11 +17,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Fonts from './components/Fonts.vue';
-import Surfaces from './components/Surfaces.vue';
-import Inputs from './components/Inputs.vue';
-import Loaders from './components/Loaders.vue';
-import Miscelanious from './components/Miscelanious.vue';
+import Fonts from './components/groups/Fonts.vue';
+import Surfaces from './components/groups/Surfaces.vue';
+import Inputs from './components/groups/Inputs.vue';
+import Loaders from './components/groups/Loaders.vue';
+import Miscelanious from './components/groups/Miscelanious.vue';
 
 export default defineComponent({
   components: { Fonts, Surfaces, Inputs, Loaders, Miscelanious },

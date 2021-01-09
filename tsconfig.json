@@ -1,9 +1,22 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2018",
     "module": "esnext",
     "strict": true,
+    "declaration": true,
     "jsx": "preserve",
-    "moduleResolution": "node"
-  }
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules"]
 }
