@@ -2,7 +2,8 @@
   "name": "@anime-skip/ui",
   "version": "0.0.10",
   "license": "MIT",
-  "main": "lib/ui/umd.js",
+  "types": "lib/index.d.ts",
+  "main": "lib/ui.umd.js",
   "module": "lib/ui.es.js",
   "exports": {
     ".": "./lib/ui.js",
