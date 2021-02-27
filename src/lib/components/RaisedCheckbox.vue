@@ -1,7 +1,7 @@
 <template>
   <RaisedContainer :dark="!checked" :down="!checked" :disabled="disabled">
     <Checkbox
-      class="flex-1 px-2"
+      class="flex-1 px-2 text-left"
       :checked="checked"
       :label="label"
       :disabled="disabled"

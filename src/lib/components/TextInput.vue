@@ -2,18 +2,19 @@
   <div class="TextInput flex flex-col min-w-0 cursor-text">
     <Body2 v-if="!!label" class="mb-3 text-opacity-high">{{ label }}</Body2>
     <div
-      class="rounded-sm ring-primary transition-all"
+      class="rounded-sm ring-primary transition-all flex"
       :class="{
         'ring ring-opacity-low': isFocused,
         'ring-1 ring-error ring-opacity-100': !isValid,
       }"
     >
       <RaisedContainer
-        class="input-wrapper h-12 space-x-4 px-4 items-center min-w-0"
+        class="input-wrapper h-12 space-x-4 px-4 items-center min-w-0 flex-1"
         dark
         :disabled="disabled"
-        down
+        :down="isFocused || !!errorMessage || !!internalValue"
         @click="focus()"
+        tabindex="-1"
       >
         <slot name="left-icon" v-bind:disabled="disabled" v-bind:focused="isFocused" />
         <input
@@ -119,7 +120,7 @@ $inputHeight: 48px;
 
 .TextInput {
   .input {
-    @apply text-on-surface text-opacity-high;
+    @apply text-on-surface text-opacity-100;
     background-color: transparent;
     box-sizing: border-box;
     line-height: 12rem;

@@ -1,5 +1,5 @@
 <template>
-  <div
+  <button
     class="FlatButton flex flex-row justify-center items-center rounded min-h-10 px-4 py-2.5 cursor-pointer select-none overflow-x-hidden"
     :class="{
       'surface surface-primary': !disabled && !secondary && !transparent,
@@ -9,7 +9,7 @@
     }"
   >
     <p class="button-text" :class="{ disabled }"><slot /></p>
-  </div>
+  </button>
 </template>
 
 <script lang="ts">
@@ -25,7 +25,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../scss/generated-config.scss';
+@import '../scss/theme.scss';
 
 .FlatButton {
   transition: ease 200ms filter;

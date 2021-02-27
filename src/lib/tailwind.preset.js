@@ -76,8 +76,8 @@ const analogousColor = {
   900: '#34730f',
 };
 
-const background = '#111d23';
-const control = mix('#000000', background, 40);
+const background = '#142026';
+const control = mix('#000000', background, 60);
 
 module.exports = {
   darkMode: false,

@@ -1,5 +1,5 @@
 <template>
-  <div class="ProgressOverlay relative">
+  <div class="LoadingOverlay relative">
     <slot />
     <div class="bg-background bg-opacity-high flex absolute inset-0" v-if="isLoading">
       <Loading class="m-auto" :size="size" />

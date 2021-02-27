@@ -1,13 +1,5 @@
 <template>
-  <svg
-    class="Icon h-6 w-6 pointer-events-none transition-colors"
-    :class="{
-      'opacity-medium': !active && !disabled,
-      'opacity-100': active && !disabled,
-      'opacity-low': disabled,
-    }"
-    viewBox="0 0 24 24"
-  >
+  <svg class="Icon pointer-events-none transition-colors" :class="styles" viewBox="0 0 24 24">
     <path :d="path" />
   </svg>
 </template>
@@ -16,9 +8,20 @@
 import { defineComponent } from 'vue';
 export default defineComponent({
   props: {
+    size: { type: Number, default: 6 },
     path: String,
     active: Boolean,
     disabled: Boolean,
+  },
+  computed: {
+    styles(): { [styles: string]: boolean } {
+      return {
+        [`h-${this.size} w-${this.size}`]: true,
+        'opacity-medium': !this.active && !this.disabled,
+        'opacity-100': this.active && !this.disabled,
+        'opacity-low': this.disabled,
+      };
+    },
   },
 });
 </script>

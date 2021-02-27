@@ -1,5 +1,5 @@
 <template>
-  <div
+  <button
     class="RaisedContainer flex flex-row justify-center items-center rounded ring-offset-transparent"
     :class="{
       'surface-primary': !dark && !secondary,
@@ -12,7 +12,7 @@
     }"
   >
     <slot />
-  </div>
+  </button>
 </template>
 
 <script lang="ts">
@@ -31,7 +31,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import '../scss/generated-config.scss';
+@import '../scss/theme.scss';
 
 $down-translation: 0px;
 $neutral-translation: 3px;

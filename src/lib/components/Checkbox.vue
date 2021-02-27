@@ -1,6 +1,6 @@
 <template>
   <div
-    class="Checkbox min-h-10 p-0 px-2 py-2 flex flex-row items-center justify-start space-x-4 select-none cursor-pointer transition-colors rounded overflow-x-hidden bg-transparent"
+    class="Checkbox min-h-10 p-0 px-2 py-2 flex flex-row items-center justify-start space-x-3 select-none cursor-pointer transition-colors rounded overflow-x-hidden bg-transparent"
     :class="{
       'flex-row-reverse': rToL,
       'opacity-low pointer-events-none': disabled,
@@ -25,7 +25,7 @@
     />
     <CheckboxUnchecked v-else class="flex-shrink-0" />
     <label
-      class="body-1 flex-1 text-opacity-high pointer-events-none"
+      class="body-1 flex-1 text-opacity-high pointer-events-none pr-2"
       :class="{
         'text-right': rToL,
       }"
