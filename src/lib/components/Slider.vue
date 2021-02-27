@@ -10,7 +10,7 @@
     </div>
     <div class="thumb-container" :style="thumbOffsetStyle">
       <slot name="thumb">
-        <div class="default-thumb" :class="{ seeking: isSeeking }" :style="inactiveThumbStyle">
+        <div class="default-thumb" :class="{ seeking: isSeeking }" :style="thumbStyle">
           <div class="thumb-highlight" />
         </div>
       </slot>
@@ -29,7 +29,7 @@ export default defineComponent({
     disableUpdateDuringSeek: Boolean,
     min: { type: Number, default: 0 },
     max: { type: Number, required: true, validator: (value: number) => value > 0 },
-    inactiveThumbSize: { type: Number },
+    defaultThumbSize: { type: Number },
   },
   emits: ['seek:start', 'seek:end', 'seek'],
   setup(props, { emit }) {
@@ -116,8 +116,8 @@ export default defineComponent({
     };
 
     const thumbOffsetStyle = computed(() => `left: ${offsetLeftPercent.value}%;`);
-    const inactiveThumbStyle = computed(
-      () => `min-width: ${props.inactiveThumbSize}px; min-height: ${props.inactiveThumbSize}px;`
+    const thumbStyle = computed(
+      () => `min-width: ${props.defaultThumbSize}px; min-height: ${props.defaultThumbSize}px;`
     );
 
     const defaultForegroundOffsetStyle = computed(
@@ -125,7 +125,7 @@ export default defineComponent({
     );
 
     return {
-      inactiveThumbStyle,
+      thumbStyle,
       thumbOffsetStyle,
       defaultForegroundOffsetStyle,
       onSeekStart,
