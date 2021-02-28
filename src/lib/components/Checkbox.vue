@@ -14,6 +14,7 @@
       class="flex-shrink-0 opacity-100 transition-colors"
       :class="{
         'fill-secondary': flat && !disabled,
+        [`fill-on-${onSurface}`]: !flat && !!onSurface,
       }"
     />
     <CheckboxIndeterminate
@@ -21,6 +22,7 @@
       class="flex-shrink-0 opacity-100 transition-colors"
       :class="{
         'fill-secondary': flat && !disabled,
+        [`fill-on-${onSurface}`]: !flat && !!onSurface,
       }"
     />
     <CheckboxUnchecked v-else class="flex-shrink-0" />
@@ -28,6 +30,7 @@
       class="body-1 flex-1 text-opacity-high pointer-events-none pr-2"
       :class="{
         'text-right': rToL,
+        [`text-on-${onSurface}`]: !flat && !!onSurface,
       }"
       >{{ label }}</label
     >
@@ -35,7 +38,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import CheckboxChecked from './icons/CheckboxChecked.vue';
 import CheckboxIndeterminate from './icons/CheckboxIndeterminate.vue';
 import CheckboxUnchecked from './icons/CheckboxUnchecked.vue';
@@ -48,6 +51,9 @@ export default defineComponent({
     flat: { type: Boolean, default: true },
     disabled: Boolean,
     rToL: Boolean,
+    onSurface: String as PropType<
+      'primary' | 'primary-varient' | 'secondary' | 'secondary-variant' | 'surface' | 'error'
+    >,
   },
   emits: ['update:checked'],
   setup(props, { emit }) {

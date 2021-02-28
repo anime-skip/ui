@@ -8,13 +8,14 @@
       :rToL="rToL"
       :flat="false"
       disableHoverEffects
+      :onSurface="onSurface"
       @update:checked="updateChecked"
     />
   </RaisedContainer>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { computed, defineComponent, PropType } from 'vue';
 import RaisedContainer from './RaisedContainer.vue';
 
 export default defineComponent({
@@ -26,11 +27,16 @@ export default defineComponent({
     disabled: Boolean,
     rToL: Boolean,
   },
-  setup(_, { emit }) {
+  setup(props, { emit }) {
     const updateChecked = (newChecked: boolean) => {
       emit('update:checked', newChecked);
     };
+    const onSurface = computed(() => {
+      if (props.checked) return 'primary';
+      return 'surface';
+    });
     return {
+      onSurface,
       updateChecked,
     };
   },
