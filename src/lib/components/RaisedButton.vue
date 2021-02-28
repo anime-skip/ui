@@ -4,8 +4,19 @@
     :secondary="secondary"
     :dark="dark"
     :disabled="disabled"
+    :error="error"
   >
-    <span class="button-text space-x-4" :class="{ disabled }"><slot /></span>
+    <span
+      class="button-text space-x-4"
+      :class="{
+        'text-on-primary': !secondary && !dark && !disabled && !error,
+        'text-on-secondary': secondary && !dark && !disabled && !error,
+        'text-on-surface': !secondary && dark && !disabled && !error,
+        'text-on-surface text-opacity-low': disabled,
+        'text-on-error': !secondary && !dark && !disabled && error,
+      }"
+      ><slot
+    /></span>
   </RaisedContainer>
 </template>
 
@@ -19,12 +30,7 @@ export default defineComponent({
     secondary: Boolean,
     dark: Boolean,
     disabled: Boolean,
+    error: Boolean,
   },
 });
 </script>
-
-<style lang="css" scoped>
-.button-text.disabled {
-  @apply text-on-surface text-opacity-low;
-}
-</style>

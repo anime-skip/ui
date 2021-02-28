@@ -2,13 +2,25 @@
   <button
     class="FlatButton flex flex-row justify-center items-center rounded min-h-10 px-4 py-2.5 cursor-pointer select-none overflow-x-hidden"
     :class="{
-      'surface surface-primary': !disabled && !secondary && !transparent,
-      'surface surface-secondary': !disabled && secondary,
-      transparent: !disabled && transparent,
+      'surface surface-primary': !disabled && !secondary && !transparent && !error,
+      'surface surface-secondary': !disabled && secondary && !error,
+      transparent: !disabled && transparent && !error,
+      'surface surface-error': !disabled && !transparent && error,
       'bg-control-disabled pointer-events-none': disabled,
     }"
   >
-    <p class="button-text" :class="{ disabled }"><slot /></p>
+    <p
+      class="button-text"
+      :class="{
+        'text-on-primary': !secondary && !transparent && !disabled && !error,
+        'text-on-secondary': secondary && !transparent && !disabled && !error,
+        'text-on-surface': !secondary && transparent && !disabled && !error,
+        'text-on-surface text-opacity-low': disabled,
+        'text-on-error': !secondary && !transparent && !disabled && error,
+      }"
+    >
+      <slot />
+    </p>
   </button>
 </template>
 
@@ -20,6 +32,7 @@ export default defineComponent({
     secondary: Boolean,
     transparent: Boolean,
     disabled: Boolean,
+    error: Boolean,
   },
 });
 </script>

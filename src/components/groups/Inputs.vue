@@ -63,23 +63,28 @@
       <RaisedCheckbox v-model:checked="checkbox5" label="Checked" />
       <RaisedCheckbox v-model:checked="checkbox6" label="Unchecked" />
       <RaisedCheckbox :checked="false" disabled label="Disabled" />
+      <RaisedCheckbox checked disabled label="Checked + Disabled" />
     </div>
     <Subtitle1 class="mt-8">Buttons</Subtitle1>
     <div class="grid grid-flow-row grid-cols-3 gap-4 mt-4">
       <RaisedButton>Primary</RaisedButton>
       <RaisedButton secondary>Secondary</RaisedButton>
       <RaisedButton dark>Dark</RaisedButton>
-      <RaisedButton disabled>Disabled</RaisedButton>
+      <RaisedButton error>Error</RaisedButton>
+      <RaisedButton disabled>Disabled Primary</RaisedButton>
       <RaisedButton disabled secondary>Disabled Secondary</RaisedButton>
       <RaisedButton disabled dark>Disabled Dark</RaisedButton>
+      <RaisedButton disabled error>Disabled Error</RaisedButton>
     </div>
     <div class="grid grid-flow-row grid-cols-3 gap-4 mt-4">
       <FlatButton>Flat Primary</FlatButton>
       <FlatButton secondary>Flat Secondary</FlatButton>
       <FlatButton transparent>Flat Transparent</FlatButton>
-      <FlatButton disabled>Disabled</FlatButton>
+      <FlatButton error>Flat Error</FlatButton>
+      <FlatButton disabled>Disabled Primary</FlatButton>
       <FlatButton disabled secondary>Disabled Secondary</FlatButton>
       <FlatButton disabled transparent>Disabled Transparent</FlatButton>
+      <FlatButton disabled error>Disabled Error</FlatButton>
     </div>
   </Group>
 </template>
