@@ -2,10 +2,6 @@
 
 .surface {
   background-color: var(--surface-color);
-  * {
-    @apply text-on-surface;
-    @apply fill-on-surface;
-  }
 }
 .surface-0 {
   --surface-color: $backgroundColor-background;
@@ -58,45 +54,23 @@
 
 .surface-primary {
   --surface-color: #{$backgroundColor-primary};
-  * {
-    @apply text-on-primary;
-    @apply fill-on-primary;
-  }
 }
 .surface-primary-variant {
   --surface-color: #{$backgroundColor-primary-variant};
-  * {
-    @apply text-on-primary-variant;
-    @apply fill-on-primary-variant;
-  }
 }
 .surface-secondary {
   --surface-color: #{$backgroundColor-secondary};
-  * {
-    @apply text-on-secondary;
-    @apply fill-on-secondary;
-  }
 }
 .surface-secondary-variant {
   --surface-color: #{$backgroundColor-secondary-variant};
-  * {
-    @apply text-on-secondary-variant;
-    @apply fill-on-secondary-variant;
-  }
 }
 .surface-error {
   --surface-color: #{$backgroundColor-error};
-  * {
-    @apply text-on-error;
-    @apply fill-on-error;
-  }
 }
 .surface-success {
   --surface-color: #{$backgroundColor-success};
-  * {
-    @apply text-on-success;
-    @apply fill-on-success;
-  }
+  @apply text-on-success;
+  @apply fill-on-success;
 }
 
 .elevated {
