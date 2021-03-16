@@ -7,6 +7,7 @@ rm -rf lib/*
 
 # Build library
 ./scripts/generate-scss.sh
+node scripts/generate-theme-vars.js
 yarn vite build
 
 # Copy in direct files
