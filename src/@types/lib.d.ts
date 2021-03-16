@@ -7,7 +7,7 @@ export interface SectionData {
 export interface TimestampData {
   key: string;
   normalizedAt: number;
-  edited?: boolean;
+  color?: string;
   skipped?: boolean;
   active?: boolean;
 }

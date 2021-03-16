@@ -25,7 +25,7 @@
       height="6"
       viewBox="0 0 12 6"
     >
-      <path d="M6 6L0 0H12L6 6Z" />
+      <path d="M6 6L0 0H12L6 6Z" :style="pathStyle(timestamp)" />
     </svg>
   </div>
 </template>
@@ -34,6 +34,7 @@
 import { computed, defineComponent, PropType } from 'vue';
 import TimelineSection from './TimelineSection.vue';
 import { SectionData, TimestampData } from '../../@types/lib';
+import theme from '../scss/generated-config';
 
 export default defineComponent({
   name: 'Timeline',
@@ -54,7 +55,11 @@ export default defineComponent({
     const timestampClass = (timestamp: TimestampData): Record<string, boolean | undefined> => {
       return {
         active: timestamp.active,
-        edited: timestamp.edited,
+      };
+    };
+    const pathStyle = (timestamp: TimestampData) => {
+      return {
+        fill: timestamp.color ?? theme['textColor-primaryPalette-400'],
       };
     };
 
@@ -93,6 +98,7 @@ export default defineComponent({
     return {
       timestampStyle,
       timestampClass,
+      pathStyle,
       sections,
       completedSections,
     };

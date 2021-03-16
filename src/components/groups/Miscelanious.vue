@@ -28,7 +28,8 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { TimestampData } from '../@types';
+import { TimestampData } from '../@types/lib';
+import theme from '../../lib/scss/generated-config';
 
 export default defineComponent({
   setup() {
@@ -56,20 +57,22 @@ export default defineComponent({
       {
         key: '1',
         normalizedAt: 10,
+        color: theme['fill-error'],
         skipped: true,
       },
       {
         key: '2',
         normalizedAt: 20,
+        color: theme['fill-success'],
       },
       {
         key: 'new',
         normalizedAt: 70,
-        edited: true,
       },
       {
         key: '3',
         normalizedAt: 90,
+        color: theme['fill-secondary'],
       },
     ];
     const timestamps3: TimestampData[] = [];
