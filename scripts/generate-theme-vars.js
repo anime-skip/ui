@@ -28,6 +28,9 @@ while ((match = regex.exec(fileContent)) !== null) {
 
 output.unshift('export default {');
 output.push('};');
+output.push('');
 
 const outputFile = path.resolve(process.cwd(), 'src/lib/scss/generated-config.ts');
 fs.writeFileSync(outputFile, output.join('\n'), { encoding: 'utf-8' });
+
+console.log(`Output TS variables to ${outputFile.replace(process.cwd() + '/', '')}`);
