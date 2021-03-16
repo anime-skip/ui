@@ -18,3 +18,6 @@ export default plugin;
 // To allow individual component use, export components
 // each can be registered via Vue.component()
 export * from './components';
+
+// Expose theme variables
+export { default as theme } from './scss/generated-config';
