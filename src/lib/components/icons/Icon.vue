@@ -5,10 +5,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
+
+type Size = 'sm' | 'md';
+const SIZES = {
+  sm: 'w-4 h-4',
+  md: 'w-6 h-6',
+};
+
 export default defineComponent({
   props: {
-    size: { type: Number, default: 6 },
+    size: { type: String as PropType<Size>, default: 'md' },
     path: String,
     active: Boolean,
     disabled: Boolean,
@@ -16,7 +23,7 @@ export default defineComponent({
   computed: {
     styles(): { [styles: string]: boolean } {
       return {
-        [`h-${this.size} w-${this.size}`]: true,
+        [SIZES[this.size]]: true,
         'opacity-medium': !this.active && !this.disabled,
         'opacity-100': this.active && !this.disabled,
         'opacity-low': this.disabled,
