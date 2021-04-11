@@ -17,7 +17,7 @@ UI Component library for all of Anime Skip, using [TailwindCSS](https://tailwind
    ```js
    // tailwind.config.js
    module.exports = {
-     presets: [require('@anime-skip/ui/tailwind-preset')],
+     presets: [require('@anime-skip/ui/tailwind.preset')],
      purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
    };
    ```
