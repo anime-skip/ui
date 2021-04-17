@@ -9,8 +9,10 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
+import Loading from './Loading.vue';
 
 export default defineComponent({
+  components: { Loading },
   props: {
     isLoading: { type: Boolean, required: true },
     size: { type: String as PropType<'sm' | 'md' | 'lg'>, default: 'md' },
