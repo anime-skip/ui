@@ -1,43 +1,24 @@
 // Components
-import RaisedButton from './RaisedButton.vue';
-export { RaisedButton };
-import RaisedContainer from './RaisedContainer.vue';
-export { RaisedContainer };
-import FlatButton from './FlatButton.vue';
-export { FlatButton };
-import NavBar from './NavBar.vue';
-export { NavBar };
-import Card from './Card.vue';
-export { Card };
-import TextInput from './TextInput.vue';
-export { TextInput };
-import Checkbox from './Checkbox.vue';
-export { Checkbox };
-import RaisedCheckbox from './RaisedCheckbox.vue';
-export { RaisedCheckbox };
-import Loading from './Loading.vue';
-export { Loading };
-import LoadingOverlay from './LoadingOverlay.vue';
-export { LoadingOverlay };
-import Slider from './Slider.vue';
-export { Slider };
-import Timeline from './Timeline.vue';
-export { Timeline };
+export { default as RaisedButton } from './RaisedButton.vue';
+export { default as RaisedContainer } from './RaisedContainer.vue';
+export { default as FlatButton } from './FlatButton.vue';
+export { default as NavBar } from './NavBar.vue';
+export { default as Card } from './Card.vue';
+export { default as TextInput } from './TextInput.vue';
+export { default as Checkbox } from './Checkbox.vue';
+export { default as RaisedCheckbox } from './RaisedCheckbox.vue';
+export { default as Loading } from './Loading.vue';
+export { default as LoadingOverlay } from './LoadingOverlay.vue';
+export { default as Slider } from './Slider.vue';
+export { default as Timeline } from './Timeline.vue';
 
 // Text
-import Body1 from './text/Body1.vue';
-export { Body1 };
-import Body2 from './text/Body2.vue';
-export { Body2 };
-import Caption from './text/Caption.vue';
-export { Caption };
-import Overline from './text/Overline.vue';
-export { Overline };
-import Subtitle1 from './text/Subtitle1.vue';
-export { Subtitle1 };
-import Subtitle2 from './text/Subtitle2.vue';
-export { Subtitle2 };
+export { default as Body1 } from './text/Body1.vue';
+export { default as Body2 } from './text/Body2.vue';
+export { default as Caption } from './text/Caption.vue';
+export { default as Overline } from './text/Overline.vue';
+export { default as Subtitle1 } from './text/Subtitle1.vue';
+export { default as Subtitle2 } from './text/Subtitle2.vue';
 
 // Icons
-import Icon from './icons/Icon.vue';
-export { Icon };
+export { default as Icon } from './icons/Icon.vue';
