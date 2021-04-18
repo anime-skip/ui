@@ -84,7 +84,6 @@
           :link="item.link"
           :title="item.title"
           dropdown
-          @click="toggleMenu()"
         />
       </div>
     </div>
