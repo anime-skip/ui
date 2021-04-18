@@ -11,20 +11,11 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   props: {
-    title: { type: String, required: true },
     dropdown: Boolean,
-  },
-  setup(props) {
-    const base = computed<string>(() => props.link.split(/(#|\?)/)[0]);
-    const isCurrentPath = () => window.location.pathname.startsWith(base.value);
-
-    return {
-      isCurrentPath,
-    };
   },
 });
 </script>
