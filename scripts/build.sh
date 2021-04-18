@@ -43,5 +43,8 @@ appendCssToStyles  "src/lib/scss/fonts.css"
 appendCssToStyles  "src/lib/scss/defaults.css"
 appendScssToStyles "src/lib/scss/utilities.scss"
 
+# Remove source mappings from compiled SCSS
+sed -i '/\/\*\# sourceMappingURL=.temp.css.map \*\//d' lib/style.css
+
 # Copy package.json to build from the source
 cp package.json lib/
