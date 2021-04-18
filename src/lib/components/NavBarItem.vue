@@ -1,6 +1,6 @@
 <template>
-  <a
-    :href="link"
+  <router-link
+    :to="link"
     class="block h-16 py-5"
     :class="{
       'opacity-100 selected font-medium border-primary': isCurrentPath(),
@@ -10,12 +10,13 @@
       'mx-1 px-2': !dropdown,
       'border-b-2': !dropdown && isCurrentPath(),
     }"
-    >{{ title }}</a
+    >{{ title }}</router-link
   >
 </template>
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue';
+
 export default defineComponent({
   props: {
     link: { type: String, required: true },
