@@ -11,8 +11,10 @@
     homeTitle="Anime Skip"
     homeIcon="https://www.anime-skip.com/img/logo_nav.e785b842.svg"
     homeLink="/"
-    :items="navItems"
+    :leftItems="leftNavItems"
     :rightItems="rightNavItems"
+    rightMenu
+    rightMenuText="aklinker1"
     :rightMenuItems="rightMenuItems"
   />
 </template>
@@ -28,7 +30,7 @@ import Miscelanious from './components/groups/Miscelanious.vue';
 export default defineComponent({
   components: { Fonts, Surfaces, Inputs, Loaders, Miscelanious },
   setup() {
-    const navItems = [
+    const leftNavItems = [
       { title: 'Dashboard', link: '/dashboard' },
       { title: 'Team', link: '/team' },
     ];
@@ -41,8 +43,8 @@ export default defineComponent({
       { title: 'Log Out', link: '/log-out' },
     ];
     return {
+      leftNavItems,
       rightNavItems,
-      navItems,
       rightMenuItems,
     };
   },
