@@ -14,10 +14,10 @@
           </button>
         </div>
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-          <a v-if="!!homeLink" class="flex-shrink-0 flex items-center" :href="homeLink">
+          <router-link v-if="!!homeLink" class="flex-shrink-0 flex items-center" :to="homeLink">
             <img class="block h-6 mr-4 w-auto" :src="homeIcon" :alt="homeTitle" />
             <p class="sm:block lg:block heading-6 font-bold">{{ homeTitle }}</p>
-          </a>
+          </router-link>
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
               <NavBarItem
