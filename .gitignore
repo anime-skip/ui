@@ -6,4 +6,3 @@ node_modules/
 /esm
 /cjs
 *.local
-*.tgz
