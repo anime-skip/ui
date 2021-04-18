@@ -68,7 +68,6 @@
                 :key="item.link"
                 :to="item.link"
                 class="w-full h-12 flex items-center px-4 subtitle-1 text-on-surface text-opacity-high"
-                @click="toggleRightDropDown"
               >
                 {{ item.title }}
               </router-link>
@@ -93,7 +92,7 @@
 </template>
 
 <script lang="ts">
-import { computed, ref, defineComponent, PropType } from 'vue';
+import { computed, ref, defineComponent, PropType, watch } from 'vue';
 import DrawerOpen from './icons/DrawerOpen.vue';
 import DrawerClose from './icons/DrawerClose.vue';
 import NavBarItem from './NavBarItem.vue';
@@ -119,6 +118,7 @@ export default defineComponent({
     homeTitle: { type: String, default: 'Anime Skip' },
     homeIcon: { type: String, default: '' },
     homeLink: String,
+    route: String,
     leftItems: { type: Array as PropType<NavItem[]>, required: true },
     rightItems: { type: Array as PropType<NavItem[]>, required: true },
     rightMenuItems: { type: Array as PropType<NavItem[]>, required: true },
@@ -141,6 +141,14 @@ export default defineComponent({
     };
 
     const allItems = computed(() => [...props.leftItems, ...props.rightItems]);
+
+    watch(
+      () => props.route,
+      () => {
+        menuOpen.value = false;
+        rightDropdownOpen.value = false;
+      }
+    );
 
     return {
       menuOpenClass,
