@@ -1,7 +1,7 @@
 <template>
   <router-link
     :to="link"
-    class="block h-16 py-5"
+    class="flex items-center h-16 subtitle-1"
     :class="{
       'opacity-100 selected font-medium border-primary': isCurrentPath(),
       'opacity-medium': !isCurrentPath(),

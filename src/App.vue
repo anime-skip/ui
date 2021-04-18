@@ -12,6 +12,8 @@
     homeIcon="https://www.anime-skip.com/img/logo_nav.e785b842.svg"
     homeLink="/"
     :items="navItems"
+    :rightItems="rightNavItems"
+    :rightMenuItems="rightMenuItems"
   />
 </template>
 
@@ -29,11 +31,19 @@ export default defineComponent({
     const navItems = [
       { title: 'Dashboard', link: '/dashboard' },
       { title: 'Team', link: '/team' },
+    ];
+    const rightNavItems = [
       { title: 'Projects', link: '/projects?test=param' },
       { title: 'Calendar', link: '/calendar#test' },
     ];
+    const rightMenuItems = [
+      { title: 'Account Settings', link: '/account' },
+      { title: 'Log Out', link: '/log-out' },
+    ];
     return {
+      rightNavItems,
       navItems,
+      rightMenuItems,
     };
   },
 });

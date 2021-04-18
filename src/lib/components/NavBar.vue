@@ -21,36 +21,25 @@
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
               <NavBarItem
-                v-for="item of items"
+                v-for="item of leftItems"
                 :key="item.title"
                 :link="item.link"
                 :title="item.title"
               />
-              <!-- Current: "bg-gray-900 text-on-surface", Default: "text-gray-300 hover:bg-gray-700 hover:text-on-surface" -->
-              <!-- <a href="#" class="bg-gray-900 text-on-surface px-3 py-2 rounded-md text-sm font-medium"
-                >Dashboard</a
-              >
-              <a
-                href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-on-surface px-3 py-2 rounded-md text-sm font-medium"
-                >Team</a
-              >
-              <a
-                href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-on-surface px-3 py-2 rounded-md text-sm font-medium"
-                >Projects</a
-              >
-              <a
-                href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-on-surface px-3 py-2 rounded-md text-sm font-medium"
-                >Calendar</a
-              > -->
             </div>
           </div>
         </div>
         <div
           class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
         >
+          <NavBarItem
+            v-for="item of rightItems"
+            :key="item.title"
+            :link="item.link"
+            :title="item.title"
+            class="hidden"
+          />
+          <slot name="right" />
           <!-- <button
             class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-on-surface focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
           >
@@ -74,57 +63,44 @@
           </button> -->
 
           <!-- Profile dropdown -->
-          <!-- <div class="ml-3 relative">
+          <div v-if="rightMenu" class="ml-3 relative">
             <div>
-              <button
-                class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                id="user-menu"
-                aria-haspopup="true"
-              >
+              <nav-bar-button @click="toggleRightDropDown">
                 <span class="sr-only">Open user menu</span>
-                <img
-                  class="h-8 w-8 rounded-full"
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt=""
-                />
-              </button>
+                {{ rightMenuText }}
+                <icon path="M7,10L12,15L17,10H7Z" />
+              </nav-bar-button>
             </div>
-            !--
+            <!--
             Profile dropdown panel, show/hide based on dropdown state.
 
             Entering: "transition ease-out duration-100"
               From: "transform opacity-0 scale-95"
-              To: "transform opacity-100 scale-100"
-            Leaving: "transition ease-in duration-75"
-              From: "transform opacity-100 scale-100"
-              To: "transform opacity-0 scale-95"
-          --
-            <div
-              class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5"
+              To: "tritemsansform opacity-0 scale-95"
+          -->
+            <card
+              v-if="rightDropdownOpen"
+              class="origin-top-right absolute -mt-2 right-0 w-64 rounded-md"
+              :class="{
+                block: rightDropdownOpen,
+                hidden: !rightDropdownOpen,
+              }"
+              :elevation="8"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="user-menu"
             >
-              <a
-                href="#"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                role="menuitem"
-                >Your Profile</a
+              <router-link
+                v-for="item of rightMenuItems"
+                :key="item.link"
+                :to="item.link"
+                class="w-full h-12 flex items-center px-4 subtitle-1 text-on-surface text-opacity-high"
+                @click="toggleRightDropDown"
               >
-              <a
-                href="#"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                role="menuitem"
-                >Settings</a
-              >
-              <a
-                href="#"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                role="menuitem"
-                >Sign out</a
-              >
-            </div>
-          </div> -->
+                {{ item.title }}
+              </router-link>
+            </card>
+          </div>
         </div>
       </div>
     </div>
@@ -138,25 +114,6 @@
           dropdown
           @click="toggleMenu()"
         />
-        <!-- Current: "bg-gray-900 text-on-surface", Default: "text-gray-300 hover:bg-gray-700 hover:text-on-surface" -->
-        <!-- <a href="#" class="bg-gray-900 text-on-surface block px-3 py-2 rounded-md text-base font-medium"
-          >Dashboard</a
-        >
-        <a
-          href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-on-surface block px-3 py-2 rounded-md text-base font-medium"
-          >Team</a
-        >
-        <a
-          href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-on-surface block px-3 py-2 rounded-md text-base font-medium"
-          >Projects</a
-        >
-        <a
-          href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-on-surface block px-3 py-2 rounded-md text-base font-medium"
-          >Calendar</a
-        > -->
       </div>
     </div>
   </nav>
@@ -167,19 +124,33 @@ import { computed, ref, defineComponent, PropType } from 'vue';
 import DrawerOpen from './icons/DrawerOpen.vue';
 import DrawerClose from './icons/DrawerClose.vue';
 import NavBarItem from './NavBarItem.vue';
+import NavBarButton from './NavBarButton.vue';
+import Icon from './icons/Icon.vue';
+import Card from './Card.vue';
 
-interface NavItem {
+export interface NavItem {
   link: string;
   title: string;
 }
 
 export default defineComponent({
-  components: { DrawerOpen, DrawerClose, NavBarItem },
+  components: {
+    DrawerOpen,
+    DrawerClose,
+    NavBarItem,
+    NavBarButton,
+    Icon,
+    Card,
+  },
   props: {
     homeTitle: { type: String, default: 'Anime Skip' },
     homeIcon: { type: String, default: '' },
     homeLink: String,
-    items: { type: Array as PropType<NavItem[]>, required: true },
+    leftItems: { type: Array as PropType<NavItem[]>, required: true },
+    rightItems: { type: Array as PropType<NavItem[]>, required: true },
+    rightMenuItems: { type: Array as PropType<NavItem[]>, required: true },
+    rightMenu: Boolean,
+    rightMenuText: String,
   },
   setup() {
     const menuOpen = ref(false);
@@ -187,12 +158,21 @@ export default defineComponent({
     const menuHiddenClass = computed(() => (menuOpen.value ? 'hidden' : 'block'));
     const toggleMenu = () => {
       menuOpen.value = !menuOpen.value;
+      rightDropdownOpen.value = false;
+    };
+
+    const rightDropdownOpen = ref(false);
+    const toggleRightDropDown = () => {
+      rightDropdownOpen.value = !rightDropdownOpen.value;
+      menuOpen.value = false;
     };
 
     return {
       menuOpenClass,
       menuHiddenClass,
       toggleMenu,
+      rightDropdownOpen,
+      toggleRightDropDown,
     };
   },
 });
