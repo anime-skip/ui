@@ -27,6 +27,7 @@
     />
     <CheckboxUnchecked v-else class="flex-shrink-0" />
     <label
+      v-if="label"
       class="body-1 flex-1 text-opacity-high pointer-events-none pr-2"
       :class="{
         'text-right': rToL,
@@ -34,6 +35,7 @@
       }"
       >{{ label }}</label
     >
+    <slot v-else />
   </div>
 </template>
 

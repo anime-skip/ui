@@ -60,6 +60,14 @@
       <Checkbox :checked="true" disabled label="Checked & disabled" />
       <Checkbox :checked="false" disabled label="Unchecked & disabled" />
       <Checkbox v-model:checked="checkbox4" rToL label="Right to Left" />
+      <Checkbox v-model:checked="checkbox7">
+        <div>
+          <p>Custom Checkbox</p>
+          <p>Custom Layout</p>
+        </div>
+      </Checkbox>
+      <div />
+      <div />
       <RaisedCheckbox v-model:checked="checkbox5" label="Checked" />
       <RaisedCheckbox v-model:checked="checkbox6" label="Unchecked" />
       <RaisedCheckbox :checked="false" disabled label="Disabled" />
@@ -100,6 +108,7 @@ export default defineComponent({
     const checkbox4 = ref(false);
     const checkbox5 = ref(true);
     const checkbox6 = ref(false);
+    const checkbox7 = ref(true);
 
     return {
       checkbox1,
@@ -108,6 +117,7 @@ export default defineComponent({
       checkbox4,
       checkbox5,
       checkbox6,
+      checkbox7,
     };
   },
 });
