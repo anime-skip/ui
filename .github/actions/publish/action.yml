@@ -1,0 +1,13 @@
+name: Publish to GitHub Packages
+inputs:
+  npmAuthToken:
+    required: true
+runs:
+  using: composite
+  steps:
+    - run: |
+        echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+        yarn publish --non-interactive
+      shell: bash
+      env:
+        NODE_AUTH_TOKEN: ${{ inputs.npmAuthToken }}
