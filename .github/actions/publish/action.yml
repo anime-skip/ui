@@ -7,7 +7,8 @@ runs:
   steps:
     - run: |
         echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
-        yarn publish --non-interactive
+        chmod +x scripts/*
+        ./scripts/deploy.sh
       shell: bash
       env:
         NODE_AUTH_TOKEN: ${{ inputs.npmAuthToken }}
