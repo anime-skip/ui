@@ -32,12 +32,6 @@ UI Component library for all of Anime Skip, using [TailwindCSS](https://tailwind
    };
    ```
 
-## Contributing
+## Publishing
 
-### Deployments
-
-Deployment is automated. Simply merge a PR and it will be deployed.
-
-### Manual Deployments
-
-If you need to do a manual deployment (maybe for a early version or test version), commit a version change, then run `./scripts/deploy.sh`.
+To publish a new version of the library, go to the [publish action](https://github.com/anime-skip/ui/actions/workflows/publish.yml) and manually run it.
