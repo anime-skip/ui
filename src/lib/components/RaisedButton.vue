@@ -25,6 +25,7 @@ import { defineComponent } from 'vue';
 import RaisedContainer from './RaisedContainer.vue';
 
 export default defineComponent({
+  name: 'RaisedButton',
   components: { RaisedContainer },
   props: {
     secondary: Boolean,

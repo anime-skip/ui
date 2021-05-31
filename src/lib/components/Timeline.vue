@@ -4,15 +4,15 @@
       v-for="section of sections"
       :key="section.timestamp.key"
       :timestamp="section.timestamp"
-      :endTime="section.endTime"
+      :end-time="section.endTime"
       :skipped="section.isSkipped"
     />
     <TimelineSection
       v-for="section of completedSections"
       :key="'completed' + section.timestamp.key"
       :timestamp="section.timestamp"
-      :endTime="section.endTime"
-      :currentTime="normalizedProgress"
+      :end-time="section.endTime"
+      :current-time="normalizedProgress"
       completed
     />
     <svg
@@ -41,7 +41,7 @@ export default defineComponent({
   components: { TimelineSection },
   props: {
     timestamps: { type: Array as PropType<TimestampData[]>, required: true },
-    normalizedProgress: Number, // 0-100
+    normalizedProgress: { type: Number, default: undefined }, // 0-100
     editing: Boolean,
   },
   emits: ['seek'],

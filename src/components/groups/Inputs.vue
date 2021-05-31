@@ -3,10 +3,10 @@
     <Subtitle1>Text Inputs</Subtitle1>
     <div class="grid grid-flow-row grid-cols-2 gap-4 mt-4">
       <TextInput placeholder="Blank" label="Label" />
-      <TextInput placeholder="Filled" label="Label" defaultValue="Default value" />
+      <TextInput placeholder="Filled" label="Label" default-value="Default value" />
       <TextInput placeholder="Disabled" disabled />
       <TextInput placeholder="Left icon">
-        <template v-slot:left-icon="slotProps">
+        <template #left-icon="slotProps">
           <Icon
             :disabled="slotProps.disabled"
             :active="slotProps.focused"
@@ -14,9 +14,9 @@
           />
         </template>
       </TextInput>
-      <TextInput placeholder="Disabled" disabled defaultValue="Disabled value" />
+      <TextInput placeholder="Disabled" disabled default-value="Disabled value" />
       <TextInput placeholder="Right icon">
-        <template v-slot:right-icon="slotProps">
+        <template #right-icon="slotProps">
           <Icon
             :disabled="slotProps.disabled"
             :active="slotProps.focused"
@@ -24,16 +24,16 @@
           />
         </template>
       </TextInput>
-      <TextInput placeholder="Error" :isValid="false" errorMessage="Enter a value" />
+      <TextInput placeholder="Error" :is-valid="false" error-message="Enter a value" />
       <TextInput placeholder="Left and right icons">
-        <template v-slot:left-icon="slotProps">
+        <template #left-icon="slotProps">
           <Icon
             :disabled="slotProps.disabled"
             :active="slotProps.focused"
             path="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
           />
         </template>
-        <template v-slot:right-icon="slotProps">
+        <template #right-icon="slotProps">
           <Icon
             :disabled="slotProps.disabled"
             :active="slotProps.focused"
@@ -43,7 +43,7 @@
       </TextInput>
       <div />
       <TextInput placeholder="Right icon disabled" disabled>
-        <template v-slot:right-icon="slotProps">
+        <template #right-icon="slotProps">
           <Icon
             :disabled="slotProps.disabled"
             :active="slotProps.focused"
@@ -59,7 +59,7 @@
       <Checkbox v-model:checked="checkbox3" label="Unchecked" />
       <Checkbox :checked="true" disabled label="Checked & disabled" />
       <Checkbox :checked="false" disabled label="Unchecked & disabled" />
-      <Checkbox v-model:checked="checkbox4" rToL label="Right to Left" />
+      <Checkbox v-model:checked="checkbox4" r-to-l label="Right to Left" />
       <Checkbox v-model:checked="checkbox7">
         <div>
           <p>Custom Checkbox</p>

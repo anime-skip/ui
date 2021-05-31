@@ -28,6 +28,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
+  name: 'FlatButton',
   props: {
     secondary: Boolean,
     transparent: Boolean,

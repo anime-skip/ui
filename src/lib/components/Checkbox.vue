@@ -46,16 +46,20 @@ import CheckboxIndeterminate from './icons/CheckboxIndeterminate.vue';
 import CheckboxUnchecked from './icons/CheckboxUnchecked.vue';
 
 export default defineComponent({
+  name: 'Checkbox',
   components: { CheckboxChecked, CheckboxIndeterminate, CheckboxUnchecked },
   props: {
-    checked: [Boolean, String] as PropType<boolean | 'indeterminate'>,
-    label: String,
+    checked: { type: [Boolean, String] as PropType<boolean | 'indeterminate'>, default: undefined },
+    label: { type: String, default: undefined },
     flat: { type: Boolean, default: true },
     disabled: Boolean,
     rToL: Boolean,
-    onSurface: String as PropType<
-      'primary' | 'primary-varient' | 'secondary' | 'secondary-variant' | 'surface' | 'error'
-    >,
+    onSurface: {
+      type: String as PropType<
+        'primary' | 'primary-varient' | 'secondary' | 'secondary-variant' | 'surface' | 'error'
+      >,
+      default: undefined,
+    },
   },
   emits: ['update:checked'],
   setup(props, { emit }) {

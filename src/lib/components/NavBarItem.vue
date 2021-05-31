@@ -10,14 +10,16 @@
       'mx-1 px-2': !dropdown,
       'border-b-2': !dropdown && isCurrentPath(),
     }"
-    >{{ title }}</router-link
   >
+    {{ title }}
+  </router-link>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue';
 
 export default defineComponent({
+  name: 'NavBarItem',
   props: {
     link: { type: String, required: true },
     title: { type: String, required: true },

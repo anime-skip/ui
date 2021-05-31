@@ -9,6 +9,7 @@ import { defineComponent } from 'vue';
 import Icon from './Icon.vue';
 
 export default defineComponent({
+  name: 'DrawerClose',
   components: { Icon },
 });
 </script>

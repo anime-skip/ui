@@ -4,6 +4,6 @@ runs:
   steps:
     - run: |
         yarn prettier
-        yarn lint
+        yarn lint:no-fix
         yarn build
       shell: bash

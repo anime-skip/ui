@@ -6,6 +6,7 @@
 import { computed, defineComponent, PropType } from 'vue';
 
 export default defineComponent({
+  name: 'Card',
   props: {
     elevation: { type: Number as PropType<2 | 3 | 4 | 6 | 8 | 12 | 16 | 24>, default: 1 },
   },

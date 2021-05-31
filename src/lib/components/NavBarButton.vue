@@ -14,6 +14,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
+  name: 'NavBarButton',
   props: {
     dropdown: Boolean,
   },
