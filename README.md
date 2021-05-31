@@ -1,5 +1,7 @@
 # `@anime-skip/ui`
 
+[![PR Checks](https://github.com/anime-skip/ui/actions/workflows/pr-checks.yml/badge.svg)](https://github.com/anime-skip/ui/actions/workflows/pr-checks.yml)
+
 UI Component library for all of Anime Skip, using [TailwindCSS](https://tailwindcss.com/docs)
 
 ## Get Started
