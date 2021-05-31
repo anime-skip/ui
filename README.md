@@ -20,7 +20,7 @@ UI Component library for all of Anime Skip, using [TailwindCSS](https://tailwind
      presets: [require('@anime-skip/ui/tailwind.preset')],
      purge: [
        './index.html',
-       './src/**/*.{vue,js,ts,jsx,tsx}', 
+       './src/**/*.{vue,js,ts,jsx,tsx}',
        './node_modules/@anime-skip/ui/ui.*.js',
      ],
    };
@@ -40,4 +40,4 @@ Deployment is automated. Simply merge a PR and it will be deployed.
 
 ### Manual Deployments
 
-If you need to do a manual deployment (maybe for a early version or test version), run `./scripts/deploy.sh`.
+If you need to do a manual deployment (maybe for a early version or test version), commit a version change, then run `./scripts/deploy.sh`.
