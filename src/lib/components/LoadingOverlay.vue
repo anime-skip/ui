@@ -12,6 +12,7 @@ import { defineComponent, PropType } from 'vue';
 import Loading from './Loading.vue';
 
 export default defineComponent({
+  name: 'LoadingOverlay',
   components: { Loading },
   props: {
     isLoading: { type: Boolean, required: true },

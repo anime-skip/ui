@@ -4,7 +4,7 @@
       <slot name="background">
         <div class="default-background" />
       </slot>
-      <slot name="foreground" v-bind:progress="displayedProgress">
+      <slot name="foreground" :progress="displayedProgress">
         <div class="default-foreground" :style="defaultForegroundOffsetStyle" />
       </slot>
     </div>
@@ -24,12 +24,13 @@ import Utils from '../Utils';
 import { computed, defineComponent, ref } from 'vue';
 
 export default defineComponent({
+  name: 'Slider',
   props: {
     progress: { type: Number, required: true },
     disableUpdateDuringSeek: Boolean,
     min: { type: Number, default: 0 },
     max: { type: Number, required: true, validator: (value: number) => value > 0 },
-    defaultThumbSize: { type: Number },
+    defaultThumbSize: { type: Number, default: undefined },
   },
   emits: ['seek:start', 'seek:end', 'seek'],
   setup(props, { emit }) {

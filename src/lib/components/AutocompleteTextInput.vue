@@ -3,8 +3,8 @@
     <TextInput
       ref="input"
       :label="label"
-      :errorMessage="errorMessage"
-      :leftIcon="leftIcon"
+      :error-message="errorMessage"
+      :left-icon="leftIcon"
       v-model:value="searchValue"
       :disabled="disabled"
       @focus="onFocusInput"
@@ -48,15 +48,22 @@
 import { computed, defineComponent, PropType, ref, watch } from 'vue';
 import TextInput from './TextInput.vue';
 
+export interface AutocompleteItem {
+  title: string;
+  subtitle?: string;
+  key: string;
+}
+
 export default defineComponent({
+  name: 'AutocompleteTextInput',
   components: { TextInput },
   props: {
     value: { type: Object as PropType<AutocompleteItem>, required: true },
-    label: String,
-    errorMessage: String,
+    label: { type: String, default: undefined },
+    errorMessage: { type: String, default: undefined },
     noOptionsMessage: { type: String, default: 'No results' },
     options: { type: Array as PropType<AutocompleteItem[]>, required: true },
-    leftIcon: String,
+    leftIcon: { type: String, default: undefined },
     searchDelay: { type: Number, default: 300 },
     disabled: Boolean,
   },

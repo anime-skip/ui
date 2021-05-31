@@ -3,8 +3,8 @@
     <div class="flex flex-col space-y-4">
       <h6>Timeline</h6>
       <div class="space-y-4 overflow-x-hidden">
-        <Timeline class="w-48" :timestamps="timestamps1" :normalizedProgress="progress1" />
-        <Timeline class="w-48" :timestamps="timestamps2" editing :normalizedProgress="progress1" />
+        <Timeline class="w-48" :timestamps="timestamps1" :normalized-progress="progress1" />
+        <Timeline class="w-48" :timestamps="timestamps2" editing :normalized-progress="progress1" />
         <Timeline class="w-48" :timestamps="timestamps3" />
       </div>
       <h6>Slider</h6>
@@ -18,7 +18,7 @@
           :progress="progress2"
           :max="100"
           @seek="updateProgress2"
-          disableUpdateDuringSeek
+          disable-update-during-seek
         />
       </div>
       <Body1>{{ progress2 }}</Body1>

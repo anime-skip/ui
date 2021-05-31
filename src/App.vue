@@ -8,14 +8,14 @@
   </div>
   <NavBar
     class="fixed left-0 top-0 right-0"
-    homeTitle="Anime Skip"
-    homeIcon="https://www.anime-skip.com/img/logo_nav.e785b842.svg"
-    homeLink="/"
-    :leftItems="leftNavItems"
-    :rightItems="rightNavItems"
-    rightMenu
-    rightMenuText="aklinker1"
-    :rightMenuItems="rightMenuItems"
+    home-title="Anime Skip"
+    home-icon="https://www.anime-skip.com/img/logo_nav.e785b842.svg"
+    home-link="/"
+    :left-items="leftNavItems"
+    :right-items="rightNavItems"
+    right-menu
+    right-menu-text="aklinker1"
+    :right-menu-items="rightMenuItems"
   />
 </template>
 

@@ -24,6 +24,7 @@
 import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
+  name: 'Loading',
   props: {
     size: { type: String as PropType<'sm' | 'md' | 'lg'>, default: 'md' },
   },

@@ -16,7 +16,7 @@
         @click="focus()"
         tabindex="-1"
       >
-        <slot name="left-icon" v-bind:disabled="disabled" v-bind:focused="isFocused" />
+        <slot name="left-icon" :disabled="disabled" :focused="isFocused" />
         <input
           ref="input"
           class="input body-1 h-12 flex-1 p-0 min-w-0 outline-none"
@@ -31,7 +31,7 @@
           @keydown.esc.stop.prevent="onPressEsc"
           @keyup.enter="$emit('submit')"
         />
-        <slot name="right-icon" v-bind:disabled="disabled" v-bind:focused="isFocused" />
+        <slot name="right-icon" :disabled="disabled" :focused="isFocused" />
       </RaisedContainer>
     </div>
     <Caption v-if="errorMessage" class="text-error m-0 mt-2">{{ errorMessage }}</Caption>
@@ -45,17 +45,18 @@ import Caption from './text/Caption.vue';
 import Body2 from './text/Body2.vue';
 
 export default defineComponent({
+  name: 'TextInput',
   components: { RaisedContainer, Caption, Body2 },
   props: {
-    id: String,
-    label: String,
+    id: { type: String, default: undefined },
+    label: { type: String, default: undefined },
     placeholder: { type: String, required: true },
-    errorMessage: String,
-    autocomplete: String as PropType<'username' | 'current-password'>,
-    defaultValue: String,
+    errorMessage: { type: String, default: undefined },
+    autocomplete: { type: String as PropType<'username' | 'current-password'>, default: undefined },
+    defaultValue: { type: String, default: undefined },
     type: { type: String as PropType<'text' | 'password'>, default: 'text' },
     isValid: { type: Boolean, default: true },
-    value: String,
+    value: { type: String, default: undefined },
     disabled: Boolean,
   },
   emits: ['focus', 'blur', 'update:value', 'keypress-esc', 'submit'],

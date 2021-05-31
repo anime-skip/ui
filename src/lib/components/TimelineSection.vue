@@ -11,10 +11,11 @@ import { computed, defineComponent, PropType } from 'vue';
 import { TimestampData } from '../../@types/lib';
 
 export default defineComponent({
+  name: 'TimelineSection',
   props: {
     timestamp: { type: Object as PropType<TimestampData>, required: true },
     endTime: { type: Number, required: true }, // 0-100
-    currentTime: Number,
+    currentTime: { type: Number, default: undefined },
     skipped: Boolean,
     buffered: Boolean,
     completed: Boolean,

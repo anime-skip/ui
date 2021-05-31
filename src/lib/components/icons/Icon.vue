@@ -14,9 +14,10 @@ const SIZES = {
 };
 
 export default defineComponent({
+  name: 'Icon',
   props: {
     size: { type: String as PropType<Size>, default: 'md' },
-    path: String,
+    path: { type: String, required: true },
     active: Boolean,
     disabled: Boolean,
   },

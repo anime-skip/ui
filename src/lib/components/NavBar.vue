@@ -105,6 +105,7 @@ export interface NavItem {
 }
 
 export default defineComponent({
+  name: 'NavBar',
   components: {
     DrawerOpen,
     DrawerClose,
@@ -116,13 +117,13 @@ export default defineComponent({
   props: {
     homeTitle: { type: String, default: 'Anime Skip' },
     homeIcon: { type: String, default: '' },
-    homeLink: String,
-    route: String,
+    homeLink: { type: String, default: undefined },
+    route: { type: String, default: undefined },
     leftItems: { type: Array as PropType<NavItem[]>, required: true },
     rightItems: { type: Array as PropType<NavItem[]>, required: true },
     rightMenuItems: { type: Array as PropType<NavItem[]>, required: true },
     rightMenu: Boolean,
-    rightMenuText: String,
+    rightMenuText: { type: String, default: undefined },
   },
   setup(props) {
     const menuOpen = ref(false);

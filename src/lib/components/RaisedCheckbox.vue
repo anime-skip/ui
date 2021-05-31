@@ -5,10 +5,10 @@
       :checked="checked"
       :label="label"
       :disabled="disabled"
-      :rToL="rToL"
+      :r-to-l="rToL"
       :flat="false"
-      disableHoverEffects
-      :onSurface="onSurface"
+      disable-hover-effects
+      :on-surface="onSurface"
       @update:checked="updateChecked"
     />
   </RaisedContainer>
@@ -19,11 +19,12 @@ import { computed, defineComponent, PropType } from 'vue';
 import RaisedContainer from './RaisedContainer.vue';
 
 export default defineComponent({
+  name: 'RaisedCheckbox',
   components: { RaisedContainer },
   emits: ['update:checked'],
   props: {
-    checked: [Boolean, String] as PropType<boolean | 'indeterminate'>,
-    label: String,
+    checked: { type: [Boolean, String] as PropType<boolean | 'indeterminate'>, default: undefined },
+    label: { type: String, default: undefined },
     disabled: Boolean,
     rToL: Boolean,
   },
