@@ -3,6 +3,7 @@ runs:
   using: composite
   steps:
     - run: |
+        chmod +x scripts/*
         yarn prettier
         yarn lint:no-fix
         yarn build
