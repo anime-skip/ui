@@ -1,3 +1,5 @@
+![Available Components](/.github/assets/components.png)
+
 # `@anime-skip/ui`
 
 [![PR Checks](https://github.com/anime-skip/ui/actions/workflows/pr-checks.yml/badge.svg)](https://github.com/anime-skip/ui/actions/workflows/pr-checks.yml)
