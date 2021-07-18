@@ -345,6 +345,13 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@seregpie/vue-resize-sensor@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@seregpie/vue-resize-sensor/-/vue-resize-sensor-1.1.5.tgz#992232943665458bb969c2b04518beb1b313d3e1"
+  integrity sha512-YaDNzb5ysFkh4IPRgBxCD7wxUnonhWEXXH5rbWDDLTXqk1qkKUzF+QzLhdcRlNrrZHjBudTSktVB1yLnJIOL3w==
+  dependencies:
+    vue-demi "*"
+
 "@types/estree@*":
   version "0.0.45"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.45.tgz#e9387572998e5ecdac221950dab3e8c3b16af884"
@@ -536,6 +543,11 @@
   dependencies:
     "@vue/compiler-dom" "3.0.5"
     "@vue/shared" "3.0.5"
+
+"@vue/devtools-api@^6.0.0-beta.14":
+  version "6.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.0.0-beta.15.tgz#ad7cb384e062f165bcf9c83732125bffbc2ad83d"
+  integrity sha512-quBx4Jjpexo6KDiNUGFr/zF/2A4srKM9S9v2uHgMXSU//hjgq1eGzqkIFql8T9gfX5ZaVOUzYBP3jIdIR3PKIA==
 
 "@vue/reactivity@3.0.5":
   version "3.0.5"
@@ -2801,6 +2813,11 @@ vite@^2.3.4:
   optionalDependencies:
     fsevents "~2.3.1"
 
+vue-demi@*:
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.11.2.tgz#faa06da53887c493a695b997f4fcb4784a667990"
+  integrity sha512-J+X8Au6BhQdcej6LY4O986634hZLu55L0ewU2j8my7WIKlu8cK0dqmdUxqVHHMd/cMrKKZ9SywB/id6aLhwCtA==
+
 vue-eslint-parser@^7.6.0:
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.6.0.tgz#01ea1a2932f581ff244336565d712801f8f72561"
@@ -2812,6 +2829,13 @@ vue-eslint-parser@^7.6.0:
     espree "^6.2.1"
     esquery "^1.4.0"
     lodash "^4.17.15"
+
+vue-router@^4.0.10:
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.10.tgz#ec8fda032949b2a31d3273170f8f376e86eb52ac"
+  integrity sha512-YbPf6QnZpyyWfnk7CUt2Bme+vo7TLfg1nGZNkvYqKYh4vLaFw6Gn8bPGdmt5m4qrGnKoXLqc4htAsd3dIukICA==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.14"
 
 vue@^3.0.5:
   version "3.0.5"

@@ -1,10 +1,19 @@
 import './lib/scss/all.scss';
 
 import { createApp } from 'vue';
-import App from './App.vue';
 import plugin from './lib';
 import Group from './components/Group.vue';
+import { createRouter, createWebHistory, RouterView } from 'vue-router';
 
-const app = createApp(App).component('Group', Group).use(plugin);
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    {
+      path: '/',
+      alias: '/:pathMatch(.*)*',
+      component: () => import('./App.vue'),
+    },
+  ],
+});
 
-app.mount('#app');
+createApp(RouterView).component('Group', Group).use(plugin).use(router).mount('#app');
