@@ -21,3 +21,6 @@ export * from './components';
 
 // Expose theme variables
 export { default as theme } from './scss/generated-config';
+
+// Add utils
+export * from './utils/useTimeout';
