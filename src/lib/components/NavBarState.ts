@@ -1,4 +1,4 @@
-import { inject, provide, ref, Ref } from '@vue/runtime-core';
+import { inject, provide, ref, Ref } from 'vue';
 
 const OVERFLOW_KEYS = {
   value: Symbol('overflow-open.value'),
