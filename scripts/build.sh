@@ -1,50 +1,48 @@
 #!/bin/bash
 set -e
 
-# Clean lib/
+function startCmd {
+    echo ""
+    echo -e "\x1b[96m\x1b[1m$1\x1b[0m"
+    echo -en "\x1b[2m"
+}
+function endCmd {
+    echo -en "\x1b[0m\x1b[92mDone!\x1b[0m\n"
+}
+
+startCmd "Removing lib/*"
 mkdir -p lib
 rm -rf lib/*
+endCmd
 
-# Build library
-./scripts/generate-scss.sh
+startCmd "Generating theme files"
+./scripts/generate-scss.sh | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"
 node scripts/generate-theme-vars.js
-yarn vite build
+endCmd
 
-# Copy in direct files
-cp src/lib/tailwind.preset.js lib/
-cp src/lib/scss/theme.scss lib/
+startCmd "Building library"
+echo -en "\x1b[2m"
+yarn vite build | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"
+endCmd
 
-# Add tailwind setup and utils to style.css
-echo -e "\n/* compiled tailwind styles for components */\n" | cat - lib/style.css > lib/.temp.css && mv lib/.temp.css lib/style.css
-echo "" >> lib/style.css
-function appendCssToStyles {
-    # $1: The path to the .css file who's content will be appended
-    echo "Appending $1"
-    echo -e "\n/* $1 */\n" >> lib/style.css
-    cat "$1" >> lib/style.css
-}
-function appendScssToStyles {
-    # $1: The path to the .scss file who's content will be compiled and appended
-    echo "Appending $1"
-    echo -e "\n/* $1 */\n" >> lib/style.css
-    yarn -s sass "$1" lib/.temp.css 
-    cat lib/.temp.css >> lib/style.css
-    rm -rf lib/.temp.css*
-}
-function prependCssToStyles {
-    # $1: The path to the .css file who's content will be prepended
-    echo "Prepending $1"
-    echo -e  "/* $1 */\n" | cat - "$1" | cat - lib/style.css > lib/.temp.css
-    mv lib/.temp.css lib/style.css
-}
-prependCssToStyles "src/lib/scss/imports.css"
-appendCssToStyles  "src/lib/scss/tailwind.css"
-appendCssToStyles  "src/lib/scss/fonts.css"
-appendCssToStyles  "src/lib/scss/defaults.css"
-appendScssToStyles "src/lib/scss/utilities.scss"
+startCmd "Copy in raw files"
+echo -en "\x1b[2m"
+cp \
+    src/lib/tailwind.preset.js \
+    src/lib/styles/variables-theme.scss \
+    package.json \
+    lib/
+endCmd
 
+startCmd "Compile Tailwind entrypoint"
+yarn -s sass src/lib/styles/index.scss lib/tailwind.css
 # Remove source mappings from compiled SCSS
-sed -i '/\/\*\# sourceMappingURL=.temp.css.map \*\//d' lib/style.css
+sed -i '/\/\*\# sourceMappingURL=tailwind.css.map \*\//d' lib/style.css
+cat lib/style.css >> lib/tailwind.css
+endCmd
 
-# Copy package.json to build from the source
-cp package.json lib/
+startCmd "Remove unneccessary files"
+rm -f lib/favicon.ico lib/style.css
+endCmd
+
+echo ""

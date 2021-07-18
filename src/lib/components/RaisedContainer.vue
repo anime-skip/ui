@@ -32,7 +32,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import '../scss/theme.scss';
+@import '../styles/variables-theme.scss';
 
 $down-translation: 0px;
 $neutral-translation: 3px;

@@ -1,0 +1,50 @@
+@layer base {
+  /* Top Level */
+  html,
+  body {
+    @apply h-full;
+  }
+  body {
+    @apply bg-background;
+  }
+  * {
+    @apply text-on-surface;
+    @apply fill-on-surface;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* SVGs */
+  svg path {
+    fill: inherit;
+  }
+
+  /* Text */
+  h1 {
+    @apply heading-1 text-opacity-high text-on-surface;
+  }
+  h2 {
+    @apply heading-2 text-opacity-high text-on-surface;
+  }
+  h3 {
+    @apply heading-3 text-opacity-high text-on-surface;
+  }
+  h4 {
+    @apply heading-4 text-opacity-high text-on-surface;
+  }
+  h5 {
+    @apply heading-5 text-opacity-high text-on-surface;
+  }
+  h6 {
+    @apply heading-6 text-opacity-high text-on-surface;
+  }
+  p,
+  li,
+  div,
+  span {
+    @apply body-1 text-opacity-high text-on-surface;
+  }
+  a {
+    @apply body-1 no-underline text-secondaryPalette-300 hover:underline;
+  }
+}

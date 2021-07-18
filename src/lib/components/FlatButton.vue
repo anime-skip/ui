@@ -39,7 +39,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../scss/theme.scss';
+@import '../styles/variables-theme.scss';
 
 .FlatButton {
   transition: ease 200ms filter;

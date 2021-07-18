@@ -28,8 +28,8 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { TimestampData } from '../@types/lib';
-import theme from '../../lib/scss/generated-config';
+import { TimestampData } from '../../@types/lib';
+import { theme } from '../../lib';
 
 export default defineComponent({
   setup() {

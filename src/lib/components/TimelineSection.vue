@@ -53,7 +53,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @use "sass:map";
-@import '../scss/theme.scss';
+@import '../styles/variables-theme.scss';
 
 $notCompletedColor: rgba(
   $color: lighten($textColor-background, 25%),

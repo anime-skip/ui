@@ -1,0 +1,8 @@
+// Order matters
+@import './imports.scss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Order doesn't matter after the above
+@import './utilities.scss', './base.scss';

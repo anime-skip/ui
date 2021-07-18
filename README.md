@@ -16,7 +16,7 @@ UI Component library for all of Anime Skip, using [TailwindCSS](https://tailwind
    ```bash
    yarn add @anime-skip/ui
    ```
-1. Setup [TailwindCSS](https://tailwindcss.com/docs/guides/vue-3-vite#setting-up-tailwind-css), stopping after the "Create your configuration files" steps
+1. [Setup TailwindCSS](https://tailwindcss.com/docs/guides/vue-3-vite#setting-up-tailwind-css), stopping after the "Create your configuration files" steps
 1. Create the tailwind config
    ```js
    // tailwind.config.js
@@ -34,6 +34,10 @@ UI Component library for all of Anime Skip, using [TailwindCSS](https://tailwind
    module.exports = {
      plugins: [require('tailwindcss'), require('autoprefixer')],
    };
+   ```
+1. Import Tailwind in your main entrypoint
+   ```js
+   import '@anime-skip/ui/tailwind.css';
    ```
 
 ## Publishing

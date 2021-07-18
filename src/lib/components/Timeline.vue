@@ -34,7 +34,7 @@
 import { computed, defineComponent, PropType } from 'vue';
 import TimelineSection from './TimelineSection.vue';
 import { SectionData, TimestampData } from '../../@types/lib';
-import theme from '../scss/generated-config';
+import theme from '../styles/generated-config';
 
 export default defineComponent({
   name: 'Timeline',

@@ -1,5 +1,4 @@
-import './lib/scss/all.scss';
-
+import './lib/styles/index.scss';
 import { createApp } from 'vue';
 import plugin from './lib';
 import Group from './components/Group.vue';
