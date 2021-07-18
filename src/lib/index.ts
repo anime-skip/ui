@@ -1,26 +1,17 @@
-import { Plugin } from 'vue';
-
-// Import vue components
+import { App, Plugin } from 'vue';
 import * as components from './components';
 
-// Create module definition for Vue.use()
+// Default export for Vue.use()
 const plugin: Plugin = {
-  install(app) {
+  install(app: App) {
     Object.entries(components).forEach(([componentName, component]) => {
       app.component(componentName, component);
     });
   },
 };
-
-// Default export is library as a whole, registered via Vue.use()
 export default plugin;
 
-// To allow individual component use, export components
-// each can be registered via Vue.component()
+// Named exports
 export * from './components';
-
-// Expose theme variables
 export { default as theme } from './scss/generated-config';
-
-// Add utils
 export * from './utils/useTimeout';

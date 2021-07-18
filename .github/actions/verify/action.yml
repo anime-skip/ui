@@ -6,5 +6,6 @@ runs:
         chmod +x scripts/*
         yarn prettier
         yarn lint:no-fix
+        yarn compile
         yarn build
       shell: bash

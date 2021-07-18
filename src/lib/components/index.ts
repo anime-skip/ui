@@ -4,12 +4,7 @@ export { default as RaisedContainer } from './RaisedContainer.vue';
 export { default as FlatButton } from './FlatButton.vue';
 export { default as NavBar } from './NavBar.vue';
 export * from './NavBar.vue';
-export type {
-  BasicNavItem,
-  ClickNavItem,
-  DividerMenuItem,
-  DropDownNavItem,
-} from './NavBarItems/Item.vue';
+export * from './NavBarItems/types';
 export { default as Card } from './Card.vue';
 export { default as TextInput } from './TextInput.vue';
 export { default as Checkbox } from './Checkbox.vue';
