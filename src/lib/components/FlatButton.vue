@@ -1,6 +1,6 @@
 <template>
   <button
-    class="FlatButton flex flex-row justify-center items-center rounded min-h-10 px-4 py-2.5 cursor-pointer select-none overflow-x-hidden"
+    class="FlatButton flex flex-row justify-center items-center rounded min-h-10 cursor-pointer select-none overflow-x-hidden"
     :class="{
       'surface surface-primary': !disabled && !secondary && !transparent && !error,
       'surface surface-secondary': !disabled && secondary && !error,
@@ -9,23 +9,22 @@
       'bg-control-disabled pointer-events-none': disabled,
     }"
   >
-    <p
-      class="button-text"
-      :class="{
-        'text-on-primary': !secondary && !transparent && !disabled && !error,
-        'text-on-secondary': secondary && !transparent && !disabled && !error,
-        'text-on-surface': !secondary && transparent && !disabled && !error,
-        'text-on-surface text-opacity-low': disabled,
-        'text-on-error': !secondary && !transparent && !disabled && error,
-      }"
+    <router-link
+      v-if="link"
+      :to="link"
+      class="px-4 py-2.5 hover:no-underline flex flex-row items-center button-text justify-center"
+      :class="classes"
     >
+      <slot />
+    </router-link>
+    <p v-else class="button-text px-4 py-2.5" :class="classes">
       <slot />
     </p>
   </button>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { computed, defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'FlatButton',
@@ -34,6 +33,19 @@ export default defineComponent({
     transparent: Boolean,
     disabled: Boolean,
     error: Boolean,
+    link: { type: String, default: undefined },
+  },
+  setup(props) {
+    const classes = computed(() => ({
+      'text-on-primary': !props.secondary && !props.transparent && !props.disabled && !props.error,
+      'text-on-secondary': props.secondary && !props.transparent && !props.disabled && !props.error,
+      'text-on-surface': !props.secondary && props.transparent && !props.disabled && !props.error,
+      'text-on-surface text-opacity-low': props.disabled,
+      'text-on-error': !props.secondary && !props.transparent && !props.disabled && props.error,
+    }));
+    return {
+      classes,
+    };
   },
 });
 </script>
@@ -61,9 +73,8 @@ export default defineComponent({
       background-color: rgba($color: $backgroundColor-on-surface, $alpha: 0.2);
     }
   }
-}
-
-.button-text.disabled {
-  @apply text-on-surface text-opacity-low;
+  .button-text.disabled {
+    @apply text-on-surface text-opacity-low;
+  }
 }
 </style>

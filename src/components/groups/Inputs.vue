@@ -53,7 +53,7 @@
       </TextInput>
     </div>
     <Subtitle1 class="mt-8">Checkboxes</Subtitle1>
-    <div class="grid grid-flow-row grid-cols-3 gap-4 mt-4">
+    <div class="grid grid-flow-row grid-cols-4 gap-4 mt-4 items-start">
       <Checkbox v-model:checked="checkbox1" label="Checked" />
       <Checkbox v-model:checked="checkbox2" label="Indeterminate" />
       <Checkbox v-model:checked="checkbox3" label="Unchecked" />
@@ -67,14 +67,13 @@
         </div>
       </Checkbox>
       <div />
-      <div />
       <RaisedCheckbox v-model:checked="checkbox5" label="Checked" />
       <RaisedCheckbox v-model:checked="checkbox6" label="Unchecked" />
       <RaisedCheckbox :checked="false" disabled label="Disabled" />
       <RaisedCheckbox checked disabled label="Checked + Disabled" />
     </div>
-    <Subtitle1 class="mt-8">Buttons</Subtitle1>
-    <div class="grid grid-flow-row grid-cols-3 gap-4 mt-4">
+    <Subtitle1 class="mt-8">Raised Buttons</Subtitle1>
+    <div class="grid grid-flow-row grid-cols-4 gap-4 mt-4 items-start">
       <RaisedButton>Primary</RaisedButton>
       <RaisedButton secondary>Secondary</RaisedButton>
       <RaisedButton dark>Dark</RaisedButton>
@@ -83,16 +82,25 @@
       <RaisedButton disabled secondary>Disabled Secondary</RaisedButton>
       <RaisedButton disabled dark>Disabled Dark</RaisedButton>
       <RaisedButton disabled error>Disabled Error</RaisedButton>
+      <RaisedButton link="#primary">Primary Link</RaisedButton>
+      <RaisedButton secondary link="#secondary">Secondary Link</RaisedButton>
+      <RaisedButton dark link="#dark">Dark Link</RaisedButton>
+      <RaisedButton error link="#error">Error Link</RaisedButton>
     </div>
-    <div class="grid grid-flow-row grid-cols-3 gap-4 mt-4">
+    <Subtitle1 class="mt-8">Flat Buttons</Subtitle1>
+    <div class="grid grid-flow-row grid-cols-4 gap-4 mt-4 items-start">
       <FlatButton>Flat Primary</FlatButton>
       <FlatButton secondary>Flat Secondary</FlatButton>
       <FlatButton transparent>Flat Transparent</FlatButton>
       <FlatButton error>Flat Error</FlatButton>
-      <FlatButton disabled>Disabled Primary</FlatButton>
-      <FlatButton disabled secondary>Disabled Secondary</FlatButton>
-      <FlatButton disabled transparent>Disabled Transparent</FlatButton>
-      <FlatButton disabled error>Disabled Error</FlatButton>
+      <FlatButton disabled>Flat Disabled Primary</FlatButton>
+      <FlatButton disabled secondary>Flat Disabled Secondary</FlatButton>
+      <FlatButton disabled transparent>Flat Disabled Transparent</FlatButton>
+      <FlatButton disabled error>Flat Disabled Error</FlatButton>
+      <FlatButton link="#primary">Flat Link Primary</FlatButton>
+      <FlatButton link="#secondary" secondary>Flat Link Secondary</FlatButton>
+      <FlatButton link="#transparent" transparent>Flat Link Transparent</FlatButton>
+      <FlatButton link="#error" error>Flat Link Error</FlatButton>
     </div>
   </Group>
 </template>
