@@ -9,9 +9,19 @@
       'bg-control-disabled pointer-events-none': disabled,
     }"
   >
+    <a
+      v-if="link && link.startsWith('https')"
+      :href="link"
+      :target="target"
+      class="px-4 py-2.5 hover:no-underline flex flex-row items-center button-text justify-center"
+      :class="classes"
+    >
+      <slot />
+    </a>
     <router-link
-      v-if="link"
+      v-else-if="link"
       :to="link"
+      :target="target"
       class="px-4 py-2.5 hover:no-underline flex flex-row items-center button-text justify-center"
       :class="classes"
     >
@@ -34,6 +44,7 @@ export default defineComponent({
     disabled: Boolean,
     error: Boolean,
     link: { type: String, default: undefined },
+    target: { type: String, default: undefined },
   },
   setup(props) {
     const classes = computed(() => ({
