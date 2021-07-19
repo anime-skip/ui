@@ -47,4 +47,7 @@
   a {
     @apply body-1 no-underline text-secondaryPalette-300 hover:underline;
   }
+  strong {
+    @apply font-bold text-on-surface text-opacity-100;
+  }
 }
