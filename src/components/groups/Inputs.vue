@@ -83,9 +83,9 @@
       <RaisedButton disabled dark>Disabled Dark</RaisedButton>
       <RaisedButton disabled error>Disabled Error</RaisedButton>
       <RaisedButton link="#primary">Primary Link</RaisedButton>
-      <RaisedButton secondary link="https://google.com" target="_blank"
-        >Secondary Link</RaisedButton
-      >
+      <RaisedButton secondary link="https://google.com" target="_blank">
+        Secondary Link
+      </RaisedButton>
       <RaisedButton dark link="#dark">Dark Link</RaisedButton>
       <RaisedButton error link="#error">Error Link</RaisedButton>
     </div>
@@ -100,9 +100,9 @@
       <FlatButton disabled transparent>Flat Disabled Transparent</FlatButton>
       <FlatButton disabled error>Flat Disabled Error</FlatButton>
       <FlatButton link="#primary">Flat Link Primary</FlatButton>
-      <FlatButton link="https://google.com" target="_blank" secondary
-        >Flat Link Secondary</FlatButton
-      >
+      <FlatButton link="https://google.com" target="_blank" secondary>
+        Flat Link Secondary
+      </FlatButton>
       <FlatButton link="#transparent" transparent>Flat Link Transparent</FlatButton>
       <FlatButton link="#error" error>Flat Link Error</FlatButton>
     </div>
