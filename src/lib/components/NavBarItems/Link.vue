@@ -1,7 +1,7 @@
 <template>
   <router-link
     :to="link"
-    class="flex items-center subtitle-1 font-bold border-primary border-opacity-0 transition-colors bg-on-surface bg-opacity-0 hover:bg-opacity-hover text-on-surface"
+    class="flex items-center subtitle-1 font-bold border-primary border-opacity-0 transition-colors bg-on-surface bg-opacity-0 hover:bg-opacity-hover text-on-surface hover:no-underline"
     :class="{
       'h-16 pt-2px border-b-2 px-4': !inOverflow,
       'h-12 border-l-4 px-13': inOverflow,

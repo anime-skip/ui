@@ -122,6 +122,6 @@ export default defineComponent({
 }
 
 .drop-down-row {
-  @apply h-12 px-4 flex items-center bg-on-surface bg-opacity-0 hover:bg-opacity-hover transition-colors text-on-surface text-opacity-high;
+  @apply h-12 px-4 flex items-center bg-on-surface bg-opacity-0 hover:bg-opacity-hover transition-colors text-on-surface text-opacity-high no-underline;
 }
 </style>

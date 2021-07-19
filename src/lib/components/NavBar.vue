@@ -15,7 +15,11 @@
             </button>
           </div>
           <div class="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
-            <router-link v-if="!!homeLink" class="flex-shrink-0 flex items-center" :to="homeLink">
+            <router-link
+              v-if="!!homeLink"
+              class="flex-shrink-0 flex items-center hover:no-underline"
+              :to="homeLink"
+            >
               <img class="block h-6 mr-4 w-auto" :src="homeIcon" :alt="homeTitle" />
               <p class="sm:block lg:block heading-6 font-bold">{{ homeTitle }}</p>
             </router-link>
