@@ -4,7 +4,7 @@ runs:
   steps:
     - run: |
         chmod +x scripts/*
-        yarn prettier
+        yarn format:check
         yarn lint:no-fix
         yarn compile
         yarn build
