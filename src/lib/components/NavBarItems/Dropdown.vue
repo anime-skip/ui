@@ -79,7 +79,7 @@ import { injectNavBarDropdownState, injectNavBarOverflowState } from '../NavBarS
 import DropdownIcon from '../icons/DropdownIcon.vue';
 import HeightReveal from '../HeightReveal.vue';
 import Card from '../Card.vue';
-import { BasicNavItem, ClickNavItem, DividerMenuItem } from './Item.vue';
+import { BasicNavItem, ClickNavItem, DividerMenuItem } from './types';
 
 export default defineComponent({
   name: 'NavBarDropDown',

@@ -19,6 +19,7 @@ export default defineConfig({
     rollupOptions: {
       external: ['vue', 'vue-router', '@seregpie/vue-resize-sensor'],
       output: {
+        exports: 'named',
         globals: {
           vue: 'Vue',
         },

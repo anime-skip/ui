@@ -3,6 +3,7 @@
     <TextInput
       ref="input"
       :label="label"
+      placeholder=""
       :error-message="errorMessage"
       :left-icon="leftIcon"
       v-model:value="searchValue"

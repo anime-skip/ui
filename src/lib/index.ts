@@ -15,3 +15,4 @@ export default plugin;
 export * from './components';
 export { default as theme } from './styles/generated-config';
 export * from './utils/useTimeout';
+export * from './components/NavBarItems/types';

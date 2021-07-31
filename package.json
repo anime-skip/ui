@@ -13,7 +13,7 @@
   "scripts": {
     "compile": "vue-tsc --noEmit",
     "start": "vite",
-    "build": "./scripts/build.sh",
+    "build": "yarn compile && ./scripts/build.sh",
     "lint": "yarn lint:no-fix --fix",
     "lint:no-fix": "eslint src --ext .ts,.vue --max-warnings 0",
     "prettier": "prettier --check \"src/**/*.{js,ts,vue}\"",
@@ -34,13 +34,13 @@
     "@tailwindcss/line-clamp": "^0.2.1",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
-    "@vitejs/plugin-vue-jsx": "^1.1.0",
     "@vitejs/plugin-vue": "^1.1.4",
+    "@vitejs/plugin-vue-jsx": "^1.1.0",
     "@vue/compiler-sfc": "^3.0.5",
     "autoprefixer": "^10.2.4",
+    "eslint": "^7.27.0",
     "eslint-plugin-only-warn": "^1.0.2",
     "eslint-plugin-vue": "^7.10.0",
-    "eslint": "^7.27.0",
     "husky": "^4.3.6",
     "postcss": "^8.2.6",
     "prettier": "^2.2.1",
@@ -50,15 +50,15 @@
     "tailwindcss": "^2.0.3",
     "typescript": "^4.3.5",
     "vite": "^2.3.4",
+    "vue": "^3.0.5",
     "vue-router": "^4.0.10",
-    "vue-tsc": "^0.2.1",
-    "vue": "^3.0.5"
+    "vue-tsc": "^0.2.2"
   },
   "peerDependencies": {
     "@tailwindcss/line-clamp": "^0.2.1",
     "autoprefixer": "^10.2.4",
     "postcss": "^8.2.6",
-    "vue-router": ">=4.0.10",
-    "vue": ">=3.0.5"
+    "vue": ">=3.0.5",
+    "vue-router": ">=4.0.10"
   }
 }

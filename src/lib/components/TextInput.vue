@@ -14,7 +14,7 @@
         :disabled="disabled"
         :down="isFocused || !!errorMessage || !!internalValue"
         @click="focus()"
-        tabindex="-1"
+        :tabindex="-1"
       >
         <slot name="left-icon" :disabled="disabled" :focused="isFocused" />
         <input

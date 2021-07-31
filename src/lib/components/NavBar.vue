@@ -56,12 +56,8 @@
 import { computed, defineComponent, PropType, watch } from 'vue';
 import DrawerOpen from './icons/DrawerOpen.vue';
 import DrawerClose from './icons/DrawerClose.vue';
-import NavBarItem, {
-  BasicNavItem,
-  ClickNavItem,
-  DividerMenuItem,
-  DropdownNavItem,
-} from './NavBarItems/Item.vue';
+import NavBarItem from './NavBarItems/Item.vue';
+import { BasicNavItem, ClickNavItem, DividerMenuItem, DropdownNavItem } from './NavBarItems/types';
 import { provideNavBarOverflowState, provideNavBarDropdownState } from './NavBarState';
 import { useRoute } from 'vue-router';
 import HeightReveal from './HeightReveal.vue';
