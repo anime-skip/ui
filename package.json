@@ -16,8 +16,8 @@
     "build": "yarn compile && ./scripts/build.sh",
     "lint": "yarn lint:no-fix --fix",
     "lint:no-fix": "eslint src --ext .ts,.vue --max-warnings 0",
-    "prettier": "prettier --check \"src/**/*.{js,ts,vue}\"",
-    "prettier:write": "yarn prettier --write",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "pack:local": "yarn -s build && cd lib && yarn pack && cd .."
   },
   "husky": {
