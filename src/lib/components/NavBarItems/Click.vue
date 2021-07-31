@@ -7,6 +7,7 @@
       'h-12 border-l-4 px-13 self-stretch': inOverflow,
     }"
   >
+    <vnode v-if="icon" :node="icon()" />
     <template v-if="!!title">
       {{ title }}
     </template>
@@ -15,14 +16,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, FunctionalComponent, h, PropType, VNode } from 'vue';
 import { injectNavBarOverflowState } from '../NavBarState';
+import NavBarItemIconWrapperVue from './NavBarItemIconWrapper.vue';
+
+const Vnode: FunctionalComponent<{ node: VNode }> = ({ node }) =>
+  h(NavBarItemIconWrapperVue, null, node);
 
 export default defineComponent({
   name: 'NavBarClickItem',
+  components: { Vnode },
   props: {
     onClick: { type: Function as PropType<() => void>, required: true },
     title: { type: String, default: undefined },
+    icon: { type: Function, default: undefined },
     inOverflow: Boolean,
     disableHideOverflowOnClick: Boolean,
   },

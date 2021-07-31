@@ -1,8 +1,11 @@
+import { VNode } from 'vue';
+
 export interface BasicNavItem {
   type: 'basic';
   key: string;
   link: string;
   title: string;
+  icon?: () => VNode;
 }
 export interface DropdownNavItem {
   type: 'dropdown';
@@ -19,4 +22,5 @@ export interface ClickNavItem {
   key: string;
   title: string;
   onClick: () => void;
+  icon?: () => VNode;
 }

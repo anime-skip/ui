@@ -3,12 +3,14 @@
     v-if="item.type === 'basic'"
     :title="item.title"
     :link="item.link"
+    :icon="item.icon"
     :in-overflow="inOverflow"
   />
   <click
     v-else-if="item.type === 'click'"
     :title="item.title"
     :on-click="item.onClick"
+    :icon="item.icon"
     :in-overflow="inOverflow"
   />
   <dropdown

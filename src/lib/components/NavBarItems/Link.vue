@@ -9,20 +9,25 @@
       'text-opacity-medium': !isCurrentPath,
     }"
   >
-    {{ title }}
+    <vnode v-if="icon" :node="icon()" />{{ title }}
   </router-link>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, FunctionalComponent, h, PropType, VNode } from 'vue';
 import { useRoute, RouterLink } from 'vue-router';
+import NavBarItemIconWrapper from './NavBarItemIconWrapper.vue';
+
+const Vnode: FunctionalComponent<{ node: VNode }> = ({ node }) =>
+  h(NavBarItemIconWrapper, null, node);
 
 export default defineComponent({
   name: 'NavBarLinkItem',
-  components: { RouterLink },
+  components: { RouterLink, Vnode },
   props: {
     link: { type: String, required: true },
     title: { type: String, required: true },
+    icon: { type: Function as PropType<() => VNode>, default: undefined },
     inOverflow: Boolean,
   },
   setup(props) {
