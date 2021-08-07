@@ -6,6 +6,7 @@ export interface SectionData {
 
 export interface TimestampData {
   key: string;
+  title?: string;
   normalizedAt: number;
   color?: string;
   skipped?: boolean;

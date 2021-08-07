@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import Utils from '../Utils';
+import * as Utils from '../Utils';
 import { computed, defineComponent, ref } from 'vue';
 
 export default defineComponent({

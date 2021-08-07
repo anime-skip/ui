@@ -1,5 +1,34 @@
 <template>
-  <div class="Timeline relative">
+  <div
+    ref="timelineRef"
+    class="Timeline relative pt-1 -mt-1 pb-2 -mb-2"
+    @mouseenter="toggleHover(true)"
+    @mouseleave="toggleHover(false)"
+    @mousemove="moveOverlay"
+  >
+    <!-- Overlay -->
+    <div
+      v-if="allowOverlay"
+      class="absolute w-full h-0 -top-1 opacity-0 transition-opacity whitespace-nowrap z-10 pointer-events-none"
+      :class="{
+        'opacity-100': isShowingHoverOverlay,
+      }"
+    >
+      <div
+        ref="overlayRef"
+        class="absolute bottom-0 -transition-x-50% px-2"
+        :style="`left: ${hoverOverlayLeftPx}px`"
+      >
+        <card :elevation="12" class="py-2 px-2.5 text-center">
+          <p class="subtitle-1 text-opacity-100 text-primaryPalette-300 font-bold">
+            {{ hoverOverlayTimestamp }}
+          </p>
+          <p>{{ hoverOverlayTime }}</p>
+        </card>
+      </div>
+    </div>
+
+    <!-- Timeline -->
     <TimelineSection
       v-for="section of sections"
       :key="section.timestamp.key"
@@ -31,18 +60,23 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue';
+import { computed, defineComponent, PropType, ref } from 'vue';
 import TimelineSection from './TimelineSection.vue';
 import { SectionData, TimestampData } from '../../@types/lib';
 import theme from '../styles/generated-config';
+import Card from './Card.vue';
+import * as Utils from '../Utils';
 
 export default defineComponent({
   name: 'Timeline',
-  components: { TimelineSection },
+  components: { TimelineSection, Card },
   props: {
     timestamps: { type: Array as PropType<TimestampData[]>, required: true },
     normalizedProgress: { type: Number, default: undefined }, // 0-100
     editing: Boolean,
+    allowOverlay: Boolean,
+    duration: { type: Number, required: true },
+    forceOverlayNormalizedAt: { type: Number, default: undefined },
   },
   emits: ['seek'],
   setup(props) {
@@ -95,12 +129,72 @@ export default defineComponent({
       return sections.value.filter(section => !section.timestamp.skipped);
     });
 
+    // Hover
+
+    const overlayBaseTime = computed<number>(() =>
+      props.forceOverlayNormalizedAt != null
+        ? props.forceOverlayNormalizedAt
+        : hoverOverlayNormalizedAt.value
+    );
+
+    const isHovering = ref(false);
+    const toggleHover = (newIsHovering: boolean) => {
+      if (!props.allowOverlay) return;
+      isHovering.value = newIsHovering;
+    };
+    const isShowingHoverOverlay = computed<boolean>(
+      () => isHovering.value || props.forceOverlayNormalizedAt != null
+    );
+
+    const hoverOverlayLeftPx = computed<number>(() => {
+      if (overlayRef.value == null || timelineRef.value == null) return 0;
+
+      const overlayWidth = overlayRef.value?.clientWidth ?? 0;
+      const totalWidth = timelineRef.value?.clientWidth ?? 0;
+      const x = totalWidth * (overlayBaseTime.value / 100);
+      const min = overlayWidth / 2;
+      const max = totalWidth - overlayWidth / 2;
+      return Utils.boundedNumber(x, [min, max]);
+    });
+    const hoverOverlayNormalizedAt = ref(0);
+    const overlayRef = ref<HTMLDivElement | null>();
+    const timelineRef = ref<HTMLDivElement | null>();
+    const moveOverlay = (event: MouseEvent) => {
+      if (!props.allowOverlay) return;
+
+      const totalWidth = timelineRef.value?.clientWidth ?? 0;
+      const mouseX = Utils.boundedNumber(event.clientX - (timelineRef.value?.offsetLeft ?? 0), [
+        0,
+        totalWidth,
+      ]);
+      hoverOverlayNormalizedAt.value = (mouseX / totalWidth) * 100;
+    };
+
+    const hoverOverlayTimestamp = computed<string | undefined>(() => {
+      if (props.timestamps == null || props.timestamps.length === 0) return undefined;
+      const timestampsBeforeTime = props.timestamps.filter(
+        ({ normalizedAt }) => normalizedAt <= hoverOverlayNormalizedAt.value
+      );
+      return timestampsBeforeTime.pop()?.title?.trim() ?? 'Unknown';
+    });
+    const hoverOverlayTime = computed<string>(() => {
+      return Utils.formatSeconds(props.duration * (overlayBaseTime.value / 100), false);
+    });
+
     return {
       timestampStyle,
       timestampClass,
       pathStyle,
       sections,
       completedSections,
+      hoverOverlayLeftPx,
+      isShowingHoverOverlay,
+      toggleHover,
+      hoverOverlayTimestamp,
+      hoverOverlayTime,
+      moveOverlay,
+      overlayRef,
+      timelineRef,
     };
   },
 });
@@ -156,5 +250,9 @@ $translationInactiveSliderVrv: 3px;
       transform: translateX(-50%) translateY(-12px);
     }
   }
+}
+
+.-transition-x-50\% {
+  translate: -50%;
 }
 </style>
