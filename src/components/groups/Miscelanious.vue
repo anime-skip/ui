@@ -2,10 +2,28 @@
   <Group title="Miscelanious">
     <div class="flex flex-col space-y-4">
       <h6>Timeline</h6>
-      <div class="space-y-4 overflow-x-hidden">
-        <Timeline class="w-48" :timestamps="timestamps1" :normalized-progress="progress1" />
-        <Timeline class="w-48" :timestamps="timestamps2" editing :normalized-progress="progress1" />
-        <Timeline class="w-48" :timestamps="timestamps3" />
+      <div class="space-y-4 overflow-visible">
+        <Timeline
+          class="w-48"
+          :timestamps="timestamps1"
+          :normalized-progress="progress1"
+          allow-overlay
+          :duration="90 * 60"
+        />
+        <Timeline
+          class="w-48"
+          :timestamps="timestamps2"
+          editing
+          :normalized-progress="progress1"
+          :duration="22 * 60"
+        />
+        <Timeline
+          class="w-48"
+          :timestamps="timestamps3"
+          allow-overlay
+          :duration="20 * 60"
+          :force-overlay-normalized-at="55"
+        />
       </div>
       <h6>Slider</h6>
       <div>
@@ -36,19 +54,23 @@ export default defineComponent({
     const timestamps1: TimestampData[] = [
       {
         key: '1',
+        title: 'Canon',
         normalizedAt: 0,
       },
       {
         key: '2',
+        title: 'Intro',
         normalizedAt: 10,
         skipped: true,
       },
       {
         key: '3',
+        title: 'Canon',
         normalizedAt: 20,
       },
       {
         key: '4',
+        title: 'Credits',
         normalizedAt: 90,
         skipped: true,
       },

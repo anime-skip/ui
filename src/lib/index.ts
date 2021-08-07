@@ -16,3 +16,4 @@ export * from './components';
 export { default as theme } from './styles/generated-config';
 export * from './utils/useTimeout';
 export * from './components/NavBarItems/types';
+export * as Utils from './Utils';
