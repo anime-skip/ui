@@ -9,7 +9,7 @@
     <!-- Overlay -->
     <div
       v-if="allowOverlay"
-      class="absolute w-full h-0 -top-1 opacity-0 transition-opacity whitespace-nowrap z-10 pointer-events-none"
+      class="absolute w-full h-0 -top-1 opacity-0 transition-opacity whitespace-nowrap z-10 pointer-events-none select-none"
       :class="{
         'opacity-100': isShowingHoverOverlay,
       }"
@@ -173,7 +173,8 @@ export default defineComponent({
     const hoverOverlayTimestamp = computed<string | undefined>(() => {
       if (props.timestamps == null || props.timestamps.length === 0) return undefined;
       const timestampsBeforeTime = props.timestamps.filter(
-        ({ normalizedAt }) => normalizedAt <= hoverOverlayNormalizedAt.value
+        ({ normalizedAt }) =>
+          normalizedAt <= (props.forceOverlayNormalizedAt ?? hoverOverlayNormalizedAt.value)
       );
       return timestampsBeforeTime.pop()?.title?.trim() ?? 'Unknown';
     });
