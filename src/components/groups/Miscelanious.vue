@@ -22,7 +22,7 @@
           :timestamps="timestamps3"
           allow-overlay
           :duration="20 * 60"
-          :force-overlay-normalized-at="55"
+          :force-overlay-normalized-at="progress1"
         />
       </div>
       <h6>Slider</h6>
@@ -97,7 +97,30 @@ export default defineComponent({
         color: theme['fill-secondary'],
       },
     ];
-    const timestamps3: TimestampData[] = [];
+    const timestamps3: TimestampData[] = [
+      {
+        key: '1',
+        title: 'Canon',
+        normalizedAt: 0,
+      },
+      {
+        key: '2',
+        title: 'Intro',
+        normalizedAt: 20,
+        skipped: true,
+      },
+      {
+        key: '3',
+        title: 'Canon',
+        normalizedAt: 40,
+      },
+      {
+        key: '4',
+        title: 'Credits',
+        normalizedAt: 80,
+        skipped: true,
+      },
+    ];
 
     const progress1 = ref(67);
     const updateProgress1 = (newProgress1: number) => {
