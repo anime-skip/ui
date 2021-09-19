@@ -16,7 +16,7 @@
     >
       <div
         ref="overlayRef"
-        class="absolute bottom-0 -transition-x-50% px-2"
+        class="absolute bottom-0 -translation-x-50% px-2"
         :style="`left: ${hoverOverlayLeftPx}px`"
       >
         <card :elevation="12" class="py-2 px-2.5 text-center">
@@ -253,7 +253,7 @@ $translationInactiveSliderVrv: 3px;
   }
 }
 
-.-transition-x-50\% {
-  translate: -50%;
+.-translation-x-50\% {
+  transform: translateX(-50%);
 }
 </style>
