@@ -26,11 +26,7 @@ jobs:
         with:
           github-token: ${{ secrets.github_token }}
           output-file: 'false'
-      - name: Format package.json
-        run: |
-          yarn format
-          git commit -am "chore: format package.json after release"
-          git push
+          pre-commit: .github/pre-commit.js
       - name: Publish to GitHub Packages
         uses: ./.github/actions/publish
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
