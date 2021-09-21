@@ -17,7 +17,7 @@ export function formatSeconds(seconds: number, includeDecimals: boolean): string
 
   let decimalSec: string | number = padLeft(Math.floor(sec), 2);
   if (includeDecimals) {
-    decimalSec = `${decimalSec}.${padRight(Math.floor((sec - Math.floor(sec)) * 100), 2)}`;
+    decimalSec = `${decimalSec}.${padLeft(Math.floor((sec - Math.floor(sec)) * 100), 2)}`;
   }
 
   let sections: Array<string | number>;
