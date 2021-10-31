@@ -1,23 +1,34 @@
 ![Available Components](/.github/assets/components.png)
 
-# `@anime-skip/ui`
+# Anime Skip UI
 
-[![PR Checks](https://github.com/anime-skip/ui/actions/workflows/pr-checks.yml/badge.svg)](https://github.com/anime-skip/ui/actions/workflows/pr-checks.yml)
+Vue component library for all of Anime Skip, using [TailwindCSS](https://tailwindcss.com/docs), powering the website and web extension
 
-UI Component library for all of Anime Skip, using [TailwindCSS](https://tailwindcss.com/docs)
+```bash
+echo "@anime-skip:registry=https://npm.pkg.github.com/" >> .npmrc
+pnpm add @anime-skip/ui
+```
+
+<br/>
+
+## Contributing
+
+See the [contributing guidelines](https://github.com/anime-skip/docs/wiki) for all of Anime Skip
+
+<br/>
 
 ## Get Started
 
-1. Setup your `.npmrc` file for the project:
-   ```text
-   @anime-skip:registry=https://npm.pkg.github.com/
-   ```
-1. Install the library
+1. Install the library:
+
    ```bash
-   yarn add @anime-skip/ui
+   echo "@anime-skip:registry=https://npm.pkg.github.com/" >> .npmrc
+   pnpm add @anime-skip/ui
    ```
+   
 1. [Setup TailwindCSS](https://tailwindcss.com/docs/guides/vue-3-vite#setting-up-tailwind-css), stopping after the "Create your configuration files" steps
-1. Create the tailwind config
+
+3. Modify the tailwind config
    ```js
    // tailwind.config.js
    module.exports = {
@@ -35,11 +46,14 @@ UI Component library for all of Anime Skip, using [TailwindCSS](https://tailwind
      plugins: [require('tailwindcss'), require('autoprefixer')],
    };
    ```
-1. Import Tailwind in your main entrypoint
+1. Import the styles in your main entrypoint
    ```js
    import '@anime-skip/ui/tailwind.css';
    ```
+   
+<br/>
 
-## Publishing
+## Usage
 
-To publish a new version of the library, go to the [publish action](https://github.com/anime-skip/ui/actions/workflows/publish.yml) and manually run it.
+This library is not documented yet. Play around with the code to see what changes, then use the components in your code
+
