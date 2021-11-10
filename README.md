@@ -25,10 +25,10 @@ See the [contributing guidelines](https://github.com/anime-skip/docs/wiki) for a
    echo "@anime-skip:registry=https://npm.pkg.github.com/" >> .npmrc
    pnpm add @anime-skip/ui
    ```
-   
+
 1. [Setup TailwindCSS](https://tailwindcss.com/docs/guides/vue-3-vite#setting-up-tailwind-css), stopping after the "Create your configuration files" steps
 
-3. Modify the tailwind config
+1. Modify the tailwind config
    ```js
    // tailwind.config.js
    module.exports = {
@@ -50,10 +50,9 @@ See the [contributing guidelines](https://github.com/anime-skip/docs/wiki) for a
    ```js
    import '@anime-skip/ui/tailwind.css';
    ```
-   
+
 <br/>
 
 ## Usage
 
 This library is not documented yet. Play around with the code to see what changes, then use the components in your code
-
