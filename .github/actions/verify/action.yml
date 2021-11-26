@@ -5,7 +5,7 @@ runs:
     - run: |
         chmod +x scripts/*
         pnpm format:check
-        pnpm lint:no-fix
+        pnpm lint:check
         pnpm compile
         pnpm build
       shell: bash
