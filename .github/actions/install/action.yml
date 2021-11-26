@@ -4,3 +4,5 @@ runs:
   steps:
     - run: pnpm install --frozen-lockfile
       shell: bash
+    - run: pnpm husky install
+      shell: bash
