@@ -1,5 +1,5 @@
 #!/bin/bash
-./scripts/build.sh
+pnpm build
 
 pushd lib
 npm publish
