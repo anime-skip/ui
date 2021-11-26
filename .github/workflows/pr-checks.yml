@@ -13,23 +13,19 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
+
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: Cache Dependencies
-        uses: actions/cache@v2
+
+      - name: Cache .pnpm-store
+        uses: actions/cache@v1
         with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+      - name: Install pnpm
+        run: curl -f https://get.pnpm.io/v6.14.js | node - add --global pnpm@6
+
       - uses: ./.github/actions/install
+
       - uses: ./.github/actions/verify
-  check-commits:
-    name: Check Commits
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - uses: wagoid/commitlint-github-action@v3
-        with:
-          failOnWarnings: true
