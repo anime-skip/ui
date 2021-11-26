@@ -4,8 +4,8 @@ runs:
   steps:
     - run: |
         chmod +x scripts/*
-        yarn format:check
-        yarn lint:no-fix
-        yarn compile
-        yarn build
+        pnpm format:check
+        pnpm lint:check
+        pnpm compile
+        pnpm build
       shell: bash

@@ -166,7 +166,7 @@ $thumbSizeUnitless: strip-unit($thumbSize);
     top: 0;
     bottom: 0;
     height: $height;
-    border-radius: $height / 2;
+    border-radius: $height * 0.5;
   }
 
   .default-foreground {
@@ -176,15 +176,15 @@ $thumbSizeUnitless: strip-unit($thumbSize);
     top: 0;
     bottom: 0;
     background-color: var(--default-foreground-color);
-    border-top-left-radius: $height / 2;
-    border-bottom-left-radius: $height / 2;
+    border-top-left-radius: $height * 0.5;
+    border-bottom-left-radius: $height * 0.5;
   }
 
   .thumb-container {
     position: absolute;
     width: $thumbSize;
     height: $thumbSize;
-    transform: (translateX(-$thumbSize / 2));
+    transform: (translateX(-$thumbSize * 0.5));
     top: -2px;
     overflow: visible;
     display: flex;

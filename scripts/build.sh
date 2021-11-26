@@ -22,7 +22,7 @@ endCmd
 
 startCmd "Building library"
 echo -en "\x1b[2m"
-yarn vite build | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"
+vite build | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"
 endCmd
 
 startCmd "Copy in raw files"
@@ -35,7 +35,7 @@ cp \
 endCmd
 
 startCmd "Compile Tailwind entrypoint"
-yarn -s sass src/lib/styles/index.scss lib/tailwind.css
+sass src/lib/styles/index.scss lib/tailwind.css
 # Remove source mappings from compiled SCSS
 sed -i '/\/\*\# sourceMappingURL=tailwind.css.map \*\//d' lib/style.css
 cat lib/style.css >> lib/tailwind.css

@@ -1,13 +1,14 @@
 import { onUnmounted, ref } from 'vue';
 
+type UsedTimeout = [(...args: Parameters<typeof window.setTimeout>) => void, () => void];
+
 /**
  * @returns `[setTimeout, clearTimeout]`
  */
-export function useTimeout(): [typeof setTimeout, () => void] {
+export function useTimeout(): UsedTimeout {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const timeout = ref<any | undefined>();
-  // @ts-expect-error: Arg spreading to resolve overridden method types
-  const setCustomTimeout: typeof setTimeout = (...args) => {
+  const setCustomTimeout = (...args: Parameters<typeof window.setTimeout>) => {
     timeout.value = setTimeout(...args);
   };
   onUnmounted(() => {

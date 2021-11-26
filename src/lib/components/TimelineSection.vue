@@ -52,7 +52,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@use "sass:map";
+@use 'sass:map';
 @import '../styles/variables-theme.scss';
 
 $notCompletedColor: rgba(
