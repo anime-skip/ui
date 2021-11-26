@@ -2,11 +2,12 @@
 set -e
 
 # touch src/lib/styles/variables-theme.scss
-yarn -s tailwindcss-export-config \
-    --config=src/lib/tailwind.preset.js \
-    --destination=src/lib/styles/variables-theme \
-    --format=scss \
-    --flat=true
+tailwindcss-export-config \
+    --config src/lib/tailwind.preset.js \
+    --destination src/lib/styles/variables-theme \
+    --format scss \
+    --flat true \
+    --quoted-keys true
 
 # Fix lint
 INPUT_FILE="src/lib/styles/variables-theme.scss"
