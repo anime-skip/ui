@@ -1,12 +1,11 @@
 import { onUnmounted, ref } from 'vue';
 
+type UsedTimeout = [(...args: Parameters<typeof window.setTimeout>) => void, () => void];
+
 /**
  * @returns `[setTimeout, clearTimeout]`
  */
-export function useTimeout(): [
-  (...args: Parameters<typeof window.setTimeout>) => void,
-  () => void
-] {
+export function useTimeout(): UsedTimeout {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const timeout = ref<any | undefined>();
   const setCustomTimeout = (...args: Parameters<typeof window.setTimeout>) => {
