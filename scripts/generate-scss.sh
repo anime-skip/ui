@@ -1,16 +1,16 @@
 #!/bin/bash
 set -e
 
-# touch src/lib/styles/variables-theme.scss
+# touch src/styles/variables-theme.scss
 tailwindcss-export-config \
-    --config=src/lib/tailwind.preset.js \
-    --destination=src/lib/styles/variables-theme \
+    --config=src/tailwind.preset.js \
+    --destination=src/styles/variables-theme \
     --format=scss \
     --flat=true
     
 # Fix lint
-INPUT_FILE="src/lib/styles/variables-theme.scss"
-TEMP_OUTPUT="src/lib/styles/variables-theme.scss-temp"
+INPUT_FILE="src/styles/variables-theme.scss"
+TEMP_OUTPUT="src/styles/variables-theme.scss-temp"
 PATTERN="1 / -1"
 while read -r line
 do

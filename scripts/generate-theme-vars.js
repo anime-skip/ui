@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const file = path.resolve(process.cwd(), 'src/lib/styles/variables-theme.scss');
+const file = path.resolve(process.cwd(), 'src/styles/variables-theme.scss');
 
 const fileContent = fs.readFileSync(file, { encoding: 'utf-8' });
 const output = [];
@@ -30,7 +30,7 @@ output.unshift('export default {');
 output.push('};');
 output.push('');
 
-const outputFile = path.resolve(process.cwd(), 'src/lib/styles/generated-config.ts');
+const outputFile = path.resolve(process.cwd(), 'src/styles/generated-config.ts');
 fs.writeFileSync(outputFile, output.join('\n'), { encoding: 'utf-8' });
 
 console.log(`Output TS variables to ${outputFile.replace(process.cwd() + '/', '')}`);

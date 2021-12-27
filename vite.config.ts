@@ -11,7 +11,7 @@ export default defineConfig({
   build: {
     outDir: 'lib',
     lib: {
-      entry: path.resolve(__dirname, 'src/lib/index.ts'),
+      entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'ui',
     },
     rollupOptions: {
