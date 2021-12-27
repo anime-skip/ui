@@ -1,5 +1,5 @@
 <template>
-  <svg class="Icon pointer-events-none transition-colors" :class="styles" viewBox="0 0 24 24">
+  <svg class="Icon as-pointer-events-none as-transition-colors" :class="styles" viewBox="0 0 24 24">
     <path :d="path" />
   </svg>
 </template>
@@ -9,8 +9,8 @@ import { defineComponent, PropType } from 'vue';
 
 type Size = 'sm' | 'md';
 const SIZES = {
-  sm: 'w-4 h-4',
-  md: 'w-6 h-6',
+  sm: 'as-w-4 as-h-4',
+  md: 'as-w-6 as-h-6',
 };
 
 export default defineComponent({
@@ -25,9 +25,9 @@ export default defineComponent({
     styles(): { [styles: string]: boolean } {
       return {
         [SIZES[this.size]]: true,
-        'opacity-medium': !this.active && !this.disabled,
-        'opacity-100': this.active && !this.disabled,
-        'opacity-low': this.disabled,
+        'as-opacity-medium': !this.active && !this.disabled,
+        'as-opacity-100': this.active && !this.disabled,
+        'as-opacity-low': this.disabled,
       };
     },
   },

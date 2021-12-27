@@ -1,15 +1,15 @@
 <template>
   <svg
-    class="spinner"
+    class="as-spinner"
     :class="{
-      'w-6 h-6 thick-width': size === 'sm',
-      'w-12 h-12': size === 'md',
-      'w-24 h-24': size === 'lg',
+      'as-w-6 as-h-6 as-thick-width': size === 'sm',
+      'as-w-12 as-h-12': size === 'md',
+      'as-w-24 as-h-24': size === 'lg',
     }"
     viewBox="0 0 56 56"
   >
     <circle
-      class="path"
+      class="as-path"
       fill="none"
       :stroke-width="size === 'sm' ? 6 : 4"
       stroke-linecap="round"
@@ -35,7 +35,7 @@ export default defineComponent({
 $offset: 177;
 $duration: 1.6s;
 
-.spinner {
+.as-spinner {
   animation: rotator $duration linear infinite;
 }
 
@@ -48,7 +48,7 @@ $duration: 1.6s;
   }
 }
 
-.path {
+.as-path {
   stroke-dasharray: $offset;
   stroke-dashoffset: 0;
   transform-origin: center;

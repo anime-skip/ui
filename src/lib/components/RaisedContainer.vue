@@ -1,14 +1,14 @@
 <template>
   <button
-    class="RaisedContainer flex flex-row justify-center items-center rounded ring-offset-transparent"
+    class="RaisedContainer as-flex as-flex-row as-justify-center as-items-center as-rounded as-ring-offset-transparent"
     :class="{
-      'surface-primary': !dark && !secondary,
-      down,
-      'dark surface-control': dark,
-      'secondary surface-secondary': secondary,
-      disabled,
-      'ring ring-primary': focused,
-      'error surface-error': error,
+      'as-surface-primary': !dark && !secondary,
+      'as-down': down,
+      'as-dark as-surface-control': dark,
+      'as-secondary as-surface-secondary': secondary,
+      'as-disabled': disabled,
+      'as-ring as-ring-primary': focused,
+      'as-error as-surface-error': error,
     }"
   >
     <slot />
@@ -54,42 +54,42 @@ $error-dark: desaturate(darken($backgroundColor-error, 17%), 25%);
   outline-width: 0;
   @include Raised($primary-dark, $neutral-translation);
 
-  &.secondary {
+  &.as-secondary {
     background-color: $backgroundColor-secondary;
     @include Raised($secondary-dark, $neutral-translation);
   }
 
-  &.dark {
+  &.as-dark {
     background-color: $backgroundColor-control;
     @include Raised($backgroundColor-control-variant, $neutral-translation);
   }
 
-  &.error {
+  &.as-error {
     background-color: $backgroundColor-error;
     @include Raised($error-dark, $neutral-translation);
   }
 
-  &.down,
+  &.as-down,
   &:active:hover {
     @include Raised($backgroundColor-primary-variant, $down-translation);
   }
 
-  &.secondary.down,
-  &.secondary:active:hover {
+  &.as-secondary.as-down,
+  &.as-secondary:active:hover {
     @include Raised($secondary-dark, $down-translation);
   }
 
-  &.dark.down,
-  &.dark:active:hover {
+  &.as-dark.as-down,
+  &.as-dark:active:hover {
     @include Raised($backgroundColor-control-variant, $down-translation);
   }
 
-  &.error.down,
-  &.error:active:hover {
+  &.as-error.as-down,
+  &.as-error:active:hover {
     @include Raised($error-dark, $down-translation);
   }
 
-  &.disabled {
+  &.as-disabled {
     background-color: $backgroundColor-control-disabled;
     pointer-events: none;
     @include Raised($backgroundColor-control-disabled, $down-translation);

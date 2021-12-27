@@ -1,3 +1,3 @@
 <template>
-  <p class="overline"><slot /></p>
+  <p class="as-text-overline"><slot /></p>
 </template>

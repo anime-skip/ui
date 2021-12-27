@@ -1,5 +1,5 @@
 <template>
-  <Group title="Fonts" class="space-y-4">
+  <Group title="Fonts" class="as-space-y-4">
     <h1>Heading 1</h1>
     <h2>Heading 2</h2>
     <h3>Heading 3</h3>
@@ -13,7 +13,7 @@
     <Body1>Body 1</Body1>
     <Body2>Body 2</Body2>
 
-    <p class="button-text text-left">Button</p>
+    <p class="as-button-text as-text-left">Button</p>
     <Caption>Caption</Caption>
     <Overline>Overline</Overline>
   </Group>

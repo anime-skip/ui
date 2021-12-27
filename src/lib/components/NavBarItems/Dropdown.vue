@@ -1,41 +1,45 @@
 <template>
-  <div class="relative flex flex-col">
+  <div class="as-relative as-flex as-flex-col">
     <!-- Visible Button -->
     <click :in-overflow="inOverflow" :on-click="onClickItem" disable-hide-overflow-on-click>
       <dropdown-icon
         v-if="inOverflow"
-        class="-ml-10 mr-4 transform transition-transform"
+        class="as--ml-10 as-mr-4 as-transform as-transition-transform"
         :class="{
-          'rotate-180': isOpen,
+          'as-rotate-180': isOpen,
         }"
       />
       {{ title }}
       <dropdown-icon
         v-if="!inOverflow"
-        class="-mr-2 ml-1 transform transition-transform"
+        class="as--mr-2 as-ml-1 as-transform as-transition-transform"
         :class="{
-          'rotate-180': isOpen,
+          'as-rotate-180': isOpen,
         }"
       />
     </click>
 
     <!-- Dismiss Overlay -->
-    <div v-if="isOpen" class="sm:hidden md:block md:fixed md:inset-0" @click="dismiss" />
+    <div
+      v-if="isOpen"
+      class="sm:as-hidden md:as-block md:as-fixed md:as-inset-0"
+      @click="dismiss"
+    />
 
     <!-- Children expanded in  -->
     <div v-if="inOverflow">
       <height-reveal :visible="isOpen" :duration-ms="100">
-        <div :elevation="inOverflow ? undefined : 12" class="flex flex-col px-6">
+        <div :elevation="inOverflow ? undefined : 12" class="as-flex as-flex-col as-px-6">
           <template v-for="item of children" :key="item.key">
             <router-link
               v-if="item.type === 'basic'"
               :to="item.link"
               @click="dismiss"
-              class="drop-down-row"
+              class="as-drop-down-row"
             >
               {{ item.title }}
             </router-link>
-            <button v-else-if="item.type === 'click'" @click="dismiss" class="drop-down-row">
+            <button v-else-if="item.type === 'click'" @click="dismiss" class="as-drop-down-row">
               {{ item.title }}
             </button>
             <divider v-else />
@@ -45,22 +49,22 @@
     </div>
 
     <!-- Dialog Overlay -->
-    <div v-else class="absolute right-0 -bottom-2 h-0 overflow-visible">
+    <div v-else class="as-absolute as-right-0 as--bottom-2 as-h-0 as-overflow-visible">
       <height-reveal :visible="isOpen" :duration-ms="100">
         <card
           :elevation="inOverflow ? undefined : 12"
-          class="min-w-200px max-w-300px flex flex-col"
+          class="as-min-w-200px as-max-w-300px as-flex as-flex-col"
         >
           <template v-for="item of children" :key="item.key">
             <router-link
               v-if="item.type === 'basic'"
               :to="item.link"
               @click="dismiss"
-              class="drop-down-row"
+              class="as-drop-down-row"
             >
               {{ item.title }}
             </router-link>
-            <button v-else-if="item.type === 'click'" @click="dismiss" class="drop-down-row">
+            <button v-else-if="item.type === 'click'" @click="dismiss" class="as-drop-down-row">
               {{ item.title }}
             </button>
             <divider v-else />
@@ -114,14 +118,14 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.min-w-200px {
+.as-min-w-200px {
   min-width: 200px;
 }
-.max-w-300px {
+.as-max-w-300px {
   max-width: 300px;
 }
 
-.drop-down-row {
-  @apply h-12 px-4 flex items-center bg-on-surface bg-opacity-0 hover:bg-opacity-hover transition-colors text-on-surface text-opacity-high no-underline;
+.as-drop-down-row {
+  @apply as-h-12 as-px-4 as-flex as-items-center as-bg-on-surface as-bg-opacity-0 hover:as-bg-opacity-hover as-transition-colors as-text-on-surface as-text-opacity-high as-no-underline;
 }
 </style>

@@ -1,7 +1,12 @@
 <template>
   <div
     class="TimelineSection"
-    :class="{ buffered, completed, skipped, current }"
+    :class="{
+      'as-buffered': buffered,
+      'as-completed': completed,
+      'as-skipped': skipped,
+      'as-current': current,
+    }"
     :style="positioning"
   />
 </template>
@@ -66,16 +71,16 @@ $notCompletedColor: rgba(
   height: 3px;
   border-radius: 1.5px;
 }
-.skipped {
+.as-skipped {
   background-color: transparent;
 }
-.buffered {
+.as-buffered {
   background-color: rgba($color: $textColor-on-surface, $alpha: 0.75);
 }
-.completed {
+.as-completed {
   background-color: $backgroundColor-primaryPalette-500;
 }
-.current {
+.as-current {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }

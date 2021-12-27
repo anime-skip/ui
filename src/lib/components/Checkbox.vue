@@ -1,37 +1,37 @@
 <template>
   <div
-    class="Checkbox min-h-10 p-0 px-2 py-2 flex flex-row items-center justify-start space-x-3 select-none cursor-pointer transition-colors rounded overflow-x-hidden bg-transparent"
+    class="as-min-h-10 as-p-0 as-px-2 as-py-2 as-flex as-flex-row as-items-center as-justify-start as-space-x-3 as-select-none as-cursor-pointer as-transition-colors as-rounded as-overflow-x-hidden as-bg-transparent"
     :class="{
-      'flex-row-reverse': rToL,
-      'opacity-low pointer-events-none': disabled,
-      'space-x-reverse': rToL,
-      'hover:bg-on-surface hover:bg-opacity-hover hover:active:bg-opacity-active': flat,
+      'as-flex-row-reverse': rToL,
+      'as-opacity-low as-pointer-events-none': disabled,
+      'as-space-x-reverse': rToL,
+      'hover:as-bg-on-surface hover:as-bg-opacity-hover hover:active:as-bg-opacity-active': flat,
     }"
     @click="toggleChecked()"
   >
     <CheckboxChecked
       v-if="checked === true"
-      class="flex-shrink-0 opacity-100 transition-colors"
+      class="as-flex-shrink-0 as-opacity-100 as-transition-colors"
       :class="{
-        'fill-secondary': flat && !disabled,
-        [`fill-on-${onSurface}`]: !flat && !!onSurface,
+        'as-fill-secondary': flat && !disabled,
+        [`as-fill-on-${onSurface}`]: !flat && !!onSurface,
       }"
     />
     <CheckboxIndeterminate
       v-else-if="checked === 'indeterminate'"
-      class="flex-shrink-0 opacity-100 transition-colors"
+      class="as-flex-shrink-0 as-opacity-100 as-transition-colors"
       :class="{
-        'fill-secondary': flat && !disabled,
-        [`fill-on-${onSurface}`]: !flat && !!onSurface,
+        'as-fill-secondary': flat && !disabled,
+        [`as-fill-on-${onSurface}`]: !flat && !!onSurface,
       }"
     />
-    <CheckboxUnchecked v-else class="flex-shrink-0" />
+    <CheckboxUnchecked v-else class="as-flex-shrink-0" />
     <label
       v-if="label"
-      class="body-1 flex-1 text-opacity-high pointer-events-none pr-2"
+      class="as-body-1 as-flex-1 as-text-opacity-high as-pointer-events-none as-pr-2"
       :class="{
-        'text-right': rToL,
-        [`text-on-${onSurface}`]: !flat && !!onSurface,
+        'as-text-right': rToL,
+        [`as-text-on-${onSurface}`]: !flat && !!onSurface,
       }"
       >{{ label }}</label
     >

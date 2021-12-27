@@ -1,3 +1,3 @@
 <template>
-  <p class="caption"><slot /></p>
+  <p class="as-caption"><slot /></p>
 </template>

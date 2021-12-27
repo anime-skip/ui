@@ -1,8 +1,11 @@
 <template>
-  <div class="LoadingOverlay relative">
+  <div class="LoadingOverlay as-relative">
     <slot />
-    <div class="bg-background bg-opacity-high flex absolute inset-0" v-if="isLoading">
-      <Loading class="m-auto" :size="size" />
+    <div
+      class="as-bg-background as-bg-opacity-high as-flex as-absolute as-inset-0"
+      v-if="isLoading"
+    >
+      <Loading class="as-m-auto" :size="size" />
     </div>
   </div>
 </template>

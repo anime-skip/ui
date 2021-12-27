@@ -1,19 +1,19 @@
 <template>
   <button
-    class="FlatButton flex flex-row justify-center items-center rounded min-h-10 cursor-pointer select-none overflow-x-hidden"
+    class="FlatButton as-flex as-flex-row as-justify-center as-items-center as-rounded as-min-h-10 as-cursor-pointer as-select-none as-overflow-x-hidden"
     :class="{
-      'surface surface-primary': !disabled && !secondary && !transparent && !error,
-      'surface surface-secondary': !disabled && secondary && !error,
-      transparent: !disabled && transparent && !error,
-      'surface surface-error': !disabled && !transparent && error,
-      'bg-control-disabled pointer-events-none': disabled,
+      'as-surface as-surface-primary': !disabled && !secondary && !transparent && !error,
+      'as-surface as-surface-secondary': !disabled && secondary && !error,
+      'as-transparent': !disabled && transparent && !error,
+      'as-surface as-surface-error': !disabled && !transparent && error,
+      'as-bg-control-disabled as-pointer-events-none': disabled,
     }"
   >
     <a
       v-if="link && link.startsWith('https')"
       :href="link"
       :target="target"
-      class="px-4 py-2.5 hover:no-underline flex flex-row items-center button-text justify-center"
+      class="as-px-4 as-py-2.5 hover:as-no-underline as-flex as-flex-row as-items-center as-button-text as-justify-center"
       :class="classes"
     >
       <slot />
@@ -22,12 +22,12 @@
       v-else-if="link"
       :to="link"
       :target="target"
-      class="px-4 py-2.5 hover:no-underline flex flex-row items-center button-text justify-center"
+      class="as-px-4 as-py-2.5 hover:as-no-underline as-flex as-flex-row as-items-center as-button-text as-justify-center"
       :class="classes"
     >
       <slot />
     </router-link>
-    <p v-else class="button-text px-4 py-2.5" :class="classes">
+    <p v-else class="as-button-text as-px-4 as-py-2.5" :class="classes">
       <slot />
     </p>
   </button>
@@ -48,11 +48,14 @@ export default defineComponent({
   },
   setup(props) {
     const classes = computed(() => ({
-      'text-on-primary': !props.secondary && !props.transparent && !props.disabled && !props.error,
-      'text-on-secondary': props.secondary && !props.transparent && !props.disabled && !props.error,
-      'text-on-surface': !props.secondary && props.transparent && !props.disabled && !props.error,
-      'text-on-surface text-opacity-low': props.disabled,
-      'text-on-error': !props.secondary && !props.transparent && !props.disabled && props.error,
+      'as-text-on-primary':
+        !props.secondary && !props.transparent && !props.disabled && !props.error,
+      'as-text-on-secondary':
+        props.secondary && !props.transparent && !props.disabled && !props.error,
+      'as-text-on-surface':
+        !props.secondary && props.transparent && !props.disabled && !props.error,
+      'as-text-on-surface as-text-opacity-low': props.disabled,
+      'as-text-on-error': !props.secondary && !props.transparent && !props.disabled && props.error,
     }));
     return {
       classes,
@@ -74,7 +77,7 @@ export default defineComponent({
     filter: brightness(120%) saturate(95%);
   }
 
-  &.transparent {
+  &.as-transparent {
     background-color: transparent;
     transition-property: background-color;
     &:hover {
@@ -84,8 +87,8 @@ export default defineComponent({
       background-color: rgba($color: $backgroundColor-on-surface, $alpha: 0.2);
     }
   }
-  .button-text.disabled {
-    @apply text-on-surface text-opacity-low;
+  .as-button-text.disabled {
+    @apply as-text-on-surface as-text-opacity-low;
   }
 }
 </style>

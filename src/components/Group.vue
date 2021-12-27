@@ -1,8 +1,8 @@
 <template>
   <div
-    class="Group flex flex-col p-8 m-8 border-2 border-on-surface border-opacity-divider rounded-2xl space-y-4"
+    class="as-flex as-flex-col as-p-8 as-m-8 as-border-2 as-border-on-surface as-border-opacity-divider as-rounded-2xl as-space-y-4"
   >
-    <h5 class="text-primary">{{ title }}</h5>
+    <h5 class="as-text-primary">{{ title }}</h5>
     <slot />
   </div>
 </template>
