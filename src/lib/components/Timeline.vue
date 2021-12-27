@@ -1,7 +1,7 @@
 <template>
   <div
     ref="timelineRef"
-    class="Timeline relative pt-1 -mt-1 pb-2 -mb-2"
+    class="Timeline as-relative as-pt-1 as--mt-1 as-pb-2 as--mb-2"
     @mouseenter="toggleHover(true)"
     @mouseleave="toggleHover(false)"
     @mousemove="moveOverlay"
@@ -9,18 +9,18 @@
     <!-- Overlay -->
     <div
       v-if="allowOverlay"
-      class="absolute w-full h-0 -top-1 opacity-0 transition-opacity whitespace-nowrap z-10 pointer-events-none select-none"
+      class="as-absolute as-w-full as-h-0 as--top-1 as-opacity-0 as-transition-opacity as-whitespace-nowrap as-z-10 as-pointer-events-none as-select-none"
       :class="{
-        'opacity-100': isShowingHoverOverlay,
+        'as-opacity-100': isShowingHoverOverlay,
       }"
     >
       <div
         ref="overlayRef"
-        class="absolute bottom-0 -translation-x-50% px-2"
+        class="as-absolute as-bottom-0 as--translation-x-50% as-px-2"
         :style="`left: ${hoverOverlayLeftPx}px`"
       >
-        <card :elevation="12" class="py-2 px-2.5 text-center">
-          <p class="subtitle-1 text-opacity-100 text-primaryPalette-300 font-bold">
+        <card :elevation="12" class="as-py-2 as-px-2.5 as-text-center">
+          <p class="as-subtitle-1 as-text-opacity-100 as-text-primaryPalette-300 as-font-bold">
             {{ hoverOverlayTimestamp }}
           </p>
           <p>{{ hoverOverlayTime }}</p>
@@ -88,7 +88,7 @@ export default defineComponent({
     };
     const timestampClass = (timestamp: TimestampData): Record<string, boolean | undefined> => {
       return {
-        active: timestamp.active,
+        'as-active': timestamp.active,
       };
     };
     const pathStyle = (timestamp: TimestampData) => {
@@ -211,18 +211,18 @@ $translationInactiveSliderVrv: 3px;
 .Timeline {
   height: 3px;
 
-  &.add-margin {
+  &.as-add-margin {
     margin-left: 24px;
     margin-right: 24px;
   }
 
-  .slider {
+  .as-slider {
     top: 0;
     left: 0;
     right: 0;
     transition: top;
 
-    .slider-foreground {
+    .as-slider-foreground {
       position: absolute;
       left: 0;
       right: 0;
@@ -241,19 +241,19 @@ $translationInactiveSliderVrv: 3px;
     path {
       fill: theme('colors.primaryPalette.500');
     }
-    &.edited {
+    &.as-edited {
       path {
         fill: theme('colors.complementaryPalette.500');
       }
     }
 
-    &.active {
+    &.as-active {
       transform: translateX(-50%) translateY(-12px);
     }
   }
 }
 
-.-translation-x-50\% {
+.as--translation-x-50\% {
   transform: translateX(-50%);
 }
 </style>

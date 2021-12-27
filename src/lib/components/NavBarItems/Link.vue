@@ -1,12 +1,12 @@
 <template>
   <router-link
     :to="link"
-    class="flex items-center subtitle-1 font-bold border-primary border-opacity-0 transition-colors bg-on-surface bg-opacity-0 hover:bg-opacity-hover text-on-surface hover:no-underline"
+    class="as-flex as-items-center as-subtitle-1 as-font-bold as-border-primary as-border-opacity-0 as-transition-colors as-bg-on-surface as-bg-opacity-0 hover:as-bg-opacity-hover as-text-on-surface hover:as-no-underline"
     :class="{
-      'h-16 pt-2px border-b-2 px-4': !inOverflow,
-      'h-12 border-l-4 px-13': inOverflow,
-      'text-opacity-100 border-opacity-100': isCurrentPath,
-      'text-opacity-medium': !isCurrentPath,
+      'as-h-16 as-pt-2px as-border-b-2 as-px-4': !inOverflow,
+      'as-h-12 as-border-l-4 as-px-13': inOverflow,
+      'as-text-opacity-100 as-border-opacity-100': isCurrentPath,
+      'as-text-opacity-medium': !isCurrentPath,
     }"
   >
     <vnode v-if="icon" :node="icon()" />{{ title }}
@@ -44,10 +44,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.pt-2px {
+.as-pt-2px {
   padding-top: 2px;
 }
-.px-13 {
+.as-px-13 {
   padding-left: 52px;
 }
 </style>

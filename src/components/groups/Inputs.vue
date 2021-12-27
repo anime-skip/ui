@@ -1,7 +1,7 @@
 <template>
   <Group title="Inputs">
     <Subtitle1>Text Inputs</Subtitle1>
-    <div class="grid grid-flow-row grid-cols-2 gap-4 mt-4">
+    <div class="as-grid as-grid-flow-row as-grid-cols-2 as-gap-4 as-mt-4">
       <TextInput placeholder="Blank" label="Label" />
       <TextInput placeholder="Filled" label="Label" default-value="Default value" />
       <TextInput placeholder="Disabled" disabled />
@@ -52,8 +52,8 @@
         </template>
       </TextInput>
     </div>
-    <Subtitle1 class="mt-8">Checkboxes</Subtitle1>
-    <div class="grid grid-flow-row grid-cols-4 gap-4 mt-4 items-start">
+    <Subtitle1 class="as-mt-8">Checkboxes</Subtitle1>
+    <div class="as-grid as-grid-flow-row as-grid-cols-4 as-gap-4 as-mt-4 as-items-start">
       <Checkbox v-model:checked="checkbox1" label="Checked" />
       <Checkbox v-model:checked="checkbox2" label="Indeterminate" />
       <Checkbox v-model:checked="checkbox3" label="Unchecked" />
@@ -72,8 +72,8 @@
       <RaisedCheckbox :checked="false" disabled label="Disabled" />
       <RaisedCheckbox checked disabled label="Checked + Disabled" />
     </div>
-    <Subtitle1 class="mt-8">Raised Buttons</Subtitle1>
-    <div class="grid grid-flow-row grid-cols-4 gap-4 mt-4 items-start">
+    <Subtitle1 class="as-mt-8">Raised Buttons</Subtitle1>
+    <div class="as-grid as-grid-flow-row as-grid-cols-4 as-gap-4 as-mt-4 as-items-start">
       <RaisedButton>Primary</RaisedButton>
       <RaisedButton secondary>Secondary</RaisedButton>
       <RaisedButton dark>Dark</RaisedButton>
@@ -89,8 +89,8 @@
       <RaisedButton dark link="#dark">Dark Link</RaisedButton>
       <RaisedButton error link="#error">Error Link</RaisedButton>
     </div>
-    <Subtitle1 class="mt-8">Flat Buttons</Subtitle1>
-    <div class="grid grid-flow-row grid-cols-4 gap-4 mt-4 items-start">
+    <Subtitle1 class="as-mt-8">Flat Buttons</Subtitle1>
+    <div class="as-grid as-grid-flow-row as-grid-cols-4 as-gap-4 as-mt-4 as-items-start">
       <FlatButton>Flat Primary</FlatButton>
       <FlatButton secondary>Flat Secondary</FlatButton>
       <FlatButton transparent>Flat Transparent</FlatButton>

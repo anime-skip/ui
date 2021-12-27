@@ -1,21 +1,21 @@
 <template>
   <div class="Slider">
-    <div class="bar-container">
+    <div class="as-bar-container">
       <slot name="background">
-        <div class="default-background" />
+        <div class="as-default-background" />
       </slot>
       <slot name="foreground" :progress="displayedProgress">
-        <div class="default-foreground" :style="defaultForegroundOffsetStyle" />
+        <div class="as-default-foreground" :style="defaultForegroundOffsetStyle" />
       </slot>
     </div>
-    <div class="thumb-container" :style="thumbOffsetStyle">
+    <div class="as-thumb-container" :style="thumbOffsetStyle">
       <slot name="thumb">
-        <div class="default-thumb" :class="{ seeking: isSeeking }" :style="thumbStyle">
-          <div class="thumb-highlight" />
+        <div class="as-default-thumb" :class="{ 'as-seeking': isSeeking }" :style="thumbStyle">
+          <div class="as-thumb-highlight" />
         </div>
       </slot>
     </div>
-    <div class="mouse-event-handler select-none" @mousedown="onSeekStart" />
+    <div class="as-as- as-select-none" @mousedown="onSeekStart" />
   </div>
 </template>
 
@@ -150,7 +150,7 @@ $thumbSizeUnitless: strip-unit($thumbSize);
   --default-foreground-color: theme('colors.primary');
   --default-background-color: theme('colors.control-variant');
 
-  .bar-container {
+  .as-bar-container {
     position: absolute;
     left: 0;
     top: 2px;
@@ -158,7 +158,7 @@ $thumbSizeUnitless: strip-unit($thumbSize);
     height: $height;
   }
 
-  .default-background {
+  .as-default-background {
     position: absolute;
     background-color: var(--default-background-color);
     left: 0;
@@ -169,7 +169,7 @@ $thumbSizeUnitless: strip-unit($thumbSize);
     border-radius: $height * 0.5;
   }
 
-  .default-foreground {
+  .as-default-foreground {
     position: absolute;
     left: 0;
     right: 0;
@@ -180,7 +180,7 @@ $thumbSizeUnitless: strip-unit($thumbSize);
     border-bottom-left-radius: $height * 0.5;
   }
 
-  .thumb-container {
+  .as-thumb-container {
     position: absolute;
     width: $thumbSize;
     height: $thumbSize;
@@ -192,7 +192,7 @@ $thumbSizeUnitless: strip-unit($thumbSize);
     align-items: center;
     justify-content: center;
 
-    .default-thumb {
+    .as-default-thumb {
       min-width: $thumbSize;
       min-height: $thumbSize;
       border-radius: 50%;
@@ -203,7 +203,7 @@ $thumbSizeUnitless: strip-unit($thumbSize);
       justify-content: center;
       position: relative;
 
-      .thumb-highlight {
+      .as-thumb-highlight {
         position: absolute;
         left: 0;
         right: 0;
@@ -216,8 +216,8 @@ $thumbSizeUnitless: strip-unit($thumbSize);
         transition: 200ms;
       }
 
-      &.seeking {
-        .thumb-highlight {
+      &.as-seeking {
+        .as-thumb-highlight {
           left: -3px;
           right: -3px;
           top: -3px;
@@ -229,7 +229,7 @@ $thumbSizeUnitless: strip-unit($thumbSize);
     }
   }
 
-  .mouse-event-handler {
+  .as-mouse-event-handler {
     position: absolute;
     left: -7px;
     right: -7px;

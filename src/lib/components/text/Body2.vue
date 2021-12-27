@@ -1,3 +1,3 @@
 <template>
-  <p class="body-2"><slot /></p>
+  <p class="as-body-2"><slot /></p>
 </template>

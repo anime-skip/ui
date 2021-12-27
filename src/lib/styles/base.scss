@@ -2,14 +2,14 @@
   /* Top Level */
   html,
   body {
-    @apply h-full;
+    @apply as-h-full;
   }
   body {
-    @apply bg-background;
+    @apply as-bg-background;
   }
   * {
-    @apply text-on-surface;
-    @apply fill-on-surface;
+    @apply as-text-on-surface;
+    @apply as-fill-on-surface;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -21,31 +21,31 @@
 
   /* Text */
   h1 {
-    @apply heading-1 text-opacity-high text-on-surface;
+    @apply as-heading-1 as-text-opacity-high as-text-on-surface;
   }
   h2 {
-    @apply heading-2 text-opacity-high text-on-surface;
+    @apply as-heading-2 as-text-opacity-high as-text-on-surface;
   }
   h3 {
-    @apply heading-3 text-opacity-high text-on-surface;
+    @apply as-heading-3 as-text-opacity-high as-text-on-surface;
   }
   h4 {
-    @apply heading-4 text-opacity-high text-on-surface;
+    @apply as-heading-4 as-text-opacity-high as-text-on-surface;
   }
   h5 {
-    @apply heading-5 text-opacity-high text-on-surface;
+    @apply as-heading-5 as-text-opacity-high as-text-on-surface;
   }
   h6 {
-    @apply heading-6 text-opacity-high text-on-surface;
+    @apply as-heading-6 as-text-opacity-high as-text-on-surface;
   }
   p,
   li {
-    @apply body-1 text-opacity-high text-on-surface;
+    @apply as-body-1 as-text-opacity-high as-text-on-surface;
   }
   a {
-    @apply body-1 no-underline text-secondaryPalette-300 hover:underline;
+    @apply as-body-1 as-no-underline as-text-secondaryPalette-300 hover:as-underline;
   }
   strong {
-    @apply font-bold text-on-surface text-opacity-100;
+    @apply as-font-bold as-text-on-surface as-text-opacity-100;
   }
 }

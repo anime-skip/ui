@@ -1,15 +1,15 @@
 <template>
-  <div class="TextInput flex flex-col min-w-0 cursor-text">
-    <Body2 v-if="!!label" class="mb-3 text-opacity-high">{{ label }}</Body2>
+  <div class="TextInput as-flex as-flex-col as-min-w-0 as-cursor-text">
+    <Body2 v-if="!!label" class="as-mb-3 as-text-opacity-high">{{ label }}</Body2>
     <div
-      class="rounded-sm ring-primary transition-all flex"
+      class="as-rounded-sm as-ring-primary as-transition-all as-flex"
       :class="{
-        'ring ring-opacity-low': isFocused,
-        'ring-1 ring-error ring-opacity-100': !isValid,
+        'as-ring as-ring-opacity-low': isFocused,
+        'as-ring-1 as-ring-error as-ring-opacity-100': !isValid,
       }"
     >
       <RaisedContainer
-        class="input-wrapper h-12 space-x-4 px-4 items-center min-w-0 flex-1"
+        class="as-input-wrapper as-h-12 as-space-x-4 as-px-4 as-items-center as-min-w-0 as-flex-1"
         dark
         :disabled="disabled"
         :down="isFocused || !!errorMessage || !!internalValue"
@@ -19,8 +19,8 @@
         <slot name="left-icon" :disabled="disabled" :focused="isFocused" />
         <input
           ref="input"
-          class="input body-1 h-12 flex-1 p-0 min-w-0 outline-none"
-          :class="{ error: !isValid }"
+          class="as-input as-body-1 as-h-12 as-flex-1 as-p-0 as-min-w-0 as-outline-none"
+          :class="{ 'as-error': !isValid }"
           v-model="internalValue"
           :type="type"
           :placeholder="placeholder"
@@ -34,7 +34,7 @@
         <slot name="right-icon" :disabled="disabled" :focused="isFocused" />
       </RaisedContainer>
     </div>
-    <Caption v-if="errorMessage" class="text-error m-0 mt-2">{{ errorMessage }}</Caption>
+    <Caption v-if="errorMessage" class="as-text-error as-m-0 as-mt-2">{{ errorMessage }}</Caption>
   </div>
 </template>
 
@@ -120,8 +120,8 @@ $transitionMs: 200ms;
 $inputHeight: 48px;
 
 .TextInput {
-  .input {
-    @apply text-on-surface text-opacity-100;
+  .as-input {
+    @apply as-text-on-surface as-text-opacity-100;
     background-color: transparent;
     box-sizing: border-box;
     line-height: 12rem;
@@ -129,21 +129,21 @@ $inputHeight: 48px;
     min-width: 0;
 
     &::placeholder {
-      @apply text-on-surface text-opacity-medium;
+      @apply as-text-on-surface as-text-opacity-medium;
     }
 
-    // &.error {
-    //   @apply text-on-error text-opacity-high;
+    // &.as-error {
+    //   @apply as-text-on-error as-text-opacity-high;
     //   caret-color: theme('colors.on-error');
     //   &::placeholder {
-    //     @apply text-on-error text-opacity-medium;
+    //     @apply as-text-on-error as-text-opacity-medium;
     //   }
     // }
 
     &:disabled {
-      @apply text-on-surface text-opacity-medium;
+      @apply as-text-on-surface as-text-opacity-medium;
       &::placeholder {
-        @apply text-on-surface text-opacity-low;
+        @apply as-text-on-surface as-text-opacity-low;
       }
     }
   }

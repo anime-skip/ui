@@ -1,41 +1,43 @@
 <template>
-  <nav class="elevation elevation-6">
-    <div class="bg-control">
-      <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div class="relative flex items-center justify-between h-16">
-          <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
+  <nav class="as-elevation as-elevation-6">
+    <div class="as-bg-control">
+      <div class="as-max-w-7xl as-mx-auto as-px-2 sm:as-px-6 lg:as-px-8">
+        <div class="as-relative as-flex as-items-center as-justify-between as-h-16">
+          <div class="as-absolute as-inset-y-0 as-left-0 as-flex as-items-center md:as-hidden">
             <button
-              class="inline-flex items-center justify-center p-2 rounded-md text-on-surface text-opacity-medium hover:text-opacity-100 hover:bg-on-surface hover:bg-opacity-hover"
+              class="as-inline-flex as-items-center as-justify-center as-p-2 as-rounded-md as-text-on-surface as-text-opacity-medium hover:as-text-opacity-100 hover:as-bg-on-surface hover:as-bg-opacity-hover"
               aria-expanded="false"
               @click="toggleOverflow"
             >
-              <span class="sr-only">Open main overflow</span>
+              <span class="as-sr-only">Open main overflow</span>
               <DrawerOpen :class="overflowHiddenClass" @click="toggleOverflow" />
               <DrawerClose :class="overflowOpenClass" @click="toggleOverflow" />
             </button>
           </div>
-          <div class="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
+          <div
+            class="as-flex-1 as-flex as-items-center as-justify-center md:as-items-stretch md:as-justify-start"
+          >
             <router-link
               v-if="!!homeLink"
-              class="flex-shrink-0 flex items-center hover:no-underline"
+              class="as-flex-shrink-0 as-flex as-items-center hover:as-no-underline"
               :to="homeLink"
             >
-              <img class="block h-6 mr-4 w-auto" :src="homeIcon" :alt="homeTitle" />
-              <p class="sm:block lg:block heading-6 font-bold">{{ homeTitle }}</p>
+              <img class="as-block as-h-6 as-mr-4 as-w-auto" :src="homeIcon" :alt="homeTitle" />
+              <p class="sm:as-block lg:as-block as-heading-6 as-font-bold">{{ homeTitle }}</p>
             </router-link>
-            <div class="hidden md:block md:ml-6">
-              <div class="flex space-x-1">
+            <div class="as-hidden md:as-block md:as-ml-6">
+              <div class="as-flex as-space-x-1">
                 <NavBarItem v-for="item of leftItems" :item="item" :key="item.key" />
               </div>
             </div>
           </div>
           <div
-            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+            class="as-absolute as-inset-y-0 as-right-0 as-flex as-items-center as-pr-2 sm:as-static sm:as-inset-auto sm:as-ml-6 sm:as-pr-0"
           >
             <slot name="before-right" />
             <NavBarItem
               v-for="item of rightItems"
-              class="hidden md:flex"
+              class="as-hidden md:as-flex"
               :item="item"
               :key="item.key"
             />
@@ -44,8 +46,8 @@
         </div>
       </div>
     </div>
-    <height-reveal class="bg-control" :visible="isOverflowOpen">
-      <div class="md:hidden space-y-1 pb-1 flex flex-col">
+    <height-reveal class="as-bg-control" :visible="isOverflowOpen">
+      <div class="md:as-hidden as-space-y-1 as-pb-1 as-flex as-flex-col">
         <NavBarItem v-for="item of allItems" :key="item.key" :item="item" in-overflow />
       </div>
     </height-reveal>
@@ -87,8 +89,8 @@ export default defineComponent({
     const { isOverflowOpen, updateIsOverflowOpen } = provideNavBarOverflowState();
     const { updateOpenDropdownId } = provideNavBarDropdownState();
 
-    const overflowOpenClass = computed(() => (isOverflowOpen.value ? 'block' : 'hidden'));
-    const overflowHiddenClass = computed(() => (isOverflowOpen.value ? 'hidden' : 'block'));
+    const overflowOpenClass = computed(() => (isOverflowOpen.value ? 'as-block' : 'as-hidden'));
+    const overflowHiddenClass = computed(() => (isOverflowOpen.value ? 'as-hidden' : 'as-block'));
     const toggleOverflow = () => {
       updateIsOverflowOpen(!isOverflowOpen.value);
       updateOpenDropdownId(undefined);

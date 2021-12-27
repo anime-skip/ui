@@ -1,3 +1,3 @@
 <template>
-  <p class="subtitle-2"><slot /></p>
+  <p class="as-subtitle-2"><slot /></p>
 </template>

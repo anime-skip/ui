@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-px bg-on-surface bg-opacity-divider" />
+  <div class="as-w-full as-h-px as-bg-on-surface as-bg-opacity-divider" />
 </template>
 
 <script lang="ts">

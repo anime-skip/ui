@@ -2,82 +2,82 @@
 
 @layer utilities {
   // Fonts
-  .heading-1 {
-    @apply font-heading font-light text-opacity-100;
+  .as-heading-1 {
+    @apply as-font-heading as-font-light as-text-opacity-100;
     font-size: 100px;
     line-height: 100px;
     letter-spacing: -0.5px;
   }
-  .heading-2 {
-    @apply font-heading font-light;
+  .as-heading-2 {
+    @apply as-font-heading as-font-light;
     font-size: 62px;
     line-height: 62px;
     letter-spacing: px;
   }
-  .heading-3 {
-    @apply font-heading;
+  .as-heading-3 {
+    @apply as-font-heading;
     font-size: 50px;
     line-height: 50px;
     letter-spacing: 0px;
   }
-  .heading-4 {
-    @apply font-heading;
+  .as-heading-4 {
+    @apply as-font-heading;
     font-size: 35px;
     line-height: 35px;
     letter-spacing: 0.25px;
   }
-  .heading-5 {
-    @apply font-heading;
+  .as-heading-5 {
+    @apply as-font-heading;
     font-size: 25px;
     line-height: 25px;
     letter-spacing: 0px;
   }
-  .heading-6 {
-    @apply font-heading;
+  .as-heading-6 {
+    @apply as-font-heading;
     font-size: 21px;
     line-height: 21px;
     letter-spacing: 0.15px;
   }
-  .subtitle-1 {
-    @apply font-heading;
+  .as-subtitle-1 {
+    @apply as-font-heading;
     font-size: 17px;
     line-height: 17px;
     letter-spacing: 0.15px;
   }
-  .subtitle-2 {
-    @apply font-heading;
+  .as-subtitle-2 {
+    @apply as-font-heading;
     font-size: 15px;
     line-height: 15px;
     letter-spacing: 0.1px;
   }
-  .body-1 {
-    @apply font-body;
+  .as-body-1 {
+    @apply as-font-body;
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 0.5px;
   }
-  .body-2 {
-    @apply font-body;
+  .as-body-2 {
+    @apply as-font-body;
     font-size: 14px;
     line-height: 17px;
     letter-spacing: 0.25px;
   }
-  .button-text {
-    @apply font-body font-medium;
+  .as-button-text {
+    @apply as-font-body as-font-medium;
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 1.25px;
     text-transform: uppercase;
     text-align: center;
   }
-  .caption {
-    @apply font-body;
+  .as-caption {
+    @apply as-font-body;
     font-size: 12px;
     line-height: 12px;
     letter-spacing: 0.4px;
   }
-  .overline {
-    @apply font-body;
+  .as-text-overline {
+    @apply as-font-body;
     font-size: 10px;
     line-height: 10px;
     letter-spacing: 1.5px;
@@ -85,80 +85,80 @@
   }
 
   // Elevation
-  .surface {
+  .as-surface {
     background-color: var(--surface-color);
   }
-  .surface-0 {
+  .as-surface-0 {
     --surface-color: $backgroundColor-background;
   }
-  .surface-1 {
+  .as-surface-1 {
     --surface-color: #{mix(white, $backgroundColor-background, 5%)};
     --surface-elevation: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12),
       0 1px 3px 0 rgba(0, 0, 0, 0.2);
   }
-  .surface-2 {
+  .as-surface-2 {
     --surface-color: #{mix(white, $backgroundColor-background, 7%)};
     --surface-elevation: 0 2px 2px 0 rgba(20, 16, 16, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
       0 1px 5px 0 rgba(0, 0, 0, 0.2);
   }
-  .surface-3 {
+  .as-surface-3 {
     --surface-color: #{mix(white, $backgroundColor-background, 8%)};
     --surface-elevation: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12),
       0 1px 8px 0 rgba(0, 0, 0, 0.2);
   }
-  .surface-4 {
+  .as-surface-4 {
     --surface-color: #{mix(white, $backgroundColor-background, 9%)};
     --surface-elevation: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
       0 2px 4px -1px rgba(0, 0, 0, 0.2);
   }
-  .surface-6 {
+  .as-surface-6 {
     --surface-color: #{mix(white, $backgroundColor-background, 11%)};
     --surface-elevation: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
       0 3px 5px -1px rgba(0, 0, 0, 0.2);
   }
-  .surface-8 {
+  .as-surface-8 {
     --surface-color: #{mix(white, $backgroundColor-background, 12%)};
     --surface-elevation: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12),
       0 5px 5px -3px rgba(0, 0, 0, 0.2);
   }
-  .surface-12 {
+  .as-surface-12 {
     --surface-color: #{mix(white, $backgroundColor-background, 14%)};
     --surface-elevation: 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12),
       0 7px 8px -4px rgba(0, 0, 0, 0.2);
   }
-  .surface-16 {
+  .as-surface-16 {
     --surface-color: #{mix(white, $backgroundColor-background, 15%)};
     --surface-elevation: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12),
       0 8px 10px -5px rgba(0, 0, 0, 0.2);
   }
-  .surface-24 {
+  .as-surface-24 {
     --surface-color: #{mix(white, $backgroundColor-background, 16%)};
     --surface-elevation: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12),
       0 11px 15px -7px rgba(0, 0, 0, 0.2);
   }
 
-  .surface-primary {
+  .as-surface-primary {
     --surface-color: #{$backgroundColor-primary};
   }
-  .surface-primary-variant {
+  .as-surface-primary-variant {
     --surface-color: #{$backgroundColor-primary-variant};
   }
-  .surface-secondary {
+  .as-surface-secondary {
     --surface-color: #{$backgroundColor-secondary};
   }
-  .surface-secondary-variant {
+  .as-surface-secondary-variant {
     --surface-color: #{$backgroundColor-secondary-variant};
   }
-  .surface-error {
+  .as-surface-error {
     --surface-color: #{$backgroundColor-error};
   }
-  .surface-success {
+  .as-surface-success {
     --surface-color: #{$backgroundColor-success};
-    @apply text-on-success;
-    @apply fill-on-success;
+    @apply as-text-on-success;
+    @apply as-fill-on-success;
   }
 
-  .elevated {
+  .as-elevated {
     box-shadow: var(--surface-elevation, none);
   }
 }

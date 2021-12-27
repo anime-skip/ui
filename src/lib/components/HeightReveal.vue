@@ -1,7 +1,7 @@
 <template>
   <div
     :ref="heightElement"
-    class="transition-all overflow-hidden ease-out"
+    class="as-transition-all as-overflow-hidden as-ease-out"
     :style="`max-height: ${displayHeight}px; transition-duration: ${durationMs}ms`"
   >
     <vue-resize-sensor @resize="resize">

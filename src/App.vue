@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-row flex-wrap justify-start items-start overflow-y-auto pt-16">
+  <div
+    class="as-flex as-flex-row as-flex-wrap as-justify-start as-items-start as-overflow-y-auto as-pt-16"
+  >
     <Fonts />
     <Surfaces />
     <Inputs />
@@ -7,7 +9,7 @@
     <Miscelanious />
   </div>
   <NavBar
-    class="fixed left-0 top-0 right-0"
+    class="as-fixed as-left-0 as-top-0 as-right-0"
     home-title="Anime Skip"
     home-icon="https://www.anime-skip.com/assets/logo_nav.49e247d2.svg"
     home-link="/"
@@ -104,7 +106,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style>
 body {
   position: relative;
 }

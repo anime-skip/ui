@@ -1,24 +1,24 @@
 <template>
   <Group title="Miscelanious">
-    <div class="flex flex-col space-y-4">
+    <div class="as-flex as-flex-col as-space-y-4">
       <h6>Timeline</h6>
-      <div class="space-y-4 overflow-visible">
+      <div class="as-space-y-4 as-overflow-visible">
         <Timeline
-          class="w-48"
+          class="as-w-48"
           :timestamps="timestamps1"
           :normalized-progress="progress1"
           allow-overlay
           :duration="90 * 60"
         />
         <Timeline
-          class="w-48"
+          class="as-w-48"
           :timestamps="timestamps2"
           editing
           :normalized-progress="progress1"
           :duration="22 * 60"
         />
         <Timeline
-          class="w-48"
+          class="as-w-48"
           :timestamps="timestamps3"
           allow-overlay
           :duration="20 * 60"
@@ -27,12 +27,12 @@
       </div>
       <h6>Slider</h6>
       <div>
-        <Slider class="w-48" :progress="progress1" :max="100" @seek="updateProgress1" />
+        <Slider class="as-w-48" :progress="progress1" :max="100" @seek="updateProgress1" />
       </div>
       <Body1>{{ progress1 }}</Body1>
       <div>
         <Slider
-          class="w-48 slider-white"
+          class="as-w-48 as-slider-white"
           :progress="progress2"
           :max="100"
           @seek="updateProgress2"
