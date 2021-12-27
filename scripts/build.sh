@@ -28,14 +28,14 @@ endCmd
 startCmd "Copy in raw files"
 echo -en "\x1b[2m"
 cp \
-    src/lib/tailwind.preset.js \
-    src/lib/styles/variables-theme.scss \
+    src/tailwind.preset.js \
+    src/styles/variables-theme.scss \
     package.json \
     lib/
 endCmd
 
 startCmd "Compile Tailwind entrypoint"
-sass src/lib/styles/index.scss lib/tailwind.css
+sass src/styles/index.scss lib/tailwind.css
 # Remove source mappings from compiled SCSS
 sed -i '/\/\*\# sourceMappingURL=tailwind.css.map \*\//d' lib/style.css
 cat lib/style.css >> lib/tailwind.css

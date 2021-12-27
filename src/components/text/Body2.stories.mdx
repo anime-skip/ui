@@ -1,0 +1,26 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+import Body2 from './Body2.vue';
+
+<Meta title="Text/body-2" />
+
+export const Template = args => ({
+  components: { Body2 },
+  setup() {
+    return args;
+  },
+  template: `
+    <body-2>
+      {{ text }}
+    </body-2>
+  `,
+});
+
+<Story
+  name="body-2"
+  args={{
+    text: 'Lorem ipsum...',
+  }}
+>
+  {Template.bind({})}
+</Story>

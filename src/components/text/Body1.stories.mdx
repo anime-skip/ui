@@ -1,0 +1,28 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import '../../styles/index.scss';
+import Body1 from './Body1.vue';
+
+<Meta title="Text/body-1" />
+
+You can also use the `as-body-1` class to apply the same styles to any other tag
+
+export const Template = args => ({
+  components: { Body1 },
+  setup() {
+    return args;
+  },
+  template: `
+    <body-1>
+      {{ text }}
+    </body-1>
+  `,
+});
+
+<Story
+  name="body-1"
+  args={{
+    text: 'Lorem ipsum...',
+  }}
+>
+  {Template.bind({})}
+</Story>
