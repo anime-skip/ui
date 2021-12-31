@@ -19,7 +19,7 @@ import { useRoute, RouterLink } from 'vue-router';
 import NavBarItemIconWrapper from './NavBarItemIconWrapper.vue';
 
 const Vnode: FunctionalComponent<{ node: VNode }> = ({ node }) =>
-  h(NavBarItemIconWrapper, null, node);
+  h(NavBarItemIconWrapper, null, () => node);
 
 export default defineComponent({
   name: 'NavBarLinkItem',

@@ -21,7 +21,7 @@ import { injectNavBarOverflowState } from '../NavBarState';
 import NavBarItemIconWrapperVue from './NavBarItemIconWrapper.vue';
 
 const Vnode: FunctionalComponent<{ node: VNode }> = ({ node }) =>
-  h(NavBarItemIconWrapperVue, null, node);
+  h(NavBarItemIconWrapperVue, null, () => node);
 
 export default defineComponent({
   name: 'NavBarClickItem',
