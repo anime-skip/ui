@@ -165,6 +165,45 @@ module.exports = {
       'timeline-foreground': themedColor('--as-theme-timeline-foreground', primaryColor[500]),
       'timeline-background': themedColor('--as-theme-timeline-background', '#40667A'),
     },
+    background: theme => ({
+      // Surfaces
+      'surface-1': themedColor(
+        '--as-theme-surface-1',
+        mix('#ffffff', theme('colors.background'), 5)
+      ),
+      'surface-2': themedColor(
+        '--as-theme-surface-2',
+        mix('#ffffff', theme('colors.background'), 7)
+      ),
+      'surface-3': themedColor(
+        '--as-theme-surface-3',
+        mix('#ffffff', theme('colors.background'), 8)
+      ),
+      'surface-4': themedColor(
+        '--as-theme-surface-4',
+        mix('#ffffff', theme('colors.background'), 9)
+      ),
+      'surface-6': themedColor(
+        '--as-theme-surface-6',
+        mix('#ffffff', theme('colors.background'), 11)
+      ),
+      'surface-8': themedColor(
+        '--as-theme-surface-8',
+        mix('#ffffff', theme('colors.background'), 12)
+      ),
+      'surface-12': themedColor(
+        '--as-theme-surface-12',
+        mix('#ffffff', theme('colors.background'), 14)
+      ),
+      'surface-16': themedColor(
+        '--as-theme-surface-16',
+        mix('#ffffff', theme('colors.background'), 15)
+      ),
+      'surface-24': themedColor(
+        '--as-theme-surface-24',
+        mix('#ffffff', theme('colors.background'), 16)
+      ),
+    }),
     fill: theme => ({
       primary: theme('colors.primary'),
       'primary-variant': theme('colors.primary-variant'),

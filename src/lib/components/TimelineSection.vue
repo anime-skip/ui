@@ -57,14 +57,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@use 'sass:map';
-@import '../styles/variables-theme.scss';
-
-$notCompletedColor: rgba(
-  $color: lighten($textColor-background, 25%),
-  $alpha: 0.75,
-);
-
 .TimelineSection {
   position: absolute;
   background-color: theme('colors.timeline-background');

@@ -15,11 +15,6 @@ mkdir -p lib
 rm -rf lib/*
 endCmd
 
-startCmd "Generating theme files"
-./scripts/generate-scss.sh | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"
-node scripts/generate-theme-vars.js
-endCmd
-
 startCmd "Building library"
 echo -en "\x1b[2m"
 vite build | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"
@@ -29,7 +24,6 @@ startCmd "Copy in raw files"
 echo -en "\x1b[2m"
 cp \
     src/lib/tailwind.preset.js \
-    src/lib/styles/variables-theme.scss \
     package.json \
     lib/
 endCmd

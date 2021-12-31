@@ -65,8 +65,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/variables-theme.scss';
-
 .FlatButton {
   transition: ease 200ms filter;
 
@@ -81,10 +79,10 @@ export default defineComponent({
     background-color: transparent;
     transition-property: background-color;
     &:hover {
-      background-color: rgba($color: $backgroundColor-on-surface, $alpha: 0.1);
+      @apply as-bg-on-surface as-bg-opacity-hover;
     }
     &:hover:active {
-      background-color: rgba($color: $backgroundColor-on-surface, $alpha: 0.2);
+      @apply as-bg-on-surface as-bg-opacity-active;
     }
   }
 }

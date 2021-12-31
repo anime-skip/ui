@@ -145,10 +145,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import '../../lib/styles/variables-theme.scss';
-
 .as-slider-white {
-  --as-slider-background-color: #{rgba($color: $backgroundColor-on-surface, $alpha: $opacity-low)} !important;
-  --as-slider-foreground-color: theme('colors.on-surface') !important;
+  --as-slider-background-color: rgba(255, 255, 255, 0.38);
+  --as-slider-foreground-color: white;
 }
 </style>
