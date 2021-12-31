@@ -37,9 +37,10 @@ export default defineComponent({
 $down-translation: 0px;
 $neutral-translation: 3px;
 
-$primary-dark: darken($backgroundColor-primary, 20%);
-$secondary-dark: darken($backgroundColor-secondary, 10%);
-$error-dark: desaturate(darken($backgroundColor-error, 17%), 25%);
+$primary-dark: #{theme('colors.primary-variant')}; // 20%
+$secondary-dark: #{theme('colors.secondary-variant')}; // 10%
+$dark-dark: #{theme('colors.control-variant')};
+$error-dark: #{theme('colors.error-variant')}; // desaturate(darken($backgroundColor-error, 17%), 25%);
 
 @mixin Raised($color, $offset) {
   transform: translateY(-$offset);
@@ -48,30 +49,33 @@ $error-dark: desaturate(darken($backgroundColor-error, 17%), 25%);
 
 .RaisedContainer {
   position: relative;
-  color: $backgroundColor-on-primary;
-  background-color: $backgroundColor-primary;
+  color: theme('colors.on-primary');
+  background-color: theme('colors.primary');
   transition: 200ms ease;
   outline-width: 0;
   @include Raised($primary-dark, $neutral-translation);
 
   &.as-secondary {
-    background-color: $backgroundColor-secondary;
+    color: theme('colors.on-secondary');
+    background-color: theme('colors.secondary');
     @include Raised($secondary-dark, $neutral-translation);
   }
 
   &.as-dark {
-    background-color: $backgroundColor-control;
-    @include Raised($backgroundColor-control-variant, $neutral-translation);
+    color: theme('colors.on-surface');
+    background-color: theme('colors.control');
+    @include Raised($dark-dark, $neutral-translation);
   }
 
   &.as-error {
-    background-color: $backgroundColor-error;
+    color: theme('colors.on-error');
+    background-color: theme('colors.error');
     @include Raised($error-dark, $neutral-translation);
   }
 
   &.as-down,
   &:active:hover {
-    @include Raised($backgroundColor-primary-variant, $down-translation);
+    @include Raised($primary-dark, $down-translation);
   }
 
   &.as-secondary.as-down,
@@ -81,7 +85,7 @@ $error-dark: desaturate(darken($backgroundColor-error, 17%), 25%);
 
   &.as-dark.as-down,
   &.as-dark:active:hover {
-    @include Raised($backgroundColor-control-variant, $down-translation);
+    @include Raised($dark-dark, $down-translation);
   }
 
   &.as-error.as-down,
@@ -90,9 +94,9 @@ $error-dark: desaturate(darken($backgroundColor-error, 17%), 25%);
   }
 
   &.as-disabled {
-    background-color: $backgroundColor-control-disabled;
+    background-color: theme('colors.control-disabled');
     pointer-events: none;
-    @include Raised($backgroundColor-control-disabled, $down-translation);
+    @include Raised(theme('colors.control-disabled'), $down-translation);
   }
 }
 </style>

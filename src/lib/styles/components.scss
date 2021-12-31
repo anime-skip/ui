@@ -1,6 +1,6 @@
 @import './variables-theme.scss';
 
-@layer utilities {
+@layer components {
   // Fonts
   .as-heading-1 {
     @apply as-font-heading as-font-light as-text-opacity-100;
@@ -138,22 +138,22 @@
   }
 
   .as-surface-primary {
-    --surface-color: #{$backgroundColor-primary};
+    --surface-color: theme('colors.primary');
   }
   .as-surface-primary-variant {
-    --surface-color: #{$backgroundColor-primary-variant};
+    --surface-color: theme('colors.primary-variant');
   }
   .as-surface-secondary {
-    --surface-color: #{$backgroundColor-secondary};
+    --surface-color: theme('colors.secondary');
   }
   .as-surface-secondary-variant {
-    --surface-color: #{$backgroundColor-secondary-variant};
+    --surface-color: theme('colors.secondary-variant');
   }
   .as-surface-error {
-    --surface-color: #{$backgroundColor-error};
+    --surface-color: theme('colors.error');
   }
   .as-surface-success {
-    --surface-color: #{$backgroundColor-success};
+    --surface-color: theme('colors.success');
     @apply as-text-on-success;
     @apply as-fill-on-success;
   }

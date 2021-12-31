@@ -87,8 +87,5 @@ export default defineComponent({
       background-color: rgba($color: $backgroundColor-on-surface, $alpha: 0.2);
     }
   }
-  .as-button-text.disabled {
-    @apply as-text-on-surface as-text-opacity-low;
-  }
 }
 </style>

@@ -7,6 +7,7 @@
     <Inputs />
     <Loaders />
     <Miscelanious />
+    <input type="checkbox" title="Custom theme" v-model="isCustomTheme" />
   </div>
   <NavBar
     class="as-fixed as-left-0 as-top-0 as-right-0"
@@ -19,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, h } from 'vue';
+import { defineComponent, h, ref, watch } from 'vue';
 import Fonts from './components/groups/Fonts.vue';
 import Surfaces from './components/groups/Surfaces.vue';
 import Inputs from './components/groups/Inputs.vue';
@@ -98,9 +99,16 @@ export default defineComponent({
         },
       },
     ];
+
+    const isCustomTheme = ref(false);
+    watch(isCustomTheme, newValue => {
+      if (newValue) document.body.classList.add('themed');
+      else document.body.classList.remove('themed');
+    });
     return {
       leftNavItems,
       rightNavItems,
+      isCustomTheme,
     };
   },
 });
@@ -109,5 +117,19 @@ export default defineComponent({
 <style>
 body {
   position: relative;
+}
+
+.themed {
+  --as-theme-primary: 255 165 0;
+  --as-theme-primary-variant: 255 215 0;
+  --as-theme-on-primary-variant: 0 0 0;
+  --as-theme-secondary: 0 0 255;
+  --as-theme-secondary-variant: 75 0 130;
+  --as-theme-success: 0 128 0;
+  --as-theme-error: 255 0 0;
+  --as-theme-timeline-foreground: 0 255 255;
+  --as-theme-timeline-background: 255 255 255;
+  --as-theme-timeline-new: 0 255 0;
+  --as-theme-timeline-edited: 128 128 128;
 }
 </style>

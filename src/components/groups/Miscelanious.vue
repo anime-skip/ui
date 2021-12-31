@@ -47,7 +47,6 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { TimestampData } from '../../@types/lib';
-import { theme } from '../../lib';
 
 export default defineComponent({
   setup() {
@@ -79,13 +78,13 @@ export default defineComponent({
       {
         key: '1',
         normalizedAt: 10,
-        color: theme['fill-error'],
+        fillClass: 'as-fill-error',
         skipped: true,
       },
       {
         key: '2',
         normalizedAt: 20,
-        color: theme['fill-success'],
+        fillClass: 'as-fill-success',
       },
       {
         key: 'new',
@@ -94,7 +93,7 @@ export default defineComponent({
       {
         key: '3',
         normalizedAt: 90,
-        color: theme['fill-secondary'],
+        fillClass: 'as-fill-secondary',
       },
     ];
     const timestamps3: TimestampData[] = [
@@ -148,8 +147,8 @@ export default defineComponent({
 <style lang="scss">
 @import '../../lib/styles/variables-theme.scss';
 
-.slider-white {
-  --default-background-color: #{rgba($color: $backgroundColor-on-surface, $alpha: $opacity-low)} !important;
-  --default-foreground-color: theme('colors.on-surface') !important;
+.as-slider-white {
+  --as-slider-background-color: #{rgba($color: $backgroundColor-on-surface, $alpha: $opacity-low)} !important;
+  --as-slider-foreground-color: theme('colors.on-surface') !important;
 }
 </style>

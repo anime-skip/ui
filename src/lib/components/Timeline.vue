@@ -54,7 +54,7 @@
       height="6"
       viewBox="0 0 12 6"
     >
-      <path d="M6 6L0 0H12L6 6Z" :style="pathStyle(timestamp)" />
+      <path d="M6 6L0 0H12L6 6Z" :class="pathClass(timestamp)" />
     </svg>
   </div>
 </template>
@@ -91,10 +91,8 @@ export default defineComponent({
         'as-active': timestamp.active,
       };
     };
-    const pathStyle = (timestamp: TimestampData) => {
-      return {
-        fill: timestamp.color ?? theme['textColor-primaryPalette-400'],
-      };
+    const pathClass = (timestamp: TimestampData) => {
+      return timestamp.fillClass ?? 'as-fill-timeline-foreground';
     };
 
     // Sections
@@ -185,7 +183,7 @@ export default defineComponent({
     return {
       timestampStyle,
       timestampClass,
-      pathStyle,
+      pathClass,
       sections,
       completedSections,
       hoverOverlayLeftPx,
@@ -237,15 +235,6 @@ $translationInactiveSliderVrv: 3px;
     width: 12px;
     transform: translateX(-50%);
     transition: 250ms ease transform;
-
-    path {
-      fill: theme('colors.primaryPalette.500');
-    }
-    &.as-edited {
-      path {
-        fill: theme('colors.complementaryPalette.500');
-      }
-    }
 
     &.as-active {
       transform: translateX(-50%) translateY(-12px);

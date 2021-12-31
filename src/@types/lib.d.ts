@@ -8,7 +8,7 @@ export interface TimestampData {
   key: string;
   title?: string;
   normalizedAt: number;
-  color?: string;
+  fillClass?: string;
   skipped?: boolean;
   active?: boolean;
 }

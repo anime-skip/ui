@@ -67,7 +67,7 @@ $notCompletedColor: rgba(
 
 .TimelineSection {
   position: absolute;
-  background-color: $notCompletedColor;
+  background-color: theme('colors.timeline-background');
   height: 3px;
   border-radius: 1.5px;
 }
@@ -75,10 +75,10 @@ $notCompletedColor: rgba(
   background-color: transparent;
 }
 .as-buffered {
-  background-color: rgba($color: $textColor-on-surface, $alpha: 0.75);
+  @apply as-bg-on-surface as-bg-opacity-medium;
 }
 .as-completed {
-  background-color: $backgroundColor-primaryPalette-500;
+  background-color: #{theme('colors.timeline-foreground')};
 }
 .as-current {
   border-top-right-radius: 0;

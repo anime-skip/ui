@@ -1,9 +1,9 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
-function mix(overlay, base, overlayOpacity = 50) {
-  const toHex = d => d.toString(16); // convert a decimal value to hex
-  const toDecimal = h => parseInt(h, 16); // convert a hex value to decimal
+const toHex = d => d.toString(16); // convert a decimal value to hex
+const toDecimal = h => parseInt(h, 16); // convert a hex value to decimal
 
+function mix(overlay, base, overlayOpacity = 50) {
   let color = '#';
 
   for (let i = 1; i <= 6; i += 2) {
@@ -22,6 +22,15 @@ function mix(overlay, base, overlayOpacity = 50) {
   }
 
   return color; // PROFIT!
+}
+
+function toRgb(hex) {
+  hex = hex.replace('#', '');
+  return {
+    r: toDecimal(hex.substring(0, 2)),
+    g: toDecimal(hex.substring(2, 4)),
+    b: toDecimal(hex.substring(4, 6)),
+  };
 }
 
 const primaryColor = {
@@ -79,8 +88,23 @@ const analogousColor = {
 const background = '#142026';
 const control = mix('#000000', background, 60);
 
+/**
+ * Create a color that can be changed through a CSS variable, meaning it's theme-able
+ *
+ * https://tailwindcss.com/docs/customizing-colors#using-css-variables
+ */
+function themedColor(variable, defaultHexColor) {
+  const { r, g, b } = toRgb(defaultHexColor);
+  const defaultRgb = `${r} ${g} ${b}`;
+  return ({ opacityValue }) => {
+    if (opacityValue === undefined) {
+      return `rgb(var(${variable}, ${defaultRgb}))`;
+    }
+    return `rgb(var(${variable}, ${defaultRgb}) / ${opacityValue})`;
+  };
+}
+
 module.exports = {
-  darkMode: false,
   safelist: [
     // Checkbox colors styles
     'as-fill-on-primary',
@@ -105,30 +129,46 @@ module.exports = {
       analogousPalette: analogousColor,
 
       // Colors
-      primary: primaryColor[300],
-      'primary-variant': primaryColor[700],
-      secondary: secondaryColor[400],
-      'secondary-variant': secondaryColor[700],
-      background,
-      error: mix('#ffffff', complementaryColor[500], 40),
-      success: mix('#ffffff', analogousColor[500], 32),
-      control,
-      'control-variant': mix('#000000', control, 64),
-      'control-disabled': mix('#ffffff', background, 10),
-      'control-highlight': mix('#ffffff', background, 20),
+      primary: themedColor('--as-theme-primary', primaryColor[300]),
+      'primary-variant': themedColor('--as-theme-primary-variant', primaryColor[700]),
+      'primary-dark': themedColor('--as-theme-primary', primaryColor[500]),
+      secondary: themedColor('--as-theme-secondary', secondaryColor[400]),
+      'secondary-variant': themedColor('--as-theme-secondary-variant', secondaryColor[700]),
+      background: themedColor('--as-theme-background', background),
+      error: themedColor('--as-theme-error', mix('#ffffff', complementaryColor[500], 40)),
+      'error-variant': themedColor(
+        '--as-theme-error-variant',
+        mix('#ffffff', complementaryColor[700], 10)
+      ),
+      success: themedColor('--as-theme-success', mix('#ffffff', analogousColor[500], 32)),
+      control: themedColor('--as-theme-control', control),
+      'control-variant': themedColor('--as-theme-control-variant', mix('#000000', control, 64)),
+      'control-disabled': themedColor(
+        '--as-theme-control-disabled',
+        mix('#ffffff', background, 10)
+      ),
+      'control-highlight': themedColor(
+        '--as-theme-control-highlight',
+        mix('#ffffff', background, 20)
+      ),
 
       // On Surfaces
-      'on-primary': '#000000',
-      'on-primary-variant': '#ffffff',
-      'on-secondary': '#ffffff',
-      'on-secondary-variant': '#ffffff',
-      'on-surface': '#ffffff',
-      'on-error': '#000000',
-      'on-success': '#000000',
+      'on-primary': themedColor('--as-theme-on-primary', '#000000'),
+      'on-primary-variant': themedColor('--as-theme-on-primary-variant', '#ffffff'),
+      'on-secondary': themedColor('--as-theme-on-secondary', '#ffffff'),
+      'on-secondary-variant': themedColor('--as-theme-on-secondary-variant', '#ffffff'),
+      'on-surface': themedColor('--as-theme-on-surface', '#ffffff'),
+      'on-error': themedColor('--as-theme-on-error', '#000000'),
+      'on-success': themedColor('--as-theme-on-success', '#000000'),
+
+      // Misc
+      'timeline-foreground': themedColor('--as-theme-timeline-foreground', primaryColor[500]),
+      'timeline-background': themedColor('--as-theme-timeline-background', '#40667A'),
     },
     fill: theme => ({
       primary: theme('colors.primary'),
       'primary-variant': theme('colors.primary-variant'),
+      'timeline-foreground': theme('colors.timeline-foreground'),
       secondary: theme('colors.secondary'),
       'secondary-variant': theme('colors.red'),
       surface: theme('colors.surface'),

@@ -15,7 +15,7 @@
         </div>
       </slot>
     </div>
-    <div class="as-as- as-select-none" @mousedown="onSeekStart" />
+    <div class="as-mouse-event-handler as-select-none" @mousedown="onSeekStart" />
   </div>
 </template>
 
@@ -142,13 +142,14 @@ $height: 3px;
 $thumbSize: $height + 4 * 2;
 $thumbSizeUnitless: strip-unit($thumbSize);
 
+$fg-color: var(--as-slider-foreground-color, #{theme('colors.primary')});
+$bg-color: var(--as-slider-background-color, #{theme('colors.control-variant')});
+
 .Slider {
   height: $height + 4px;
   overflow-y: visible;
   position: relative;
   flex-direction: row;
-  --default-foreground-color: theme('colors.primary');
-  --default-background-color: theme('colors.control-variant');
 
   .as-bar-container {
     position: absolute;
@@ -160,7 +161,7 @@ $thumbSizeUnitless: strip-unit($thumbSize);
 
   .as-default-background {
     position: absolute;
-    background-color: var(--default-background-color);
+    background-color: $bg-color;
     left: 0;
     right: 0;
     top: 0;
@@ -175,7 +176,7 @@ $thumbSizeUnitless: strip-unit($thumbSize);
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: var(--default-foreground-color);
+    background-color: $fg-color;
     border-top-left-radius: $height * 0.5;
     border-bottom-left-radius: $height * 0.5;
   }
@@ -196,7 +197,7 @@ $thumbSizeUnitless: strip-unit($thumbSize);
       min-width: $thumbSize;
       min-height: $thumbSize;
       border-radius: 50%;
-      background-color: var(--default-foreground-color);
+      background-color: $fg-color;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -223,7 +224,7 @@ $thumbSizeUnitless: strip-unit($thumbSize);
           top: -3px;
           bottom: -3px;
           opacity: 0.38;
-          background-color: var(--default-foreground-color);
+          background-color: $fg-color;
         }
       }
     }
