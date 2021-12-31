@@ -81,6 +81,21 @@ const control = mix('#000000', background, 60);
 
 module.exports = {
   darkMode: false,
+  safelist: [
+    // Checkbox colors styles
+    'as-fill-on-primary',
+    'as-fill-on-primary-variant',
+    'as-fill-on-secondary',
+    'as-fill-on-secondary-variant',
+    'as-fill-on-surface',
+    'as-fill-on-error',
+    'as-text-on-primary',
+    'as-text-on-primary-variant',
+    'as-text-on-secondary',
+    'as-text-on-secondary-variant',
+    'as-text-on-surface',
+    'as-text-on-error',
+  ],
   theme: {
     colors: {
       // Palettes

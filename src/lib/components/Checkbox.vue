@@ -45,22 +45,6 @@ import CheckboxChecked from './icons/CheckboxChecked.vue';
 import CheckboxIndeterminate from './icons/CheckboxIndeterminate.vue';
 import CheckboxUnchecked from './icons/CheckboxUnchecked.vue';
 
-/**
- * Include classes:
- * as-fill-on-primary
- * as-fill-on-primary-variant
- * as-fill-on-secondary
- * as-fill-on-secondary-variant
- * as-fill-on-surface
- * as-fill-on-error
- * as-text-on-primary
- * as-text-on-primary-variant
- * as-text-on-secondary
- * as-text-on-secondary-variant
- * as-text-on-surface
- * as-text-on-error
- */
-
 export default defineComponent({
   name: 'Checkbox',
   components: { CheckboxChecked, CheckboxIndeterminate, CheckboxUnchecked },
