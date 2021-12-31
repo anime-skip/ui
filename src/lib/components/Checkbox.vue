@@ -14,7 +14,7 @@
       class="as-flex-shrink-0 as-opacity-100 as-transition-colors"
       :class="{
         'as-fill-secondary': flat && !disabled,
-        [`as-fill-on-${onSurface}`]: !flat && !!onSurface,
+        [`as-fill-on-${onSurface}`]: !flat && !disabled && !!onSurface,
       }"
     />
     <CheckboxIndeterminate
@@ -22,7 +22,7 @@
       class="as-flex-shrink-0 as-opacity-100 as-transition-colors"
       :class="{
         'as-fill-secondary': flat && !disabled,
-        [`as-fill-on-${onSurface}`]: !flat && !!onSurface,
+        [`as-fill-on-${onSurface}`]: !flat && !disabled && !!onSurface,
       }"
     />
     <CheckboxUnchecked v-else class="as-flex-shrink-0" />
@@ -31,7 +31,7 @@
       class="as-body-1 as-flex-1 as-text-opacity-high as-pointer-events-none as-pr-2"
       :class="{
         'as-text-right': rToL,
-        [`as-text-on-${onSurface}`]: !flat && !!onSurface,
+        [`as-text-on-${onSurface}`]: !flat && !disabled && !!onSurface,
       }"
       >{{ label }}</label
     >
@@ -45,6 +45,22 @@ import CheckboxChecked from './icons/CheckboxChecked.vue';
 import CheckboxIndeterminate from './icons/CheckboxIndeterminate.vue';
 import CheckboxUnchecked from './icons/CheckboxUnchecked.vue';
 
+/**
+ * Include classes:
+ * as-fill-on-primary
+ * as-fill-on-primary-variant
+ * as-fill-on-secondary
+ * as-fill-on-secondary-variant
+ * as-fill-on-surface
+ * as-fill-on-error
+ * as-text-on-primary
+ * as-text-on-primary-variant
+ * as-text-on-secondary
+ * as-text-on-secondary-variant
+ * as-text-on-surface
+ * as-text-on-error
+ */
+
 export default defineComponent({
   name: 'Checkbox',
   components: { CheckboxChecked, CheckboxIndeterminate, CheckboxUnchecked },
@@ -56,7 +72,7 @@ export default defineComponent({
     rToL: Boolean,
     onSurface: {
       type: String as PropType<
-        'primary' | 'primary-varient' | 'secondary' | 'secondary-variant' | 'surface' | 'error'
+        'primary' | 'primary-variant' | 'secondary' | 'secondary-variant' | 'surface' | 'error'
       >,
       default: undefined,
     },
