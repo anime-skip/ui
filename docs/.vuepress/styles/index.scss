@@ -1,0 +1,9 @@
+@import '../../../src/lib/styles/index.scss';
+
+:root,
+:root.dark {
+  // brand colors
+  --c-brand: #32b5f2;
+  --c-brand-light: #32b5f2;
+  --c-tip: #32b5f2;
+}

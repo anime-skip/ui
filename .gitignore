@@ -7,3 +7,5 @@ node_modules/
 /cjs
 *.local
 *.log
+.temp
+.cache
