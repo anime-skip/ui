@@ -35,15 +35,19 @@ jobs:
           github-token: ${{ secrets.github_token }}
           output-file: 'false'
 
+      - name: Not Published
+        if: ${{ steps.changelog.outputs.skipped == 'true' }}
+        run: |
+          echo "Changelog was empty, skipping publishing"
+          exit 1
+
       - name: Publish to GitHub Packages
         uses: ./.github/actions/publish
-        if: ${{ steps.changelog.outputs.skipped == 'false' }}
         with:
           npmAuthToken: ${{ secrets.ANIME_SKIP_PACKAGES_TOKEN }}
 
       - name: Create Release
         uses: actions/create-release@v1
-        if: ${{ steps.changelog.outputs.skipped == 'false' }}
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
         with:
