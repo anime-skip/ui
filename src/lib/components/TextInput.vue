@@ -1,5 +1,5 @@
 <template>
-  <div class="TextInput as-flex as-flex-col as-min-w-0 as-cursor-text">
+  <div class="TextInput as-flex as-flex-col as-min-w-0">
     <Body2 v-if="!!label" class="as-mb-3 as-text-opacity-high">{{ label }}</Body2>
     <div
       class="as-rounded-sm as-ring-primary as-transition-all as-flex"
@@ -9,7 +9,7 @@
       }"
     >
       <RaisedContainer
-        class="as-input-wrapper as-h-12 as-space-x-4 as-px-4 as-items-center as-min-w-0 as-flex-1"
+        class="as-input-wrapper as-h-12 as-space-x-4 as-px-4 as-items-center as-min-w-0 as-flex-1 as-cursor-text"
         dark
         :disabled="disabled"
         :down="isFocused || !!errorMessage || !!internalValue"
