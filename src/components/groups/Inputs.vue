@@ -52,6 +52,27 @@
         </template>
       </TextInput>
     </div>
+    <Subtitle1>Selections</Subtitle1>
+    <div class="as-grid as-grid-flow-row as-grid-cols-2 as-gap-4 as-mt-4">
+      <SelectDropDown label="Values" v-model:value="dropDown1">
+        <option value="value1">Value 1</option>
+        <option value="value2">Value 2</option>
+        <option value="value3">Value 3</option>
+      </SelectDropDown>
+      <SelectDropDown label="Disabled" disabled />
+      <SelectDropDown>
+        <template #left-icon="slotProps">
+          <Icon
+            :disabled="slotProps.disabled"
+            :active="slotProps.focused"
+            path="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+          />
+        </template>
+      </SelectDropDown>
+      <SelectDropDown placeholder="Disabled" disabled default-value="Disabled value" />
+      <SelectDropDown placeholder="Error" :is-valid="false" error-message="Enter a value" />
+      <div />
+    </div>
     <Subtitle1 class="as-mt-8">Checkboxes</Subtitle1>
     <div class="as-grid as-grid-flow-row as-grid-cols-4 as-gap-4 as-mt-4 as-items-start">
       <Checkbox v-model:checked="checkbox1" label="Checked" />
@@ -122,6 +143,8 @@ export default defineComponent({
     const checkbox6 = ref(false);
     const checkbox7 = ref(true);
 
+    const dropDown1 = ref('value1');
+
     return {
       checkbox1,
       checkbox2,
@@ -130,6 +153,7 @@ export default defineComponent({
       checkbox5,
       checkbox6,
       checkbox7,
+      dropDown1,
     };
   },
 });

@@ -12,6 +12,7 @@ export { default as Loading } from './Loading.vue';
 export { default as LoadingOverlay } from './LoadingOverlay.vue';
 export { default as Slider } from './Slider.vue';
 export { default as Timeline } from './Timeline.vue';
+export { default as SelectDropDown } from './SelectDropDown.vue';
 
 // Text
 export { default as Body1 } from './text/Body1.vue';
