@@ -5,7 +5,6 @@ const toDecimal = h => parseInt(h, 16); // convert a hex value to decimal
 
 function mix(overlay, base, overlayOpacity = 50) {
   let color = '#';
-  console.log({ overlay, base, overlayOpacity });
 
   for (let i = 1; i <= 6; i += 2) {
     // loop through each of the 3 hex pairs—red, green, and blue
@@ -97,7 +96,6 @@ const control = mix('#000000', background, 60);
 function themedColor(variable, defaultHexColor) {
   const { r, g, b } = toRgb(defaultHexColor);
   const defaultRgb = `${r} ${g} ${b}`;
-  console.log(variable, { defaultHexColor, r, g, b, defaultRgb });
   return ({ opacityValue }) => {
     if (opacityValue === undefined) {
       return `rgb(var(${variable}, ${defaultRgb}))`;
