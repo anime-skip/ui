@@ -122,6 +122,8 @@ module.exports = {
   ],
   theme: {
     colors: {
+      transparent: '#00000000',
+
       // Palettes
       primaryPalette: primaryColor,
       secondaryPalette: secondaryColor,
