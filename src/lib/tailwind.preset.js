@@ -5,6 +5,7 @@ const toDecimal = h => parseInt(h, 16); // convert a hex value to decimal
 
 function mix(overlay, base, overlayOpacity = 50) {
   let color = '#';
+  console.log({ overlay, base, overlayOpacity });
 
   for (let i = 1; i <= 6; i += 2) {
     // loop through each of the 3 hex pairs—red, green, and blue
@@ -96,6 +97,7 @@ const control = mix('#000000', background, 60);
 function themedColor(variable, defaultHexColor) {
   const { r, g, b } = toRgb(defaultHexColor);
   const defaultRgb = `${r} ${g} ${b}`;
+  console.log(variable, { defaultHexColor, r, g, b, defaultRgb });
   return ({ opacityValue }) => {
     if (opacityValue === undefined) {
       return `rgb(var(${variable}, ${defaultRgb}))`;
@@ -167,45 +169,17 @@ module.exports = {
       'timeline-foreground': themedColor('--as-theme-timeline-foreground', primaryColor[500]),
       'timeline-background': themedColor('--as-theme-timeline-background', '#40667A'),
     },
-    background: theme => ({
-      // Surfaces
-      'surface-1': themedColor(
-        '--as-theme-surface-1',
-        mix('#ffffff', theme('colors.background'), 5)
-      ),
-      'surface-2': themedColor(
-        '--as-theme-surface-2',
-        mix('#ffffff', theme('colors.background'), 7)
-      ),
-      'surface-3': themedColor(
-        '--as-theme-surface-3',
-        mix('#ffffff', theme('colors.background'), 8)
-      ),
-      'surface-4': themedColor(
-        '--as-theme-surface-4',
-        mix('#ffffff', theme('colors.background'), 9)
-      ),
-      'surface-6': themedColor(
-        '--as-theme-surface-6',
-        mix('#ffffff', theme('colors.background'), 11)
-      ),
-      'surface-8': themedColor(
-        '--as-theme-surface-8',
-        mix('#ffffff', theme('colors.background'), 12)
-      ),
-      'surface-12': themedColor(
-        '--as-theme-surface-12',
-        mix('#ffffff', theme('colors.background'), 14)
-      ),
-      'surface-16': themedColor(
-        '--as-theme-surface-16',
-        mix('#ffffff', theme('colors.background'), 15)
-      ),
-      'surface-24': themedColor(
-        '--as-theme-surface-24',
-        mix('#ffffff', theme('colors.background'), 16)
-      ),
-    }),
+    background: {
+      'surface-1': themedColor('--as-theme-surface-1', '#202B31'),
+      'surface-2': themedColor('--as-theme-surface-2', '#253035'),
+      'surface-3': themedColor('--as-theme-surface-3', '#263137'),
+      'surface-4': themedColor('--as-theme-surface-4', '#29343A'),
+      'surface-6': themedColor('--as-theme-surface-6', '#2E383E'),
+      'surface-8': themedColor('--as-theme-surface-8', '#313B40'),
+      'surface-12': themedColor('--as-theme-surface-12', '#353F45'),
+      'surface-16': themedColor('--as-theme-surface-16', '#374146'),
+      'surface-24': themedColor('--as-theme-surface-24', '#3A4449'),
+    },
     fill: theme => ({
       primary: theme('colors.primary'),
       'primary-variant': theme('colors.primary-variant'),
