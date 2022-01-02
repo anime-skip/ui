@@ -152,6 +152,10 @@ $inputHeight: 48px;
       }
     }
   }
+
+  option {
+    @apply as-bg-background;
+  }
 }
 
 .as-empty {
