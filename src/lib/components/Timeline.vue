@@ -9,9 +9,10 @@
     <!-- Overlay -->
     <div
       v-if="allowOverlay"
-      class="as-absolute as-w-full as-h-0 as--top-1 as-opacity-0 as-transition-opacity as-whitespace-nowrap as-z-10 as-pointer-events-none as-select-none"
+      class="as-absolute as-w-full as-h-0 as--top-1 as-transition-opacity as-whitespace-nowrap as-z-10 as-pointer-events-none as-select-none"
       :class="{
         'as-opacity-100': isShowingHoverOverlay,
+        'as-opacity-0': !isShowingHoverOverlay
       }"
     >
       <div
