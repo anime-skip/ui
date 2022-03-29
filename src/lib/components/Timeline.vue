@@ -21,7 +21,7 @@
         :style="`left: ${hoverOverlayLeftPx}px`"
       >
         <card :elevation="12" class="as-py-2 as-px-2.5 as-text-center">
-          <p class="as-subtitle-1 as-text-opacity-100 as-text-primaryPalette-300 as-font-bold">
+          <p class="as-subtitle-1 as-text-opacity-100 as-text-primary as-font-bold">
             {{ hoverOverlayTimestamp }}
           </p>
           <p>{{ hoverOverlayTime }}</p>
