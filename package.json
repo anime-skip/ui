@@ -10,6 +10,10 @@
   "types": "index.d.ts",
   "main": "ui.umd.js",
   "module": "ui.es.js",
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
+  },
   "scripts": {
     "compile": "vue-tsc --noEmit",
     "start": "vite",
