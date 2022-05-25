@@ -41,10 +41,11 @@ jobs:
           echo "Changelog was empty, skipping publishing"
           exit 1
 
-      - name: Publish to GitHub Packages
-        uses: ./.github/actions/publish
+      - uses: JS-DevTools/npm-publish@v1
+        name: Publish to NPM
         with:
-          npmAuthToken: ${{ secrets.ANIME_SKIP_PACKAGES_TOKEN }}
+          package: lib/package.json
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Create Release
         uses: actions/create-release@v1
