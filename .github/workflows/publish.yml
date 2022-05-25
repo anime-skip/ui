@@ -38,6 +38,9 @@ jobs:
           echo "Changelog was empty, skipping publishing"
           exit 1
 
+      - name: Rebuild with latest version
+        run: pnpm build
+
       - uses: JS-DevTools/npm-publish@v1
         name: Publish to NPM
         with:
